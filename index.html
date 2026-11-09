@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@400;500;600&family=Noto+Sans+KR:wght@300;400;500&family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+html,body{margin:0;background:#f8f4ec;}
+*{box-sizing:border-box;}
+a{color:#9a7a3c;text-decoration:none;}
+a:hover{color:#6f5524;}
+</style>
+</helmet>
+<div style="min-height:100vh;background:#f8f4ec;color:#2b2722;font-family:'Noto Sans KR',sans-serif;font-weight:400;line-height:1.75;-webkit-font-smoothing:antialiased;">
+  <div style="max-width:860px;margin:0 auto;padding:clamp(28px,6vw,64px) clamp(22px,5vw,48px) 48px;">
+
+    <header style="display:flex;justify-content:space-between;align-items:center;gap:16px;padding-bottom:20px;border-bottom:1px solid #d9cdb4;">
+      <span style="font-family:'Cormorant Garamond',serif;font-size:18px;letter-spacing:0.22em;color:#9a7a3c;">HYENA KIM</span>
+      <nav style="display:flex;gap:clamp(14px,3vw,28px);font-size:13px;letter-spacing:0.08em;">
+        <a href="#about">소개</a>
+        <a href="#career">경력·활동</a>
+        <a href="#contact">연락처</a>
+      </nav>
+    </header>
+
+    <section style="padding:clamp(72px,14vw,140px) 0 clamp(64px,12vw,120px);text-align:center;">
+      <div style="font-family:'Cormorant Garamond',serif;font-style:italic;font-size:clamp(15px,2.4vw,18px);color:#9a7a3c;letter-spacing:0.06em;">Banquet Sales &amp; Event Planning</div>
+      <div style="width:40px;height:1px;background:#b8955a;margin:22px auto 30px;"></div>
+      <h1 style="margin:0;font-family:'Noto Serif KR',serif;font-weight:500;font-size:clamp(44px,10vw,76px);letter-spacing:0.12em;line-height:1.2;color:#221e19;">김혜나</h1>
+      <p style="margin:26px auto 0;max-width:520px;font-size:clamp(15px,2.6vw,18px);color:#5a5248;font-weight:300;text-wrap:pretty;word-break:keep-all;">연회 세일즈와 이벤트 기획을 꿈꾸는 호텔관광과 학생</p>
+    </section>
+
+    <section id="about" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,220px),1fr));gap:20px 48px;padding:56px 0;border-top:1px solid #d9cdb4;">
+      <div>
+        <div style="font-family:'Cormorant Garamond',serif;font-size:15px;letter-spacing:0.2em;color:#9a7a3c;">01 · ABOUT</div>
+        <h2 style="margin:8px 0 0;font-family:'Noto Serif KR',serif;font-weight:500;font-size:26px;">소개</h2>
+      </div>
+      <p style="margin:0;font-size:16px;color:#3d372f;word-break:keep-all;text-wrap:pretty;">호텔 컨시어지와 웨딩홀 연회장 데스크에서 고객을 직접 맞이하며, 한 번의 행사가 준비되고 마무리되기까지의 과정을 현장에서 배웠습니다. 고객의 요청을 정확히 듣고 일정과 세부 사항을 꼼꼼히 챙기는 일에 자신이 있으며, 호텔 연회예약실에서 세일즈와 이벤트 기획 역량을 키워 가고자 합니다.</p>
+    </section>
+
+    <section id="career" style="padding:56px 0;border-top:1px solid #d9cdb4;">
+      <div style="margin-bottom:36px;">
+        <div style="font-family:'Cormorant Garamond',serif;font-size:15px;letter-spacing:0.2em;color:#9a7a3c;">02 · EXPERIENCE</div>
+        <h2 style="margin:8px 0 0;font-family:'Noto Serif KR',serif;font-weight:500;font-size:26px;">경력·활동</h2>
+      </div>
+      <div style="display:flex;flex-direction:column;">
+        <sc-for list="{{ items }}" as="item" hint-placeholder-count="3">
+          <article style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,200px),1fr));gap:8px 48px;padding:28px 0;border-top:1px solid #e6dcc8;">
+            <div style="display:flex;gap:14px;align-items:baseline;">
+              <span style="font-family:'Cormorant Garamond',serif;font-size:28px;color:#b8955a;line-height:1;">{{ item.no }}</span>
+              <span style="font-size:13px;letter-spacing:0.08em;color:#8a7f70;">{{ item.tag }}</span>
+            </div>
+            <div>
+              <h3 style="margin:0;font-family:'Noto Serif KR',serif;font-weight:500;font-size:clamp(18px,3vw,21px);line-height:1.5;word-break:keep-all;">{{ item.title }}</h3>
+              <div style="margin-top:4px;font-size:14px;color:#9a7a3c;">{{ item.role }}</div>
+              <p style="margin:12px 0 0;font-size:15px;color:#4a443b;word-break:keep-all;text-wrap:pretty;">{{ item.desc }}</p>
+            </div>
+          </article>
+        </sc-for>
+      </div>
+    </section>
+
+    <section id="contact" style="padding:72px 0 64px;border-top:1px solid #d9cdb4;text-align:center;">
+      <div style="font-family:'Cormorant Garamond',serif;font-size:15px;letter-spacing:0.2em;color:#9a7a3c;">03 · CONTACT</div>
+      <h2 style="margin:8px 0 28px;font-family:'Noto Serif KR',serif;font-weight:500;font-size:26px;">연락처</h2>
+      <a href="{{ mailto }}" style="display:inline-flex;align-items:center;gap:12px;padding:16px 28px;min-height:48px;border:1px solid #b8955a;color:#2b2722;font-family:'Cormorant Garamond',serif;font-size:clamp(18px,4vw,22px);letter-spacing:0.04em;word-break:break-all;" style-hover="background:#b8955a;color:#fffdf8;">{{ email }}</a>
+    </section>
+
+    <footer style="padding-top:24px;border-top:1px solid #d9cdb4;text-align:center;font-family:'Cormorant Garamond',serif;font-size:13px;letter-spacing:0.2em;color:#a39886;">© 2026 HYENA KIM</footer>
+  </div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;email&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;hyena.kim@email.com&quot;,&quot;tsType&quot;:&quot;string&quot;}}">
+class Component extends DCLogic {
+  renderVals() {
+    const email = this.props.email ?? "hyena.kim@email.com";
+    return {
+      email,
+      mailto: "mailto:" + email,
+      items: [
+        { no: "I", tag: "SUMMER PRACTICUM", title: "포시즌스 호텔 서울", role: "F&B 하계 실습", desc: "식음료 업장에서 고객 응대와 서비스 운영을 실습하며 호텔 F&B 현장을 경험했습니다." },
+        { no: "II", tag: "INTERNSHIP", title: "강릉 세인트존스 호텔", role: "컨시어지 인턴", desc: "투숙객 문의 응대와 안내, 예약 및 요청 사항 처리를 맡으며 호텔 서비스의 기본기를 익혔습니다." },
+        { no: "III", tag: "3 YEARS", title: "웨딩홀 연회장 데스크", role: "연회장 데스크 · 3년", desc: "예식과 연회 당일 고객 응대, 일정 확인, 현장 부서와의 소통을 담당하며 행사 운영 흐름을 경험했습니다." },
+        { no: "IV", tag: "LEADERSHIP", title: "연성대학교 호텔관광과 학생회", role: "부학과대표", desc: "학과 행사 기획과 운영을 함께 맡아 일정 조율, 인원 관리, 진행을 경험했습니다." }
+      ]
+    };
+  }
+}
+</script>
+</body>
+</html>

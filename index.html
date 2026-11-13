@@ -1,8 +1,7 @@
-<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#fff;color:#000}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
 <title>EASY IN 셀프 체크인</title>
 <meta name="claude:viewport-fit-sides" content="cover">
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+KR:wght@400;500;600;700&family=IBM+Plex+Mono:wght@500;600&family=Gowun+Batang:wght@400;700&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+KR:wght@400;500;600;700&family=IBM+Plex+Mono:wght@500;600&family=Gowun+Batang:wght@400;700&family=Noto+Sans+SC:wght@400;500;600;700&family=Noto+Serif+SC:wght@600;700&family=Noto+Sans+JP:wght@400;500;600;700&family=Noto+Serif+JP:wght@600;700&display=swap">
 <style>
 /* Layout: app bar with three views — device-framed kiosk (tablet landscape), operator dashboard, research rationale.
    Look: a deliberate single dark theme — lobby-at-night ink, warm ivory text, champagne-gold accent. */
@@ -57,7 +56,7 @@ body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset
 .k-steps .pips{display:flex;gap:5px}
 .k-steps .pip{width:26px;height:3px;border-radius:2px;background:#3A3E48}
 .k-steps .pip.on{background:var(--gold)}
-.k-steps .eta{color:var(--gold-2);white-space:nowrap}
+.k-steps .eta{color:var(--gold-2);white-space:nowrap;font-variant-numeric:tabular-nums}
 @media (max-width:720px){.k-steps{margin-left:0;width:100%}.k-steps .pips{display:none}.k-body{padding:18px 16px}.pad{grid-template-columns:repeat(5,minmax(0,1fr))}}
 .k-body{flex:1;display:flex;flex-direction:column;padding:calc(22px*var(--s)) 28px;min-height:0;overflow:auto}
 .k-foot{display:flex;align-items:center;gap:10px;padding:10px 18px;border-top:1px solid var(--k-line);background:var(--k-head);flex-wrap:wrap}
@@ -288,6 +287,10 @@ body:not(.kmode) .kexit{display:none}
 .tabs a small{font-size:11.5px;opacity:.75}
 @media (max-width:700px){.tabs a small{display:none}}
 .kmode-btn{width:100%;margin-bottom:6px;background:linear-gradient(150deg,#D4B06C,#B48E4A);color:var(--gold-ink);border:0;font-weight:700;padding:10px 12px}
+/* Chinese / Japanese: one dedicated font for every character, so glyphs never mix between the Korean font and a fallback */
+#screen:lang(zh){--f-ui:"Noto Sans SC","Noto Sans CJK SC","PingFang SC","Microsoft YaHei","IBM Plex Sans KR",sans-serif;--f-brand:"Noto Serif SC","Noto Serif CJK SC","Songti SC","SimSun","Noto Sans SC",serif;--f-num:"IBM Plex Mono",ui-monospace,Menlo,"Noto Sans SC","Noto Sans CJK SC","PingFang SC","Microsoft YaHei",monospace;font-family:var(--f-ui)}
+#screen:lang(ja){--f-ui:"Noto Sans JP","Noto Sans CJK JP","Hiragino Sans","Yu Gothic","Meiryo","IBM Plex Sans KR",sans-serif;--f-brand:"Noto Serif JP","Noto Serif CJK JP","Hiragino Mincho ProN","Yu Mincho","Noto Sans JP",serif;--f-num:"IBM Plex Mono",ui-monospace,Menlo,"Noto Sans JP","Noto Sans CJK JP","Hiragino Sans","Yu Gothic",monospace;font-family:var(--f-ui)}
+#screen :lang(ko){font-family:"IBM Plex Sans KR","Apple SD Gothic Neo","Malgun Gothic",sans-serif}
 /* ───────── review additions */
 .k-stepper{display:flex;gap:6px;align-items:center;flex-wrap:wrap}
 .k-stepper .sp{display:inline-flex;align-items:center;gap:6px;font-size:calc(12.5px*var(--s));color:var(--k-muted);padding:3px 10px 3px 3px;border-radius:999px;border:1px solid var(--k-line);white-space:nowrap}
@@ -557,26 +560,27 @@ ja:{hotel:"ホテル・キデ・ソウル",step:"ステップ",left:"残り約 {
 };
 /* review additions: new screens (QR camera, payment states, card key states, AI mode labels) in all four languages */
 const T2={
-ko:{left:"예상 약 {s}초 남음",qrS:"예약 확인 문자·메일의 QR을 카메라에 보여 주세요",idleDesc:["QR 또는 예약번호","자동으로 불러온 정보 확인","카드 결제","카드키 받기"],idleAvg:"예상 소요 시간 약 1분",
+ko:{left:"예상 남은 시간 {m}분 {s}초",etaSoon:"거의 다 됐어요",qrS:"예약 확인 문자·메일의 QR을 카메라에 보여 주세요",idleDesc:["QR 또는 예약번호","자동으로 불러온 정보 확인","카드 결제","카드키 받기"],idleAvg:"예상 소요 시간 약 1분",
  qrTitle:"QR 코드를 카메라에 보여 주세요",qrHow:"예약 확인 문자나 메일의 QR을 네모 칸 안에 맞추고, 15~20cm 거리에서 잠시 멈춰 주세요.",camStarting:"카메라를 켜고 있어요",camAsk:"카메라 사용을 묻는 창이 뜨면 '허용'을 눌러 주세요.",camScanning:"QR 코드를 찾고 있어요",camDeniedT:"카메라를 사용할 수 없어요",camDenied:"카메라 사용이 허용되지 않았어요. 브라우저의 카메라 권한을 허용하거나, 예약번호로 입력해 주세요.",camNone:"이 기기에서 카메라를 찾지 못했어요. 예약번호로 입력해 주세요.",camUnsup:"이 화면에서는 카메라를 쓸 수 없어요. 예약번호로 입력해 주세요.",camSlow:"잘 읽히지 않으면 휴대폰 화면 밝기를 높이거나, 예약번호로 입력해 보세요.",qrNotBooking:"예약 QR 코드가 아니에요. 예약 확인 메일에 있는 QR을 보여 주세요.",useCode:"예약번호로 입력하기",simQR:"시연용 QR 시뮬레이션",simQRNote:"카메라 없이 시연용 예약(GD2611)으로 진행합니다. 실제 QR 인식이 아닙니다.",qrErrT:"등록되지 않은 QR 코드예요",
  simPay:"결제 시연 화면 · 실제로 결제되지 않습니다",payS:"카드를 리더기에 대거나 꽂은 뒤, 아래 '카드 결제'를 눌러 주세요.",payWait:"결제가 끝날 때까지 카드를 빼지 마세요.",payCancel:"결제 취소",payOkT:"결제가 완료되었어요",payRef:"승인번호(시연)",toKey:"카드키 받기",payFailT:"결제가 승인되지 않았어요",payFailTips:["카드를 끝까지 꽂았는지, IC칩 방향이 맞는지 확인해 주세요.","한도 초과나 해외 결제 차단일 수 있어요. 다른 카드로 해 보세요.","결제되지 않았으니 다시 시도해도 두 번 결제되지 않아요."],payRetry:"다시 결제하기",
  simKey:"가상 발급 · 실제 카드키 발급기와 연결되어 있지 않습니다",keyFailT:"카드키를 만들지 못했어요",keyFailB:"결제는 이미 완료되었고, 다시 결제되지 않아요. 카드키를 한 번 더 발급하거나 직원을 불러 주세요.",keyRetry:"카드키 다시 발급",simDone:"시연에서는 실제 카드키가 나오지 않습니다",
  callHint:"막히면 언제든 오른쪽 아래 '직원 호출'을 눌러 주세요.",faultT:"일시적인 문제가 생겼어요",faultS:"처음 화면으로 돌아가 다시 시작해 주세요. 계속되면 직원을 불러 주세요.",
  aiModeAI:"AI 연결됨",aiModeFAQ:"AI 미연결 · FAQ 안내",aiModeChk:"연결 확인 중",viaAI:"AI 답변 · 중요한 내용은 직원에게 확인하세요",viaFAQ:"자주 묻는 질문 자동 안내 (AI 답변 아님)",viaNone:"자동 안내 불가 · 직원 연결 권장",aiNote:"호텔 안내 정보를 바탕으로 AI가 답합니다.",aiNoteFAQ:"지금은 AI가 연결되지 않아, 미리 등록된 안내문에서 찾아 답합니다.",aiUrg:"긴급 상황이면 바로 119(화재·구급) 또는 112(경찰)에 연락해 주세요. 지금 직원을 연결해 드릴게요.",aiCmp:"불편을 드려 죄송해요. 바로 해결할 수 있도록 직원을 연결해 드릴게요.",aiReq:"{r} 요청을 접수했어요. 담당 직원이 곧 처리해 드릴게요.",reqNo:"요청번호 "},
-en:{left:"About {s}s left (est.)",qrS:"Show the QR from your confirmation to the camera",idleDesc:["QR or booking number","Check your details","Pay by card","Get your key"],idleAvg:"Estimated time: about 1 minute",
+en:{left:"Est. {m} min {s} sec left",etaSoon:"Almost done",qrS:"Show the QR from your confirmation to the camera",idleDesc:["QR or booking number","Check your details","Pay by card","Get your key"],idleAvg:"Estimated time: about 1 minute",
  qrTitle:"Show your QR code to the camera",qrHow:"Fit the QR from your confirmation text or email inside the square and hold it still, 15–20 cm away.",camStarting:"Turning on the camera",camAsk:"If you’re asked about the camera, tap ‘Allow’.",camScanning:"Looking for a QR code",camDeniedT:"The camera isn’t available",camDenied:"Camera access was not allowed. Allow camera access in your browser, or enter your booking number instead.",camNone:"No camera was found on this device. Please enter your booking number.",camUnsup:"The camera can’t be used on this screen. Please enter your booking number.",camSlow:"If it won’t scan, turn up your phone’s brightness or enter your booking number.",qrNotBooking:"That isn’t a booking QR code. Please show the QR from your confirmation email.",useCode:"Enter booking number",simQR:"Demo QR simulation",simQRNote:"Continues with the demo booking (GD2611) without a camera. This is not real QR recognition.",qrErrT:"This QR code isn’t registered",
  simPay:"Payment demo · No real charge is made",payS:"Tap or insert your card on the reader, then press ‘Pay by card’.",payWait:"Please keep your card in until payment is done.",payCancel:"Cancel payment",payOkT:"Payment complete",payRef:"Approval no. (demo)",toKey:"Get my key",payFailT:"Your payment wasn’t approved",payFailTips:["Check that the card is fully inserted with the chip facing the right way.","Your limit or overseas payments may be blocked. Try another card.","Nothing was charged, so trying again won’t charge you twice."],payRetry:"Try payment again",
  simKey:"Virtual issue · Not connected to a real key card encoder",keyFailT:"We couldn’t make your key card",keyFailB:"Your payment is already complete and won’t be charged again. Try issuing the key again or call staff.",keyRetry:"Issue key again",simDone:"No real key card comes out in this demo",
  callHint:"If you get stuck, tap ‘Call staff’ at the bottom right anytime.",faultT:"Something went wrong",faultS:"Please go back to the start and try again. If it keeps happening, call staff.",
  aiModeAI:"AI connected",aiModeFAQ:"AI offline · FAQ answers",aiModeChk:"Checking",viaAI:"AI answer · Please confirm important details with staff",viaFAQ:"Automatic FAQ answer (not AI)",viaNone:"No automatic answer · Staff recommended",aiNote:"AI answers from the hotel’s guest information.",aiNoteFAQ:"AI isn’t connected right now, so answers come from our saved FAQ.",aiUrg:"If this is an emergency, call 119 (fire/ambulance) or 112 (police) now. I’m connecting you to staff.",aiCmp:"I’m sorry for the trouble. Let me connect you to a staff member right away.",aiReq:"Your request ({r}) has been sent. Our staff will take care of it shortly.",reqNo:"Request "},
-zh:{left:"预计还需约 {s} 秒",qrS:"请将确认短信或邮件中的二维码对准摄像头",idleDesc:["二维码或预订号","确认自动读取的信息","刷卡付款","领取房卡"],idleAvg:"预计约 1 分钟完成",
+zh:{left:"预计还需 {m}分{s}秒",etaSoon:"马上就好",
+qrS:"请将确认短信或邮件中的二维码对准摄像头",idleDesc:["二维码或预订号","确认自动读取的信息","刷卡付款","领取房卡"],idleAvg:"预计约 1 分钟完成",
  qrTitle:"请将二维码对准摄像头",qrHow:"请将确认短信或邮件中的二维码放入方框内，保持15~20厘米距离并稍作停留。",camStarting:"正在打开摄像头",camAsk:"如弹出摄像头使用提示，请点击“允许”。",camScanning:"正在识别二维码",camDeniedT:"无法使用摄像头",camDenied:"未允许使用摄像头。请在浏览器中允许摄像头权限，或改为输入预订号。",camNone:"此设备未找到摄像头，请输入预订号。",camUnsup:"此页面无法使用摄像头，请输入预订号。",camSlow:"如果无法识别，请调高手机屏幕亮度，或改为输入预订号。",qrNotBooking:"这不是预订二维码，请出示确认邮件中的二维码。",useCode:"输入预订号",simQR:"演示用二维码模拟",simQRNote:"不使用摄像头，以演示预订（GD2611）继续办理。这不是实际的二维码识别。",qrErrT:"该二维码未登记",
  simPay:"付款演示画面 · 不会实际扣款",payS:"请在读卡器上刷卡或插卡，然后点击下方“刷卡付款”。",payWait:"付款完成前请勿取出卡片。",payCancel:"取消付款",payOkT:"付款已完成",payRef:"授权号（演示）",toKey:"领取房卡",payFailT:"付款未获批准",payFailTips:["请确认卡片已完全插入，芯片方向正确。","可能超出额度或境外支付受限，请换一张卡试试。","本次未扣款，重新尝试不会重复扣款。"],payRetry:"重新付款",
  simKey:"虚拟发卡 · 未连接实际房卡制卡机",keyFailT:"未能制作房卡",keyFailB:"付款已完成，不会重复扣款。请再试一次发卡或呼叫员工。",keyRetry:"重新发卡",simDone:"演示中不会实际吐出房卡",
  callHint:"遇到困难时，可随时点击右下角“呼叫员工”。",faultT:"出现了暂时性问题",faultS:"请返回首页重新开始。如果问题持续，请呼叫员工。",
  aiModeAI:"AI 已连接",aiModeFAQ:"AI 未连接 · 常见问题解答",aiModeChk:"正在确认",viaAI:"AI 回答 · 重要事项请向员工确认",viaFAQ:"常见问题自动解答（非 AI）",viaNone:"无法自动解答 · 建议联系员工",aiNote:"AI 根据酒店信息回答。",aiNoteFAQ:"目前 AI 未连接，将从已登记的常见问题中查找答案。",aiUrg:"如遇紧急情况，请立即拨打 119（火警·急救）或 112（警察）。现在为您联系员工。",aiCmp:"给您带来不便，非常抱歉。现在为您联系员工尽快处理。",aiReq:"已收到您的请求（{r}），工作人员将尽快为您处理。",reqNo:"请求编号 ",
  bCodeHelp:"请输入预订号后点击确认。",bPhoneT:"请输入手机号码后4位",bConfT:"预订信息",bErr:"预订信息不一致。（ERR-102）",bErrT:"错误"},
-ja:{left:"残り約 {s} 秒（目安）",qrS:"予約確認メールのQRをカメラに向けてください",idleDesc:["QRまたは予約番号","読み込んだ内容を確認","カード決済","カードキーを受け取る"],idleAvg:"所要時間の目安：約1分",
+ja:{left:"残り約{m}分{s}秒（目安）",etaSoon:"まもなく完了します",qrS:"予約確認メールのQRをカメラに向けてください",idleDesc:["QRまたは予約番号","読み込んだ内容を確認","カード決済","カードキーを受け取る"],idleAvg:"所要時間の目安：約1分",
  qrTitle:"QRコードをカメラに向けてください",qrHow:"予約確認のSMSやメールのQRを四角い枠に合わせ、15〜20cmの距離で少し止めてください。",camStarting:"カメラを起動しています",camAsk:"カメラの使用確認が表示されたら「許可」を押してください。",camScanning:"QRコードを探しています",camDeniedT:"カメラを使用できません",camDenied:"カメラの使用が許可されませんでした。ブラウザでカメラを許可するか、予約番号を入力してください。",camNone:"この端末でカメラが見つかりません。予約番号を入力してください。",camUnsup:"この画面ではカメラを使用できません。予約番号を入力してください。",camSlow:"読み取れない場合は、スマートフォンの画面を明るくするか、予約番号を入力してください。",qrNotBooking:"予約のQRコードではありません。予約確認メールのQRを表示してください。",useCode:"予約番号を入力する",simQR:"デモ用QRシミュレーション",simQRNote:"カメラを使わず、デモ予約（GD2611）で進みます。実際のQR読み取りではありません。",qrErrT:"登録されていないQRコードです",
  simPay:"決済デモ画面 · 実際には請求されません",payS:"カードをリーダーにかざすか差し込み、下の「カードで支払う」を押してください。",payWait:"決済が終わるまでカードを抜かないでください。",payCancel:"決済をキャンセル",payOkT:"お支払いが完了しました",payRef:"承認番号（デモ）",toKey:"カードキーを受け取る",payFailT:"決済が承認されませんでした",payFailTips:["カードが奥まで入っているか、ICチップの向きをご確認ください。","限度額や海外決済の制限の可能性があります。別のカードをお試しください。","請求は発生していないため、再試行しても二重に請求されません。"],payRetry:"もう一度支払う",
  simKey:"仮想発行 · 実際のカードキー発行機とは接続されていません",keyFailT:"カードキーを作成できませんでした",keyFailB:"お支払いは完了しており、再度請求されることはありません。もう一度発行するか、スタッフをお呼びください。",keyRetry:"カードキーを再発行",simDone:"デモでは実際のカードキーは出てきません",
@@ -878,6 +882,12 @@ K.demoFail=""; K.qr={state:"starting",msg:null,slow:false}; K.errKind="code";
 const t=k=>(T[K.lang][k]!==undefined?T[K.lang][k]:T.ko[k]);
 function newSession(){K.sess={start:Date.now(),errors:0,retries:0,staff:0,method:null,errStages:[],paid:false,done:false};K.fails=0;K.code="";K.resv=null;K.rating=0}
 function stepIndex(){return {find:0,qr:0,code:0,phone:0,error:0,confirm:1,pay:2,paying:2,payok:2,payfail:2,key:3,keyfail:3,done:4,rate:4}[K.screen]}
+/* live countdown: re-anchored on each step change, ticks every second, never drops below what the remaining steps still need */
+function stepsAfterSec(){const i=stepIndex();if(i===undefined||i>=4)return 0;let s=0;for(let j=i+1;j<4;j++){if(j===2&&K.resv&&(K.resv.ota||(K.sess&&K.sess.paid)))continue;s+=STEP_SEC[j]}return s}
+function etaAnchor(){const i=stepIndex();if(i===undefined||i>=4){K.etaStep=null;K.etaEnd=0;return}if(K.etaStep!==i||!K.etaEnd){K.etaStep=i;K.etaEnd=Date.now()+stepsLeftSec()*1000}}
+function etaSec(){if(!K.etaEnd)return stepsLeftSec();return Math.max(stepsAfterSec(),Math.ceil((K.etaEnd-Date.now())/1000))}
+function etaText(){const s=etaSec();if(s<=0)return t("etaSoon");return t("left").replace("{m}",Math.floor(s/60)).replace("{s}",s%60)}
+setInterval(()=>{const el=document.querySelector("#screen .k-steps .eta");if(el&&K.etaEnd){const v=etaText();if(el.textContent!==v)el.textContent=v}},1000);
 function stepsLeftSec(){const i=stepIndex();if(i===undefined||i>=4)return 0;let s=0;for(let j=i;j<4;j++){if(j===2&&K.resv&&(K.resv.ota||(K.sess&&K.sess.paid)))continue;s+=STEP_SEC[j]}return s}
 function header(){
   const i=stepIndex();
@@ -886,12 +896,12 @@ function header(){
     const ota=!!(K.resv&&K.resv.ota); const names=t("steps");
     const idx=[0,1,2,3].filter(j=>!(ota&&j===2)); const cur=idx.indexOf(i);
     const sp=idx.map((j,n)=>`<span class="sp ${n<cur?"done":n===cur?"cur":""}"${n===cur?' aria-current="step"':""}><i>${n<cur?"✓":n+1}</i><b>${esc(names[j])}</b></span>`).join("");
-    steps=`<div class="k-steps"><div class="k-stepper" role="list" aria-label="${esc(t("step"))} ${cur+1}/${idx.length}">${sp}</div><span class="eta">${esc(t("left").replace("{s}",stepsLeftSec()))}</span></div>`;
+    steps=`<div class="k-steps"><div class="k-stepper" role="list" aria-label="${esc(t("step"))} ${cur+1}/${idx.length}">${sp}</div><span class="eta">${esc(etaText())}</span></div>`;
   }
   return `<div class="k-head"><div class="k-hotel">${esc(t("hotel"))}<small>SELF CHECK-IN</small></div>${steps}</div>`;
 }
 function footer(){
-  let langs=LANGS.map(([c,n])=>`<button class="k-chip" data-lang="${c}" aria-pressed="${K.lang===c}">${n}</button>`).join("");
+  let langs=LANGS.map(([c,n])=>`<button class="k-chip" data-lang="${c}" lang="${c==="zh"?"zh-CN":c}" aria-pressed="${K.lang===c}">${n}</button>`).join("");
   if(base())return `<div class="k-foot">${langs}<span class="grow"></span></div>`;
   return `<div class="k-foot"><button class="k-chip" id="easyBtn" aria-pressed="${K.easy}">${ICON.easy}${esc(t("easy"))}</button>${langs}<span class="grow"></span><button class="aibtn" id="aiBtn" aria-expanded="${K.aiOpen}">${ICON.chat}${esc(t("ai"))}</button><button class="callbtn" id="callBtn">${ICON.bell}${esc(t("call"))}</button></div>`;
 }
@@ -960,7 +970,7 @@ function body(){
     const r=K.resv;const L=K.lang;
     const nights=r.n+" "+t("nights");
     return `<div class="k-body">${base()?`<h2 class="k-title">${esc(t("bConfT"))}</h2>`:`<span class="auto-badge">✓ ${esc(t("found"))}</span><h2 class="k-title">${esc(t("confT"))}</h2><p class="k-sub">${esc(t("confS"))}</p>`}
-    <dl class="resv"><div><dt>${esc(t("guest"))}</dt><dd>${esc(r.name[L])}</dd></div><div><dt>${esc(t("stay"))}</dt><dd>${esc(day(r.in))} → ${esc(day(r.out))} · ${esc(nights)}</dd></div>
+    <dl class="resv"><div><dt>${esc(t("guest"))}</dt><dd>${esc(r.name[L])}</dd></div><div><dt>${esc(t("stay"))}</dt><dd>${esc(day(r.in))} → ${esc(day(r.out))} <span style="white-space:nowrap">· ${esc(nights)}</span></dd></div>
     <div><dt>${esc(t("roomType"))}</dt><dd>${esc(r.room[L])}</dd></div><div><dt>${esc(t("people"))}</dt><dd>${esc(t("adults").replace("{n}",r.ad))}</dd></div>
     <div><dt>${esc(t("breakfast"))}</dt><dd>${esc(r.bf?t("incl"):t("excl"))}</dd></div><div><dt>${esc(t("channel"))}</dt><dd>${esc(r.ch[L])} · ${esc(r.ota?t("paid"):t("dueNow"))}</dd></div></dl>
     <div class="k-actions"><button class="k-btn ghost" id="notMine">${esc(t("no"))}</button><button class="k-btn main" id="yesBtn">${esc(t("yes"))}</button></div></div>`;
@@ -1019,7 +1029,7 @@ function aiPanel(){
   <form class="ai-form" id="aiForm"><input id="aiQ" type="text" autocomplete="off" placeholder="${esc(t("aiPh"))}" maxlength="160"><button type="submit" ${K.aiBusy?"disabled":""}>${esc(t("aiSend"))}</button></form></div>`;
 }
 function renderKiosk(){
-  const el=$("#screen"); el.classList.toggle("easy",K.easy); el.classList.toggle("base",base());
+  const el=$("#screen"); el.classList.toggle("easy",K.easy); el.classList.toggle("base",base()); el.lang={ko:"ko",en:"en",zh:"zh-CN",ja:"ja"}[K.lang]||"ko";
   try{
     el.innerHTML=header()+body()+footer()+aiPanel()+callModal();
   }catch(err){
@@ -1159,7 +1169,7 @@ function go(s){
   if(s==="key"&&!K.resv.ota&&!K.sess.paid)s="pay";   /* no key card before payment is complete */
   if(s==="pay"&&K.sess&&K.sess.paid)s="key";          /* never charge twice */
   if(s==="qr"){K.sess.method="qr";K.qr={state:"starting",msg:null,slow:false}}
-  K.screen=s; renderKiosk();
+  K.screen=s; etaAnchor(); renderKiosk();
   if(s==="qr")startQR();
   if(s==="paying"){K.timer=setTimeout(()=>{
     if(K.screen!=="paying")return;
@@ -1473,5 +1483,3 @@ route(); renderKiosk(); initData();
 (async()=>{try{sampleFn=window.claude&&window.claude.use?await window.claude.use("sample"):null}catch(e){sampleFn=null}aiState=sampleFn?"ai":"faq";if(K.aiOpen)renderKiosk()})();
 })();
 </script>
-
-</body></html>

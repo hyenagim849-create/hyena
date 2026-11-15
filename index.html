@@ -1,4 +1,3 @@
-<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#fff;color:#000}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
 <title>EASY IN 셀프 체크인</title>
 <meta name="claude:viewport-fit-sides" content="cover">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -30,7 +29,14 @@ button:focus-visible,a:focus-visible,input:focus-visible,select:focus-visible{ou
 .bar{position:sticky;top:env(safe-area-inset-top,0px);z-index:20;background:rgba(12,13,16,.92);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
 body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:21;background:var(--bg)}
 .bar-in{display:flex;align-items:center;gap:16px;flex-wrap:wrap;padding-block:10px;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));max-width:1320px;margin:0 auto}
-.brand{display:flex;align-items:baseline;gap:10px;margin-right:auto;min-width:0}
+.brand{display:flex;align-items:center;gap:10px;margin-right:auto;min-width:0}
+.uni{display:inline-block;flex:none;width:30px;height:30px;border-radius:8px;background:#fff url(data:image/png;base64,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) center/80% no-repeat;box-shadow:0 0 0 1px rgba(200,163,94,.4)}
+.uni.sm{width:20px;height:20px;border-radius:5px;margin-right:8px;vertical-align:-5px}
+.device-top .dt-l{display:inline-flex;align-items:center}
+/* logo without the white badge, as chosen */
+.uni{background-color:transparent;box-shadow:none;background-size:100%;border-radius:0}
+.brand b{white-space:nowrap}
+@media (max-width:560px){.brand>span:last-child{display:none}}
 .brand b{font-family:var(--f-brand);font-weight:700;letter-spacing:.18em;font-size:16px;color:var(--gold-2)}
 .brand span{color:var(--muted);font-size:13px}
 .tabs{display:flex;gap:2px;background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:3px}
@@ -50,6 +56,37 @@ body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset
 .screen{position:relative;background:var(--k-bg);color:var(--k-ink);border-radius:14px;overflow:hidden;aspect-ratio:16/10;min-height:630px;min-width:0;width:100%;display:flex;flex-direction:column;--s:1}
 @media (max-width:720px){.screen{aspect-ratio:auto;min-height:660px}.device{padding:10px;border-radius:18px}}
 .screen.easy{--s:1.3}
+.screen.xl{--s:1.55}
+.screen.xl .hint,.screen.xl .k-sub.sub2,.screen.xl .idle-steps,.screen.xl .room2 .meta,.screen.xl .room-foot .wf,.screen.xl .bill .bl small{display:none}
+/* large text: keep the main buttons in view even when the content scrolls */
+.screen.easy .k-body:not(.k-idle):not(.busy) .k-actions{position:sticky;bottom:calc(-22px*var(--s));background:linear-gradient(to top,var(--k-bg) 78%,transparent);padding-bottom:calc(10px*var(--s));z-index:2}
+/* high contrast */
+.screen.hc{--k-bg:#000;--k-ink:#fff;--k-muted:#EDEDED;--k-line:#fff;--k-card:#000;--k-card-2:#111;--k-head:#000;--gold:#FFD400;--gold-2:#FFE04A;--gold-soft:rgba(255,212,0,.18);--gold-ink:#000;--k-accent-ink:#000;--ok:#5CFFA4;--ok-soft:rgba(92,255,164,.14);--bad:#FF8F85;--warn:#FFD400;--call:#FF8A4C;--call-ink:#000}
+.screen.hc .k-body,.screen.hc .k-idle{background:#000!important}
+.screen.hc .k-head{border-bottom:2px solid #FFD400}
+.screen.hc .k-btn.main,.screen.hc .k-idle .tap{background:#FFD400;color:#000}
+.screen.hc .k-btn.ghost,.screen.hc .k-chip,.screen.hc .aibtn,.screen.hc .k-home{border:2px solid #fff;color:#fff}
+.screen.hc .k-chip[aria-pressed="true"]{background:#FFD400;color:#000;border-color:#FFD400}
+.screen.hc .err-box{background:#000;border:2px solid #FF8F85;color:#fff}.screen.hc .err-box b{color:#FFB3AC}
+.screen.hc .bill,.screen.hc .room2,.screen.hc .qr-state,.screen.hc .ok-box,.screen.hc .resv,.screen.hc .opt,.screen.hc .code-box{border:2px solid #fff!important;background:#000!important}
+.screen.hc .eyebrow,.screen.hc .k-hotel{color:#FFD400}
+/* comfort panel */
+.a11y-bd{position:absolute;inset:0;z-index:29;background:rgba(0,0,0,.35);border:0;padding:0;cursor:default}
+.a11y{position:absolute;left:12px;right:12px;bottom:calc(70px*var(--s));z-index:30;background:var(--k-card);border:1px solid var(--gold);border-radius:18px;padding:calc(14px*var(--s)) 18px;box-shadow:0 20px 50px rgba(0,0,0,.6);max-width:760px}
+.a11y-h{display:flex;align-items:center;justify-content:space-between;gap:10px;margin-bottom:10px}.a11y-h b{font-size:calc(18px*var(--s))}
+.a11y-row{display:flex;align-items:center;gap:12px;flex-wrap:wrap;margin-bottom:10px}.a11y-row .lab{font-size:calc(14px*var(--s));color:var(--k-muted);min-width:80px}
+.szs{display:flex;gap:8px;flex-wrap:wrap}
+.sz{display:inline-flex;align-items:baseline;gap:8px;border:1px solid var(--k-line);background:transparent;color:var(--k-ink);border-radius:12px;padding:6px 14px;min-height:calc(46px*var(--s));font-size:calc(14px*var(--s))}
+.sz span{font-weight:700}.sz0 span{font-size:16px}.sz1 span{font-size:22px}.sz2 span{font-size:28px}
+.sz[aria-pressed="true"]{border:2px solid var(--gold);background:var(--gold-soft);color:var(--gold-2)}
+.tgs{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px}
+@container kscreen (max-width:760px){.tgs{grid-template-columns:1fr}}
+.tg{display:flex;align-items:center;gap:10px;text-align:left;border:1px solid var(--k-line);background:transparent;color:var(--k-ink);border-radius:12px;padding:10px 12px;min-height:calc(54px*var(--s))}
+.tg b{display:block;font-size:calc(15px*var(--s))}.tg small{display:block;color:var(--k-muted);font-size:calc(12px*var(--s));margin-top:2px}
+.tg .sw{flex:none;width:38px;height:22px;border-radius:999px;background:#3A3F49;position:relative;transition:background .15s}
+.tg .sw::after{content:"";position:absolute;top:3px;left:3px;width:16px;height:16px;border-radius:50%;background:#fff;transition:left .15s}
+.tg[aria-pressed="true"]{border-color:var(--gold)}.tg[aria-pressed="true"] .sw{background:var(--gold)}.tg[aria-pressed="true"] .sw::after{left:19px}
+.tg:disabled{opacity:.55}
 .k-head{display:flex;align-items:center;gap:8px 14px;flex-wrap:wrap;padding:calc(14px*var(--s)) 22px;background:var(--k-head);color:var(--k-ink);border-bottom:1px solid rgba(200,163,94,.35)}
 .k-hotel{font-family:var(--f-brand);font-size:calc(19px*var(--s));letter-spacing:.08em;white-space:nowrap;color:var(--gold-2)}
 .k-hotel small{font-family:var(--f-ui);font-size:10.5px;color:var(--k-muted);letter-spacing:.22em;margin-left:10px}
@@ -183,6 +220,15 @@ body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset
 .bill .okc{font-family:var(--f-ui)!important;color:var(--ok);font-size:calc(14px*var(--s))}
 .screen.base .bill .bl.tot b.amt{color:#2D5BD3}.screen.base .bill .okc{color:#1E7F4F}
 @container kscreen (max-width:620px){.pay2{grid-template-columns:1fr}.pay2 .reader{display:none}}
+/* baseline start screen: plain and light like the rest of the baseline kiosk */
+.screen.base .k-idle{background:var(--k-bg)}
+.screen.base .k-idle .eyebrow{color:#5A6472}
+.screen.base .k-idle .tap{background:#2D5BD3;color:#fff;border-radius:8px}
+.screen.base .k-idle .rule{background:#9AA3B0}
+.screen.base .idle-time{color:#2D5BD3}
+.screen.base .idle-r{border-left-color:#C9CED6}.screen.base .clock-big{color:#1D2430}
+.screen.base .idle-steps b{border-color:#9AA3B0;color:#1D2430}
+.screen.base .idle-steps,.screen.base .idle-time{display:none} /* step guide and time estimate are EASY IN improvements, not part of the baseline */
 .screen.base .room2{border-color:var(--k-line)}.screen.base .room2 .no{color:#2D5BD3}.screen.base .room2 .pkg i{border-color:#2D5BD3;color:#2D5BD3}.screen.base .pkg-note{color:#A15C00}.screen.base .incl li::before{color:#1E7F4F}
 @container kscreen (max-width:620px){.room2{grid-template-columns:1fr;gap:10px}.room2 .rn{border-right:0;padding:0 0 10px;border-bottom:1px solid var(--k-line);flex-direction:row;align-items:baseline;justify-content:flex-start;gap:10px;text-align:left}.incl{grid-template-columns:1fr}}
 .screen.base .room{border-color:var(--k-line)}.screen.base .room .no,.screen.base .pay-card .amt{color:#2D5BD3}
@@ -349,6 +395,29 @@ body:not(.kmode) .kexit{display:none}
 @container kscreen (max-width:760px){.k-idle{flex-direction:column;align-items:flex-start}.idle-r{border-left:0;padding-left:0;border-top:1px solid rgba(200,163,94,.3);padding-top:20px;min-width:0}}
 /* phones: the kiosk comes first, the project summary after it */
 @media (max-width:720px){#v-kiosk:not([hidden]){display:flex;flex-direction:column}#v-kiosk .intro{order:2;margin:16px 0 0}}
+/* remote usability test */
+body.rtmode .kexit{display:none!important}
+body.kmode.rtmode .k-head{padding-left:22px}
+.rt-chip{display:block;width:100%;border:0;background:var(--gold);color:var(--gold-ink);font-weight:700;font-size:13px;padding:5px 12px;text-align:center;letter-spacing:.02em}
+.screen.base .rt-chip{background:#2D5BD3;color:#fff}
+.rt-ov{z-index:40}
+.rt-modal{max-width:520px;text-align:left;max-height:calc(100% - 20px);overflow:auto}
+.rt-modal h3{text-align:center}
+.rt-steps{margin:8px 0 14px;padding-left:20px;line-height:1.7}
+.rt-lab{display:block;font-weight:700;margin:6px 0 6px}
+.rt-in{width:100%;box-sizing:border-box;background:var(--k-bg);color:var(--k-ink);border:1px solid var(--k-line);border-radius:12px;padding:12px 14px;font-size:16px;font-family:inherit}
+.rt-in.rt-err{border-color:var(--bad)}
+.rt-out{font-size:13px;line-height:1.5;resize:none;margin:8px 0 12px}
+.rt-small{font-size:12.5px;color:var(--k-muted);margin:10px 0 14px}
+.rt-task{background:var(--k-card-2);border-radius:12px;padding:12px 14px;line-height:1.6}
+.rt-q{margin:0 0 14px}.rt-q>b{display:block;margin-bottom:8px}
+.rt-row{display:flex;align-items:center;gap:10px;margin:6px 0}.rt-row>span{min-width:56px;color:var(--k-muted);font-size:14px}
+.rt-opts{display:flex;gap:8px;flex-wrap:wrap}
+.rt-opt{border:1px solid var(--k-line);background:transparent;color:var(--k-ink);border-radius:999px;padding:8px 14px;font-size:14px;min-height:40px}
+.rt-opt[aria-pressed="true"]{background:var(--gold);color:var(--gold-ink);border-color:var(--gold);font-weight:700}
+.screen.base .rt-opt[aria-pressed="true"]{background:#2D5BD3;border-color:#2D5BD3;color:#fff}
+.rt-modal .k-btn{width:100%}
+.rt-link{display:block;margin:10px auto 0;background:none;border:0;color:var(--k-muted);text-decoration:underline;font-size:13px}
 /* ───────── review additions */
 .k-stepper{display:flex;gap:6px;align-items:center;flex-wrap:wrap}
 .k-stepper .sp{display:inline-flex;align-items:center;gap:6px;font-size:calc(12.5px*var(--s));color:var(--k-muted);padding:3px 10px 3px 3px;border-radius:999px;border:1px solid var(--k-line);white-space:nowrap}
@@ -429,7 +498,7 @@ body.kmode .intro{display:none}
 </style>
 
 <header class="bar"><div class="bar-in">
-  <div class="brand"><b>EASY IN</b><span>데이터로 설계한 개선형 셀프 체크인</span></div>
+  <div class="brand"><span class="uni" role="img" aria-label="연성대학교"></span><b>EASY IN</b><span>데이터로 설계한 개선형 셀프 체크인</span></div>
   <nav class="tabs" aria-label="화면 선택">
     <a href="#kiosk" data-v="kiosk">고객 키오스크 <small>· 고객용</small></a>
     <a href="#admin" data-v="admin">관리자 대시보드 <small>· 직원용</small></a>
@@ -450,7 +519,7 @@ body.kmode .intro{display:none}
   <div class="kiosk-layout">
     <div>
       <div class="device">
-        <div class="device-top"><span id="kioskLabel">KIOSK 1 · LOBBY</span><span id="clock">--:--</span></div>
+        <div class="device-top"><span class="dt-l"><span class="uni sm" role="img" aria-label="연성대학교"></span><span id="kioskLabel">KIOSK 1 · LOBBY</span></span><span id="clock">--:--</span></div>
         <div class="screen" id="screen" aria-live="polite"></div>
       </div>
       <p class="demo-note">시연용 프로토타입입니다. 호텔과 예약 정보는 가상이며, 결제와 카드키 발급은 실제 장치와 연결되지 않은 시뮬레이션입니다. QR 스캔은 카메라를 쓸 수 있는 환경에서 실제로 인식합니다.</p>
@@ -620,19 +689,19 @@ ja:{hotel:"ホテル・キデ・ソウル",step:"ステップ",left:"残り約 {
 };
 /* review additions: new screens (QR camera, payment states, card key states, AI mode labels) in all four languages */
 const T2={
-ko:{left:"예상 남은 시간 {m}분 {s}초",vatLab:"부가세 10% 포함",billLab:"{p} · {n}박",roomFee:"객실 요금",paidOn:"{c}에서 결제 완료",dueLab:"지금 결제할 금액",depLab:"보증금 카드 승인",depRate:"1박당 50,000원",depNote:"신용카드는 승인만 되고 청구되지 않아요. 체크카드는 일시 출금 후 체크아웃 때 환불되며, 카드사에 따라 3~7영업일 걸릴 수 있어요.",depT:"보증금 승인이 필요해요",depS:"객실 요금은 이미 결제되었어요. 카드를 리더기에 대고 보증금 승인만 해 주세요.",payBtnDep:"보증금 승인하기",payingDep:"보증금을 승인하고 있어요",depOkT:"보증금 승인이 완료되었어요",paidSum:"{a} 결제 · 보증금 {d} 승인",depSum:"보증금 {d} 승인",homeSDep:"보증금 승인은 완료되었어요. 카드키는 프런트에서 받으실 수 있어요.",payS2:"카드를 리더기에 대거나 꽂은 뒤 ‘카드 결제’를 눌러 주세요. 객실 요금 결제와 보증금 승인이 한 번에 진행돼요.",pkgLab:"패키지",inclLab:"포함 내역",nonSmoke:"금연 객실",maxP:"최대 {n}인",roomLab:"ROOM",camSwitch:"카메라 전환",etaLab:"예상 남은 시간",etaVal:"{m}분 {s}초",idleEtaLab:"예상 소요 시간",home:"처음으로",homeT:"처음으로 돌아갈까요?",homeS:"지금까지 진행한 내용은 저장되지 않아요.",homeSPaid:"결제는 이미 완료되었어요. 카드키는 프런트에서 받으실 수 있어요.",homeStay:"계속하기",homeGo:"처음으로 돌아가기",etaSoon:"거의 다 됐어요",qrS:"예약 확인 문자·메일의 QR을 카메라에 보여 주세요",idleDesc:["QR 또는 예약번호","자동으로 불러온 정보 확인","카드 결제","카드키 받기"],idleAvg:"예상 소요 시간 약 1분",
+ko:{left:"예상 남은 시간 {m}분 {s}초",easy:"편하게 보기",a11yT:"편하게 보기",sizeLab:"글씨 크기",size0:"보통",size1:"크게",size2:"아주 크게",hcLab:"선명히 보기",hcD:"검은 바탕에 흰 글씨로 또렷하게",voiceLab:"안내 듣기",voiceD:"화면 안내를 소리로 읽어 드려요",slowLab:"천천히 하기",slowD:"남은 시간을 숨기고 여유 있게 진행해요",a11yClose:"닫기",voiceNo:"이 기기에서는 음성 안내를 쓸 수 없어요.",voiceOn:"안내 듣기를 켰어요.",again:"다시 듣기",pressBtn:"‘{b}’ 버튼을 눌러 주세요.",stepOf:"{n}단계 중 {i}단계",etaM:"약 {m}분",etaS:"약 {s}초",etaMS:"약 {m}분 {s}초",roomIs:"객실은 {r}호예요.",vatLab:"부가세 10% 포함",billLab:"{p} · {n}박",roomFee:"객실 요금",paidOn:"{c}에서 결제 완료",dueLab:"지금 결제할 금액",depLab:"보증금 카드 승인",depRate:"1박당 50,000원",depNote:"신용카드는 승인만 되고 청구되지 않아요. 체크카드는 일시 출금 후 체크아웃 때 환불되며, 카드사에 따라 3~7영업일 걸릴 수 있어요.",depT:"보증금 승인이 필요해요",depS:"객실 요금은 이미 결제되었어요. 카드를 리더기에 대고 보증금 승인만 해 주세요.",payBtnDep:"보증금 승인하기",payingDep:"보증금을 승인하고 있어요",depOkT:"보증금 승인이 완료되었어요",paidSum:"{a} 결제 · 보증금 {d} 승인",depSum:"보증금 {d} 승인",homeSDep:"보증금 승인은 완료되었어요. 카드키는 프런트에서 받으실 수 있어요.",payS2:"카드를 리더기에 대거나 꽂은 뒤 ‘카드 결제’를 눌러 주세요. 객실 요금 결제와 보증금 승인이 한 번에 진행돼요.",pkgLab:"패키지",inclLab:"포함 내역",nonSmoke:"금연 객실",maxP:"최대 {n}인",roomLab:"ROOM",camSwitch:"카메라 전환",etaLab:"예상 남은 시간",etaVal:"{m}분 {s}초",idleEtaLab:"예상 소요 시간",home:"처음으로",homeT:"처음으로 돌아갈까요?",homeS:"지금까지 진행한 내용은 저장되지 않아요.",homeSPaid:"결제는 이미 완료되었어요. 카드키는 프런트에서 받으실 수 있어요.",homeStay:"계속하기",homeGo:"처음으로 돌아가기",etaSoon:"거의 다 됐어요",qrS:"예약 확인 문자·메일의 QR을 카메라에 보여 주세요",idleDesc:["QR 또는 예약번호","자동으로 불러온 정보 확인","카드 결제","카드키 받기"],idleAvg:"예상 소요 시간 약 1분",
  qrTitle:"QR 코드를 카메라에 보여 주세요",qrHow:"예약 확인 문자나 메일의 QR을 네모 칸 안에 맞추고, 15~20cm 거리에서 잠시 멈춰 주세요.",camStarting:"카메라를 켜고 있어요",camAsk:"카메라 사용을 묻는 창이 뜨면 '허용'을 눌러 주세요.",camScanning:"QR 코드를 찾고 있어요",camDeniedT:"카메라를 사용할 수 없어요",camDenied:"카메라 사용이 허용되지 않았어요. 브라우저의 카메라 권한을 허용하거나, 예약번호로 입력해 주세요.",camNone:"이 기기에서 카메라를 찾지 못했어요. 예약번호로 입력해 주세요.",camUnsup:"이 화면에서는 카메라를 쓸 수 없어요. 예약번호로 입력해 주세요.",camSlow:"잘 읽히지 않으면 휴대폰 화면 밝기를 높이거나, 예약번호로 입력해 보세요.",qrNotBooking:"예약 QR 코드가 아니에요. 예약 확인 메일에 있는 QR을 보여 주세요.",useCode:"예약번호로 입력하기",simQR:"시연용 QR 시뮬레이션",simQRNote:"카메라 없이 시연용 예약(GD2611)으로 진행합니다. 실제 QR 인식이 아닙니다.",qrErrT:"등록되지 않은 QR 코드예요",
  simPay:"결제 시연 화면 · 실제로 결제되지 않습니다",payS:"카드를 리더기에 대거나 꽂은 뒤, 아래 '카드 결제'를 눌러 주세요.",payWait:"결제가 끝날 때까지 카드를 빼지 마세요.",payCancel:"결제 취소",payOkT:"결제가 완료되었어요",payRef:"승인번호(시연)",toKey:"카드키 받기",payFailT:"결제가 승인되지 않았어요",payFailTips:["카드를 끝까지 꽂았는지, IC칩 방향이 맞는지 확인해 주세요.","한도 초과나 해외 결제 차단일 수 있어요. 다른 카드로 해 보세요.","결제되지 않았으니 다시 시도해도 두 번 결제되지 않아요."],payRetry:"다시 결제하기",
  simKey:"가상 발급 · 실제 카드키 발급기와 연결되어 있지 않습니다",keyFailT:"카드키를 만들지 못했어요",keyFailB:"결제는 이미 완료되었고, 다시 결제되지 않아요. 카드키를 한 번 더 발급하거나 직원을 불러 주세요.",keyRetry:"카드키 다시 발급",simDone:"시연에서는 실제 카드키가 나오지 않습니다",
  callHint:"막히면 언제든 오른쪽 아래 '직원 호출'을 눌러 주세요.",faultT:"일시적인 문제가 생겼어요",faultS:"처음 화면으로 돌아가 다시 시작해 주세요. 계속되면 직원을 불러 주세요.",
  aiModeAI:"AI 연결됨",aiModeFAQ:"AI 미연결 · FAQ 안내",aiModeChk:"연결 확인 중",viaAI:"AI 답변 · 중요한 내용은 직원에게 확인하세요",viaFAQ:"자주 묻는 질문 자동 안내 (AI 답변 아님)",viaNone:"자동 안내 불가 · 직원 연결 권장",aiNote:"호텔 안내 정보를 바탕으로 AI가 답합니다.",aiNoteFAQ:"지금은 AI가 연결되지 않아, 미리 등록된 안내문에서 찾아 답합니다.",aiUrg:"긴급 상황이면 바로 119(화재·구급) 또는 112(경찰)에 연락해 주세요. 지금 직원을 연결해 드릴게요.",aiCmp:"불편을 드려 죄송해요. 바로 해결할 수 있도록 직원을 연결해 드릴게요.",aiReq:"{r} 요청을 접수했어요. 담당 직원이 곧 처리해 드릴게요.",reqNo:"요청번호 "},
-en:{left:"Est. {m} min {s} sec left",vatLab:"incl. 10% VAT",billLab:"{p} · {n} night(s)",roomFee:"Room charge",paidOn:"Paid on {c}",dueLab:"Amount to pay now",depLab:"Deposit hold",depRate:"50,000 KRW per night",depNote:"Credit cards are only authorized, not charged. Debit cards are charged temporarily and refunded after check-out, which can take 3–7 business days depending on your bank.",depT:"A deposit hold is needed",depS:"Your room is already paid. Just tap or insert your card to place the deposit hold.",payBtnDep:"Authorize deposit",payingDep:"Placing the deposit hold",depOkT:"Deposit hold complete",paidSum:"{a} paid · {d} deposit held",depSum:"{d} deposit held",homeSDep:"Your deposit hold is complete. You can collect your key at the front desk.",payS2:"Tap or insert your card, then press ‘Pay by card’. The room payment and the deposit hold are done together.",pkgLab:"Package",inclLab:"Included",nonSmoke:"Non-smoking",maxP:"Up to {n} guests",roomLab:"ROOM",camSwitch:"Switch camera",etaLab:"Time left (est.)",etaVal:"{m} min {s} sec",idleEtaLab:"Estimated time",home:"Start over",homeT:"Go back to the start?",homeS:"What you’ve done so far won’t be saved.",homeSPaid:"Your payment is already complete. You can collect your key at the front desk.",homeStay:"Continue",homeGo:"Start over",etaSoon:"Almost done",qrS:"Show the QR from your confirmation to the camera",idleDesc:["QR or booking number","Check your details","Pay by card","Get your key"],idleAvg:"Estimated time: about 1 minute",
+en:{left:"Est. {m} min {s} sec left",easy:"Easy view",a11yT:"Easy view",sizeLab:"Text size",size0:"Normal",size1:"Large",size2:"Extra large",hcLab:"High contrast",hcD:"White text on black for clearer reading",voiceLab:"Voice guide",voiceD:"Reads the screen aloud",slowLab:"Take it slow",slowD:"Hides the timer and gives you more time",a11yClose:"Close",voiceNo:"Voice guide isn’t available on this device.",voiceOn:"Voice guide is on.",again:"Repeat",pressBtn:"Press ‘{b}’.",stepOf:"Step {i} of {n}",etaM:"about {m} min",etaS:"about {s} sec",etaMS:"about {m} min {s} sec",roomIs:"Your room is {r}.",vatLab:"incl. 10% VAT",billLab:"{p} · {n} night(s)",roomFee:"Room charge",paidOn:"Paid on {c}",dueLab:"Amount to pay now",depLab:"Deposit hold",depRate:"50,000 KRW per night",depNote:"Credit cards are only authorized, not charged. Debit cards are charged temporarily and refunded after check-out, which can take 3–7 business days depending on your bank.",depT:"A deposit hold is needed",depS:"Your room is already paid. Just tap or insert your card to place the deposit hold.",payBtnDep:"Authorize deposit",payingDep:"Placing the deposit hold",depOkT:"Deposit hold complete",paidSum:"{a} paid · {d} deposit held",depSum:"{d} deposit held",homeSDep:"Your deposit hold is complete. You can collect your key at the front desk.",payS2:"Tap or insert your card, then press ‘Pay by card’. The room payment and the deposit hold are done together.",pkgLab:"Package",inclLab:"Included",nonSmoke:"Non-smoking",maxP:"Up to {n} guests",roomLab:"ROOM",camSwitch:"Switch camera",etaLab:"Time left (est.)",etaVal:"{m} min {s} sec",idleEtaLab:"Estimated time",home:"Start over",homeT:"Go back to the start?",homeS:"What you’ve done so far won’t be saved.",homeSPaid:"Your payment is already complete. You can collect your key at the front desk.",homeStay:"Continue",homeGo:"Start over",etaSoon:"Almost done",qrS:"Show the QR from your confirmation to the camera",idleDesc:["QR or booking number","Check your details","Pay by card","Get your key"],idleAvg:"Estimated time: about 1 minute",
  qrTitle:"Show your QR code to the camera",qrHow:"Fit the QR from your confirmation text or email inside the square and hold it still, 15–20 cm away.",camStarting:"Turning on the camera",camAsk:"If you’re asked about the camera, tap ‘Allow’.",camScanning:"Looking for a QR code",camDeniedT:"The camera isn’t available",camDenied:"Camera access was not allowed. Allow camera access in your browser, or enter your booking number instead.",camNone:"No camera was found on this device. Please enter your booking number.",camUnsup:"The camera can’t be used on this screen. Please enter your booking number.",camSlow:"If it won’t scan, turn up your phone’s brightness or enter your booking number.",qrNotBooking:"That isn’t a booking QR code. Please show the QR from your confirmation email.",useCode:"Enter booking number",simQR:"Demo QR simulation",simQRNote:"Continues with the demo booking (GD2611) without a camera. This is not real QR recognition.",qrErrT:"This QR code isn’t registered",
  simPay:"Payment demo · No real charge is made",payS:"Tap or insert your card on the reader, then press ‘Pay by card’.",payWait:"Please keep your card in until payment is done.",payCancel:"Cancel payment",payOkT:"Payment complete",payRef:"Approval no. (demo)",toKey:"Get my key",payFailT:"Your payment wasn’t approved",payFailTips:["Check that the card is fully inserted with the chip facing the right way.","Your limit or overseas payments may be blocked. Try another card.","Nothing was charged, so trying again won’t charge you twice."],payRetry:"Try payment again",
  simKey:"Virtual issue · Not connected to a real key card encoder",keyFailT:"We couldn’t make your key card",keyFailB:"Your payment is already complete and won’t be charged again. Try issuing the key again or call staff.",keyRetry:"Issue key again",simDone:"No real key card comes out in this demo",
  callHint:"If you get stuck, tap ‘Call staff’ at the bottom right anytime.",faultT:"Something went wrong",faultS:"Please go back to the start and try again. If it keeps happening, call staff.",
  aiModeAI:"AI connected",aiModeFAQ:"AI offline · FAQ answers",aiModeChk:"Checking",viaAI:"AI answer · Please confirm important details with staff",viaFAQ:"Automatic FAQ answer (not AI)",viaNone:"No automatic answer · Staff recommended",aiNote:"AI answers from the hotel’s guest information.",aiNoteFAQ:"AI isn’t connected right now, so answers come from our saved FAQ.",aiUrg:"If this is an emergency, call 119 (fire/ambulance) or 112 (police) now. I’m connecting you to staff.",aiCmp:"I’m sorry for the trouble. Let me connect you to a staff member right away.",aiReq:"Your request ({r}) has been sent. Our staff will take care of it shortly.",reqNo:"Request "},
-zh:{left:"预计还需 {m}分{s}秒",vatLab:"含10%增值税",billLab:"{p} · {n}晚",roomFee:"房费",paidOn:"已在{c}支付",dueLab:"本次付款金额",depLab:"押金预授权",depRate:"每晚50,000韩元",depNote:"信用卡仅预授权，不会扣款。借记卡会先暂时扣款，退房后退还，视发卡行需3~7个工作日。",depT:"需要授权押金",depS:"房费已支付。请将卡片放在读卡器上，仅需授权押金。",payBtnDep:"授权押金",payingDep:"正在授权押金",depOkT:"押金授权完成",paidSum:"已付{a} · 押金{d}已授权",depSum:"押金{d}已授权",homeSDep:"押金已授权，可在前台领取房卡。",payS2:"请刷卡或插卡后点击“刷卡付款”。房费付款和押金授权将一并完成。",pkgLab:"套餐",inclLab:"包含内容",nonSmoke:"禁烟客房",maxP:"最多{n}人",roomLab:"ROOM",camSwitch:"切换摄像头",etaLab:"预计还需",etaVal:"{m}分{s}秒",idleEtaLab:"预计用时",home:"返回首页",homeT:"要返回首页吗？",homeS:"目前为止的操作内容不会被保存。",homeSPaid:"付款已完成，可在前台领取房卡。",homeStay:"继续办理",homeGo:"返回首页",etaSoon:"马上就好",
+zh:{left:"预计还需 {m}分{s}秒",easy:"易用模式",a11yT:"易用模式",sizeLab:"字体大小",size0:"标准",size1:"大",size2:"特大",hcLab:"高对比度",hcD:"黑底白字，看得更清楚",voiceLab:"语音引导",voiceD:"朗读屏幕内容",slowLab:"慢慢来",slowD:"隐藏剩余时间，从容办理",a11yClose:"关闭",voiceNo:"此设备无法使用语音引导。",voiceOn:"已开启语音引导。",again:"再听一次",pressBtn:"请点击“{b}”。",stepOf:"第{i}步，共{n}步",etaM:"约{m}分钟",etaS:"约{s}秒",etaMS:"约{m}分{s}秒",roomIs:"您的房间是{r}号。",vatLab:"含10%增值税",billLab:"{p} · {n}晚",roomFee:"房费",paidOn:"已在{c}支付",dueLab:"本次付款金额",depLab:"押金预授权",depRate:"每晚50,000韩元",depNote:"信用卡仅预授权，不会扣款。借记卡会先暂时扣款，退房后退还，视发卡行需3~7个工作日。",depT:"需要授权押金",depS:"房费已支付。请将卡片放在读卡器上，仅需授权押金。",payBtnDep:"授权押金",payingDep:"正在授权押金",depOkT:"押金授权完成",paidSum:"已付{a} · 押金{d}已授权",depSum:"押金{d}已授权",homeSDep:"押金已授权，可在前台领取房卡。",payS2:"请刷卡或插卡后点击“刷卡付款”。房费付款和押金授权将一并完成。",pkgLab:"套餐",inclLab:"包含内容",nonSmoke:"禁烟客房",maxP:"最多{n}人",roomLab:"ROOM",camSwitch:"切换摄像头",etaLab:"预计还需",etaVal:"{m}分{s}秒",idleEtaLab:"预计用时",home:"返回首页",homeT:"要返回首页吗？",homeS:"目前为止的操作内容不会被保存。",homeSPaid:"付款已完成，可在前台领取房卡。",homeStay:"继续办理",homeGo:"返回首页",etaSoon:"马上就好",
 qrS:"请将确认短信或邮件中的二维码对准摄像头",idleDesc:["二维码或预订号","确认自动读取的信息","刷卡付款","领取房卡"],idleAvg:"预计约 1 分钟完成",
  qrTitle:"请将二维码对准摄像头",qrHow:"请将确认短信或邮件中的二维码放入方框内，保持15~20厘米距离并稍作停留。",camStarting:"正在打开摄像头",camAsk:"如弹出摄像头使用提示，请点击“允许”。",camScanning:"正在识别二维码",camDeniedT:"无法使用摄像头",camDenied:"未允许使用摄像头。请在浏览器中允许摄像头权限，或改为输入预订号。",camNone:"此设备未找到摄像头，请输入预订号。",camUnsup:"此页面无法使用摄像头，请输入预订号。",camSlow:"如果无法识别，请调高手机屏幕亮度，或改为输入预订号。",qrNotBooking:"这不是预订二维码，请出示确认邮件中的二维码。",useCode:"输入预订号",simQR:"演示用二维码模拟",simQRNote:"不使用摄像头，以演示预订（GD2611）继续办理。这不是实际的二维码识别。",qrErrT:"该二维码未登记",
  simPay:"付款演示画面 · 不会实际扣款",payS:"请在读卡器上刷卡或插卡，然后点击下方“刷卡付款”。",payWait:"付款完成前请勿取出卡片。",payCancel:"取消付款",payOkT:"付款已完成",payRef:"授权号（演示）",toKey:"领取房卡",payFailT:"付款未获批准",payFailTips:["请确认卡片已完全插入，芯片方向正确。","可能超出额度或境外支付受限，请换一张卡试试。","本次未扣款，重新尝试不会重复扣款。"],payRetry:"重新付款",
@@ -640,7 +709,7 @@ qrS:"请将确认短信或邮件中的二维码对准摄像头",idleDesc:["二�
  callHint:"遇到困难时，可随时点击右下角“呼叫员工”。",faultT:"出现了暂时性问题",faultS:"请返回首页重新开始。如果问题持续，请呼叫员工。",
  aiModeAI:"AI 已连接",aiModeFAQ:"AI 未连接 · 常见问题解答",aiModeChk:"正在确认",viaAI:"AI 回答 · 重要事项请向员工确认",viaFAQ:"常见问题自动解答（非 AI）",viaNone:"无法自动解答 · 建议联系员工",aiNote:"AI 根据酒店信息回答。",aiNoteFAQ:"目前 AI 未连接，将从已登记的常见问题中查找答案。",aiUrg:"如遇紧急情况，请立即拨打 119（火警·急救）或 112（警察）。现在为您联系员工。",aiCmp:"给您带来不便，非常抱歉。现在为您联系员工尽快处理。",aiReq:"已收到您的请求（{r}），工作人员将尽快为您处理。",reqNo:"请求编号 ",
  bCodeHelp:"请输入预订号后点击确认。",bPhoneT:"请输入手机号码后4位",bConfT:"预订信息",bErr:"预订信息不一致。（ERR-102）",bErrT:"错误"},
-ja:{left:"残り約{m}分{s}秒（目安）",vatLab:"付加価値税10%込み",billLab:"{p} · {n}泊",roomFee:"客室料金",paidOn:"{c}で支払い済み",dueLab:"今回お支払い金額",depLab:"デポジット仮押さえ",depRate:"1泊50,000ウォン",depNote:"クレジットカードは承認のみで請求されません。デビットカードは一時的に引き落とされ、チェックアウト後に返金されます（カード会社により3〜7営業日）。",depT:"デポジットの承認が必要です",depS:"客室料金はお支払い済みです。カードをリーダーにかざして、デポジットの承認だけ行ってください。",payBtnDep:"デポジットを承認",payingDep:"デポジットを承認しています",depOkT:"デポジットの承認が完了しました",paidSum:"{a} 決済 · デポジット{d} 承認",depSum:"デポジット{d} 承認",homeSDep:"デポジットの承認は完了しています。カードキーはフロントでお受け取りいただけます。",payS2:"カードをかざすか差し込み、「カードで支払う」を押してください。客室料金の決済とデポジットの承認を一度に行います。",pkgLab:"プラン",inclLab:"含まれるもの",nonSmoke:"禁煙",maxP:"最大{n}名",roomLab:"ROOM",camSwitch:"カメラ切替",etaLab:"残り時間（目安）",etaVal:"{m}分{s}秒",idleEtaLab:"所要時間（目安）",home:"最初に戻る",homeT:"最初の画面に戻りますか？",homeS:"ここまでの内容は保存されません。",homeSPaid:"お支払いは完了しています。カードキーはフロントでお受け取りいただけます。",homeStay:"続ける",homeGo:"最初に戻る",etaSoon:"まもなく完了します",qrS:"予約確認メールのQRをカメラに向けてください",idleDesc:["QRまたは予約番号","読み込んだ内容を確認","カード決済","カードキーを受け取る"],idleAvg:"所要時間の目安：約1分",
+ja:{left:"残り約{m}分{s}秒（目安）",easy:"見やすく",a11yT:"見やすく・聞きやすく",sizeLab:"文字の大きさ",size0:"標準",size1:"大きく",size2:"とても大きく",hcLab:"くっきり表示",hcD:"黒い背景に白い文字で見やすく",voiceLab:"音声ガイド",voiceD:"画面の案内を読み上げます",slowLab:"ゆっくり",slowD:"残り時間を隠して、ゆっくり進めます",a11yClose:"閉じる",voiceNo:"この端末では音声ガイドを使えません。",voiceOn:"音声ガイドをオンにしました。",again:"もう一度聞く",pressBtn:"「{b}」を押してください。",stepOf:"{n}ステップ中{i}",etaM:"約{m}分",etaS:"約{s}秒",etaMS:"約{m}分{s}秒",roomIs:"お部屋は{r}号室です。",vatLab:"付加価値税10%込み",billLab:"{p} · {n}泊",roomFee:"客室料金",paidOn:"{c}で支払い済み",dueLab:"今回お支払い金額",depLab:"デポジット仮押さえ",depRate:"1泊50,000ウォン",depNote:"クレジットカードは承認のみで請求されません。デビットカードは一時的に引き落とされ、チェックアウト後に返金されます（カード会社により3〜7営業日）。",depT:"デポジットの承認が必要です",depS:"客室料金はお支払い済みです。カードをリーダーにかざして、デポジットの承認だけ行ってください。",payBtnDep:"デポジットを承認",payingDep:"デポジットを承認しています",depOkT:"デポジットの承認が完了しました",paidSum:"{a} 決済 · デポジット{d} 承認",depSum:"デポジット{d} 承認",homeSDep:"デポジットの承認は完了しています。カードキーはフロントでお受け取りいただけます。",payS2:"カードをかざすか差し込み、「カードで支払う」を押してください。客室料金の決済とデポジットの承認を一度に行います。",pkgLab:"プラン",inclLab:"含まれるもの",nonSmoke:"禁煙",maxP:"最大{n}名",roomLab:"ROOM",camSwitch:"カメラ切替",etaLab:"残り時間（目安）",etaVal:"{m}分{s}秒",idleEtaLab:"所要時間（目安）",home:"最初に戻る",homeT:"最初の画面に戻りますか？",homeS:"ここまでの内容は保存されません。",homeSPaid:"お支払いは完了しています。カードキーはフロントでお受け取りいただけます。",homeStay:"続ける",homeGo:"最初に戻る",etaSoon:"まもなく完了します",qrS:"予約確認メールのQRをカメラに向けてください",idleDesc:["QRまたは予約番号","読み込んだ内容を確認","カード決済","カードキーを受け取る"],idleAvg:"所要時間の目安：約1分",
  qrTitle:"QRコードをカメラに向けてください",qrHow:"予約確認のSMSやメールのQRを四角い枠に合わせ、15〜20cmの距離で少し止めてください。",camStarting:"カメラを起動しています",camAsk:"カメラの使用確認が表示されたら「許可」を押してください。",camScanning:"QRコードを探しています",camDeniedT:"カメラを使用できません",camDenied:"カメラの使用が許可されませんでした。ブラウザでカメラを許可するか、予約番号を入力してください。",camNone:"この端末でカメラが見つかりません。予約番号を入力してください。",camUnsup:"この画面ではカメラを使用できません。予約番号を入力してください。",camSlow:"読み取れない場合は、スマートフォンの画面を明るくするか、予約番号を入力してください。",qrNotBooking:"予約のQRコードではありません。予約確認メールのQRを表示してください。",useCode:"予約番号を入力する",simQR:"デモ用QRシミュレーション",simQRNote:"カメラを使わず、デモ予約（GD2611）で進みます。実際のQR読み取りではありません。",qrErrT:"登録されていないQRコードです",
  simPay:"決済デモ画面 · 実際には請求されません",payS:"カードをリーダーにかざすか差し込み、下の「カードで支払う」を押してください。",payWait:"決済が終わるまでカードを抜かないでください。",payCancel:"決済をキャンセル",payOkT:"お支払いが完了しました",payRef:"承認番号（デモ）",toKey:"カードキーを受け取る",payFailT:"決済が承認されませんでした",payFailTips:["カードが奥まで入っているか、ICチップの向きをご確認ください。","限度額や海外決済の制限の可能性があります。別のカードをお試しください。","請求は発生していないため、再試行しても二重に請求されません。"],payRetry:"もう一度支払う",
  simKey:"仮想発行 · 実際のカードキー発行機とは接続されていません",keyFailT:"カードキーを作成できませんでした",keyFailB:"お支払いは完了しており、再度請求されることはありません。もう一度発行するか、スタッフをお呼びください。",keyRetry:"カードキーを再発行",simDone:"デモでは実際のカードキーは出てきません",
@@ -955,7 +1024,7 @@ let kioskNo=ls.get("easyin.kiosk",1);
 const K={screen:"idle",lang:"ko",easy:false,code:"",phone:"",resv:null,fails:0,sess:null,rating:0,callId:null,timer:null,callOpen:false,variant:ls.get("easyin.variant","improved"),tester:ls.get("easyin.tester",""),aiOpen:false,ai:[],aiBusy:false,aiCat:0};
 const base=()=>K.variant==="baseline";
 let sampleFn=null; let aiState="chk";
-K.demoFail=""; K.qr={state:"starting",msg:null,slow:false}; K.errKind="code";
+K.demoFail=""; K.qr={state:"starting",msg:null,slow:false}; K.errKind="code"; K.size=0; K.hc=false; K.voice=false; K.slow=false; K.a11yOpen=false;
 const t=k=>(T[K.lang][k]!==undefined?T[K.lang][k]:T.ko[k]);
 function newSession(){K.sess={start:Date.now(),errors:0,retries:0,staff:0,method:null,errStages:[],paid:false,done:false};K.fails=0;K.code="";K.resv=null;K.rating=0}
 function stepIndex(){return {find:0,qr:0,code:0,phone:0,error:0,confirm:1,pay:2,paying:2,payok:2,payfail:2,key:3,keyfail:3,done:4,rate:4}[K.screen]}
@@ -964,8 +1033,11 @@ function stepsAfterSec(){const i=stepIndex();if(i===undefined||i>=4)return 0;let
 function etaAnchor(){const i=stepIndex();if(i===undefined||i>=4){K.etaStep=null;K.etaEnd=0;return}if(K.etaStep!==i||!K.etaEnd){K.etaStep=i;K.etaEnd=Date.now()+stepsLeftSec()*1000}}
 function etaSec(){if(!K.etaEnd)return stepsLeftSec();return Math.max(stepsAfterSec(),Math.ceil((K.etaEnd-Date.now())/1000))}
 const etaFmt=s=>t("etaVal").replace("{m}",Math.floor(s/60)).replace("{s}",s%60);
-function etaText(){const s=etaSec();if(s<=0)return t("etaSoon");return t("left").replace("{m}",Math.floor(s/60)).replace("{s}",s%60)}
-function etaHtml(){const s=etaSec();return s<=0?`<b>${esc(t("etaSoon"))}</b>`:`<span class="lab">${esc(t("etaLab"))}</span><b>${esc(etaFmt(s))}</b>`}
+function etaText(){if(K.slow){const i=stepIndex();return t("stepOf").replace("{n}",4).replace("{i}",(i||0)+1)}const s=etaSec();if(s<=5)return t("etaSoon");return t("etaLab")+" "+etaRound(s)}
+function etaRound(s){const r=Math.ceil(s/10)*10;const m=Math.floor(r/60),x=r%60;return m&&x?t("etaMS").replace("{m}",m).replace("{s}",x):m?t("etaM").replace("{m}",m):t("etaS").replace("{s}",x)}
+function etaHtml(){
+  if(K.slow){const i=stepIndex();return `<b>${esc(t("stepOf").replace("{n}",4).replace("{i}",(i||0)+1))}</b>`}
+  const s=etaSec();return s<=5?`<b>${esc(t("etaSoon"))}</b>`:`<span class="lab">${esc(t("etaLab"))}</span><b>${esc(etaRound(s))}</b>`}
 setInterval(()=>{const el=document.querySelector("#screen .k-head .eta");if(el&&K.etaEnd){const v=etaHtml();if(el.innerHTML!==v){el.innerHTML=v;el.setAttribute("aria-label",etaText())}}},1000);
 function stepsLeftSec(){const i=stepIndex();if(i===undefined||i>=4)return 0;let s=0;for(let j=i;j<4;j++){if(j===2&&K.resv&&(K.sess&&K.sess.paid))continue;s+=STEP_SEC[j]}return s}
 function header(){
@@ -983,7 +1055,8 @@ function header(){
 function footer(){
   let langs=LANGS.map(([c,n])=>`<button class="k-chip" data-lang="${c}" lang="${c==="zh"?"zh-CN":c}" aria-pressed="${K.lang===c}">${n}</button>`).join("");
   if(base())return `<div class="k-foot">${langs}<span class="grow"></span></div>`;
-  return `<div class="k-foot"><button class="k-chip" id="easyBtn" aria-pressed="${K.easy}">${ICON.easy}${esc(t("easy"))}</button>${langs}<span class="grow"></span><button class="aibtn" id="aiBtn" aria-expanded="${K.aiOpen}">${ICON.chat}${esc(t("ai"))}</button><button class="callbtn" id="callBtn">${ICON.bell}${esc(t("call"))}</button></div>`;
+  const a11yOn=K.size>0||K.hc||K.voice||K.slow;
+  return `<div class="k-foot"><button class="k-chip" id="easyBtn" aria-pressed="${a11yOn}" aria-expanded="${K.a11yOpen}">${ICON.easy}${esc(t("easy"))}</button>${K.voice?`<button class="k-chip" id="voiceAgain"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M11 5 6 9H3v6h3l5 4z"/><path d="M15.5 8.5a5 5 0 0 1 0 7M18.5 5.5a9 9 0 0 1 0 13"/></svg>${esc(t("again"))}</button>`:""}${langs}<span class="grow"></span><button class="aibtn" id="aiBtn" aria-expanded="${K.aiOpen}">${ICON.chat}${esc(t("ai"))}</button><button class="callbtn" id="callBtn">${ICON.bell}${esc(t("call"))}</button></div>`;
 }
 function body(){
   const s=K.screen;
@@ -1099,6 +1172,14 @@ function body(){
   if(s==="thanks"){return `<div class="k-body busy"><h2 class="k-title">${esc(t("thanks"))}</h2><button class="k-btn ghost" data-go="idle">${esc(t("backHome"))}</button></div>`}
   return "";
 }
+function a11yPanel(){
+  if(!K.a11yOpen||base())return "";
+  const sz=[0,1,2].map(i=>`<button class="sz sz${i}" data-size="${i}" aria-pressed="${K.size===i}"><span aria-hidden="true">${{ko:"가",en:"A",zh:"字",ja:"あ"}[K.lang]}</span>${esc(t("size"+i))}</button>`).join("");
+  const tg=(k,lab,d,dis)=>`<button class="tg" data-a11y="${k}" aria-pressed="${!!K[k]}"${dis?" disabled":""}><span class="sw" aria-hidden="true"></span><span><b>${esc(t(lab))}</b><small>${esc(dis?t("voiceNo"):t(d))}</small></span></button>`;
+  return `<button class="a11y-bd" id="a11yBd" type="button" tabindex="-1" aria-label="${esc(t("a11yClose"))}"></button><div class="a11y" role="dialog" aria-label="${esc(t("a11yT"))}"><div class="a11y-h"><b>${esc(t("a11yT"))}</b><button class="k-chip" id="a11yClose">${esc(t("a11yClose"))}</button></div>
+  <div class="a11y-row"><span class="lab">${esc(t("sizeLab"))}</span><div class="szs">${sz}</div></div>
+  <div class="tgs">${tg("hc","hcLab","hcD")}${tg("voice","voiceLab","voiceD",!VOICE.ok)}${tg("slow","slowLab","slowD")}</div></div>`;
+}
 function homeModal(){
   if(!K.homeAsk)return "";
   const paid=K.sess&&K.sess.paid;
@@ -1107,7 +1188,7 @@ function homeModal(){
 }
 function callModal(){
   if(!K.callOpen)return "";
-  return `<div class="overlay" role="dialog" aria-modal="true" aria-labelledby="callT"><div class="modal"><div class="ring">${ICON.bell.replace("<svg","<svg width=\"30\" height=\"30\"")}</div><h3 id="callT">${esc(t("calledT"))}</h3><p>${esc(t("calledS"))}</p>
+  return `<div class="overlay" role="dialog" aria-modal="true" aria-labelledby="callT"><div class="modal"><div class="ring">${ICON.bell.replace("<svg","<svg width=\"30\" height=\"30\"")}</div><h3 id="callT">${esc(t("calledT"))}</h3><p>${esc(t("calledS"))}</p>${RT&&RT.on?`<p class="rt-small">원격 테스트에서는 실제 직원이 오지 않아요. 도움이 필요했던 순간으로 기록돼요.</p>`:""}
   <div style="display:grid;gap:8px"><button class="k-btn main" id="callClose">${esc(t("callClose"))}</button><button class="k-btn ghost" id="callCancel">${esc(t("callCancel"))}</button></div></div></div>`;
 }
 function aiPanel(){
@@ -1115,7 +1196,7 @@ function aiPanel(){
   const viaTxt=v=>v==="ai"?`<span class="via">${esc(t("viaAI"))}</span>`:v==="faq"?`<span class="via faq">${esc(t("viaFAQ"))}</span>`:v==="none"?`<span class="via">${esc(t("viaNone"))}</span>`:"";
   const msgs=[`<div class="msg a">${esc(t("aiHello"))}</div>`].concat(K.ai.map((m,i)=>`<div class="msg ${m.r}">${esc(m.t)}${m.ticket?`<br><span class="ticket">${esc(m.ticket)}</span>`:""}${m.handoff?`<br><button class="handoff" data-aicall="${i}">${esc(t("aiHandoff"))}</button>`:""}${m.r==="a"?viaTxt(m.via):""}</div>`));
   if(K.aiBusy)msgs.push(`<div class="msg a">${esc(t("aiThinking"))}</div>`);
-  const L={ko:0,en:1,zh:2,ja:3}[K.lang]; const sg=(SUGG[K.lang]||SUGG.en)[K.aiCat]||SUGG.en[0];
+  const L={ko:0,en:1,zh:2,ja:3}[K.lang]; const grp=SCREEN_GROUP[K.screen]; const sg=(K.aiCat===0&&grp&&SCREEN_SUGG[grp])?(SCREEN_SUGG[grp][K.lang]||SCREEN_SUGG[grp].en):((SUGG[K.lang]||SUGG.en)[K.aiCat]||SUGG.en[0]);
   const cats=`<div class="ai-cats">${CATS.map((c,i)=>`<button data-aicat="${i}" aria-pressed="${K.aiCat===i}">${esc(c[L])}</button>`).join("")}</div>`;
   const chips=`<div class="ai-sugg">${sg.map(q=>`<button data-sugg="${esc(q)}">${esc(q)}</button>`).join("")}</div>`;
   const mode=aiState==="ai"?`<span class="ai-mode on">● ${esc(t("aiModeAI"))}</span>`:aiState==="faq"?`<span class="ai-mode off">${esc(t("aiModeFAQ"))}</span>`:`<span class="ai-mode chk">${esc(t("aiModeChk"))}</span>`;
@@ -1124,16 +1205,56 @@ function aiPanel(){
   <form class="ai-form" id="aiForm"><input id="aiQ" type="text" autocomplete="off" placeholder="${esc(t("aiPh"))}" maxlength="160"><button type="submit" ${K.aiBusy?"disabled":""}>${esc(t("aiSend"))}</button></form></div>`;
 }
 function renderKiosk(){
-  const el=$("#screen"); el.classList.toggle("easy",K.easy); el.classList.toggle("base",base()); el.lang={ko:"ko",en:"en",zh:"zh-CN",ja:"ja"}[K.lang]||"ko";
+  const el=$("#screen"); K.easy=K.size>0; el.classList.toggle("easy",K.easy); el.classList.toggle("xl",K.size===2&&!base()); el.classList.toggle("hc",K.hc&&!base()); el.classList.toggle("base",base()); el.lang={ko:"ko",en:"en",zh:"zh-CN",ja:"ja"}[K.lang]||"ko";
   try{
-    el.innerHTML=header()+body()+footer()+aiPanel()+callModal()+homeModal();
+    el.innerHTML=(RT&&RT.on?rtChip():"")+header()+body()+footer()+aiPanel()+a11yPanel()+callModal()+homeModal()+(RT&&RT.on?rtModal():"");
   }catch(err){
     console.error("render",err); K.screen="fault"; K.aiOpen=false;
     el.innerHTML=`<div class="k-head"><div class="k-hotel">${esc(t("hotel"))}</div></div><div class="k-body busy"><h2 class="k-title">${esc(t("faultT"))}</h2><p class="k-sub">${esc(t("faultS"))}</p><button class="k-btn main" data-go="idle">${esc(t("backHome"))}</button></div><div class="k-foot"><span class="grow"></span><button class="callbtn" id="callBtn">${esc(t("call"))}</button></div>`;
     return;
   }
   const lg=$("#aiLog"); if(lg)lg.scrollTop=lg.scrollHeight;
+  voiceAfterRender();
   if(K.screen==="qr"&&QR.video&&QR.stream){const slot=$("#camSlot");if(slot&&!slot.contains(QR.video)){slot.prepend(QR.video);const p=QR.video.play();if(p&&p.catch)p.catch(()=>{})}}
+}
+/* ───────── voice guide: the browser's built-in speech (no server, no key) */
+const VOICE={ok:typeof window.speechSynthesis!=="undefined"&&typeof window.SpeechSynthesisUtterance!=="undefined",last:""};
+const BCP={ko:"ko-KR",en:"en-US",zh:"zh-CN",ja:"ja-JP"};
+function pickVoice(l){try{const vs=speechSynthesis.getVoices()||[];const w=BCP[l].toLowerCase();return vs.find(v=>v.lang&&v.lang.toLowerCase().replace("_","-")===w)||vs.find(v=>v.lang&&v.lang.toLowerCase().startsWith(l))||null}catch(e){return null}}
+/* one voice at a time: a new announcement stops the old one, and speaking waits a moment after stopping
+   because Chrome can otherwise play the old and new sentences together */
+VOICE.q=[]; VOICE.t=null;
+function stopVoice(){clearTimeout(VOICE.t);VOICE.t=null;VOICE.q=[];try{if(VOICE.ok)speechSynthesis.cancel()}catch(e){}}
+function say(text,interrupt=true){
+  if(!K.voice||!VOICE.ok||!text)return;
+  let u;try{u=new SpeechSynthesisUtterance(String(text).replace(/\s+/g," ").trim());u.lang=BCP[K.lang]||"ko-KR";const v=pickVoice(K.lang);if(v)u.voice=v;u.rate=K.slow?0.85:0.95}catch(e){return}
+  if(interrupt){stopVoice();VOICE.q=[u]}
+  else if(VOICE.t){VOICE.q.push(u);return}
+  else{try{speechSynthesis.speak(u)}catch(e){}return}
+  VOICE.t=setTimeout(()=>{const q=VOICE.q;VOICE.q=[];VOICE.t=null;q.forEach(x=>{try{speechSynthesis.speak(x)}catch(e){}})},120);
+}
+function screenSpeech(){
+  const sc=document.getElementById("screen"); const q=sel=>sc.querySelector(sel); const tx=e=>e?e.textContent.replace(/\s+/g," ").trim():"";
+  const modal=q(".overlay .modal"); if(modal)return tx(modal);
+  if(K.aiOpen)return t("aiHello");
+  const parts=[];
+  if(K.screen==="idle"){parts.push(tx(q(".k-idle .big")),tx(q(".k-idle .k-sub")),tx(q(".idle-time")))}
+  else{
+    ["h2.k-title",".err-box",".ok-box",".qr-state",".k-body > .k-sub",".code-box"].forEach(sel=>{const e=q(sel);if(e)parts.push(tx(e))});
+    if(K.screen==="confirm")sc.querySelectorAll(".resv > div").forEach(d=>{const dt=d.querySelector("dt"),dd=d.querySelector("dd");parts.push(dt&&dd?tx(dt)+": "+tx(dd):tx(d))});
+    if(K.screen==="pay"){const tot=q(".bill .tot")||q(".bill .bl");if(tot)parts.push(tx(tot))}
+    if(K.screen==="done"&&K.resv)parts.push(t("roomIs").replace("{r}",K.resv.no),tx(q(".room2 .rt")),tx(q(".room-foot span")));
+  }
+  const main=q(".k-body .k-btn.main")||q(".k-body .tap");
+  if(main)parts.push(t("pressBtn").replace("{b}",tx(main)));
+  return parts.filter(Boolean).map(x=>/[.?!。？！]$/.test(x)?x:x+(/[\u3040-\u30ff\u4e00-\u9fff]$/.test(x)?"。":".")).join(" ");
+}
+function voiceKey(){return [K.screen,K.lang,K.callOpen,K.homeAsk,K.aiOpen,K.qr&&K.qr.msg,K.qr&&K.qr.state].join("|")}
+function voiceAfterRender(){
+  if(!K.voice)return;
+  const key=voiceKey();
+  if(key===VOICE.last)return; VOICE.last=key;
+  say(screenSpeech());
 }
 /* ───────── QR camera scan: BarcodeDetector when the browser has it, bundled jsQR otherwise */
 const QR={stream:null,video:null,loop:null,det:null,canvas:null,lastBad:"",t0:0,busy:false,token:0,cams:[],curId:null,deviceId:ls.get("easyin.camId",null),facing:ls.get("easyin.camFacing","environment")};
@@ -1202,9 +1323,83 @@ function onQR(txt){
 }
 const URG=/불이|화재|연기|쓰러|응급|다쳤|피가|숨을|fire|smoke|emergency|injur|ambulance|faint|着火|火灾|急救|火事|救急/i;
 const CMP=/시끄|소음|고장|안 ?돼|안 ?나와|더러|냄새|벌레|불편|환불|분실|잃어버|방 ?바꾸|객실 ?변경|noise|noisy|broken|not working|dirty|smell|bug|refund|lost|change (my )?room|吵|坏|丢|脏|うるさい|壊れ|なくし|汚/i;
+/* ───────── more guest questions (work without AI too), all four languages */
+const MORE=[
+ {c:"객실",k:["객실 종류","방 종류","룸 타입","room type","types of room","房型","客室タイプ","部屋のタイプ"],ko:"객실은 스탠다드(24㎡), 디럭스(32㎡, 시티뷰), 이그제큐티브(38㎡, 19층 클럽 라운지 이용), 스위트(64㎡, 거실 분리)가 있어요. 스탠다드는 최대 2명, 디럭스·이그제큐티브 3명, 스위트 4명까지 묵을 수 있어요.",en:"We have Standard (24㎡), Deluxe (32㎡, city view), Executive (38㎡, with 19F Club Lounge access) and Suite (64㎡, separate living room). Standard fits up to 2 guests, Deluxe and Executive 3, Suite 4.",zh:"客房有标准间（24㎡）、豪华间（32㎡，城市景观）、行政间（38㎡，可使用19楼行政酒廊）和套房（64㎡，独立客厅）。标准间最多2人，豪华间和行政间3人，套房4人。",ja:"客室はスタンダード（24㎡）、デラックス（32㎡・シティビュー）、エグゼクティブ（38㎡・19階クラブラウンジ利用可）、スイート（64㎡・リビング別）がございます。定員はスタンダード2名、デラックス・エグゼクティブ3名、スイート4名です。"},
+ {c:"객실",k:["침대 크기","침대 사이즈","bed size","how big is the bed","床多大","ベッドのサイズ","ベッドの大きさ"],ko:"더블 침대는 160×200cm, 트윈은 110×200cm 침대 2개예요. 엑스트라 베드는 디럭스 이상 객실에서만 추가할 수 있어요.",en:"Double beds are 160×200 cm; twin rooms have two 110×200 cm beds. Extra beds are available in Deluxe rooms and above.",zh:"双人床为160×200cm，双床房为两张110×200cm的床。加床仅限豪华间及以上房型。",ja:"ダブルベッドは160×200cm、ツインは110×200cmのベッドが2台です。エキストラベッドはデラックス以上の客室で追加できます。"},
+ {c:"객실",k:["창문","창문 열","window","open the window","窗户","窓"],ko:"객실 창문은 안전을 위해 10cm까지만 열려요. 환기가 더 필요하면 프런트(객실 전화 0번)에 말씀해 주세요.",en:"For safety, windows open only about 10 cm. If you need more fresh air, call the front desk (dial 0).",zh:"为安全起见，客房窗户只能打开约10厘米。如需更多通风，请拨打0联系前台。",ja:"安全のため、客室の窓は10cmほどしか開きません。換気が必要な場合はフロント（客室電話0番）へご連絡ください。"},
+ {c:"객실",k:["미니바","냉장고","minibar","mini bar","fridge","迷你吧","冰箱","ミニバー","冷蔵庫"],ko:"냉장고 음료는 유료이고, 생수 2병은 매일 무료로 드려요. 미니바 이용 금액은 체크아웃 때 정산해요.",en:"Drinks in the fridge are charged, but 2 bottles of water are free every day. Minibar charges are settled at check-out.",zh:"冰箱饮料需付费，每天免费提供2瓶矿泉水。迷你吧费用在退房时结算。",ja:"冷蔵庫の飲み物は有料で、ミネラルウォーター2本は毎日無料です。ミニバーのご利用分はチェックアウト時に精算します。"},
+ {c:"객실",k:["커피 머신","캡슐커피","전기포트","포트","kettle","coffee machine","热水壶","咖啡机","ケトル","コーヒーマシン"],ko:"객실에 전기포트와 캡슐커피 머신이 있고 무료로 이용하실 수 있어요. 캡슐이 더 필요하면 요청해 주세요.",en:"Each room has a kettle and a capsule coffee machine, free to use. Ask us if you need more capsules.",zh:"客房内有电热水壶和胶囊咖啡机，可免费使用。需要更多胶囊请告诉我们。",ja:"客室には電気ケトルとカプセルコーヒーマシンがあり、無料でご利用いただけます。カプセルが足りなければお申し付けください。"},
+ {c:"객실",k:["드라이기","헤어드라이어","다리미","hair dryer","hairdryer","iron","吹风机","熨斗","ドライヤー","アイロン"],ko:"헤어드라이어는 객실에 있어요. 다리미와 다리미판은 무료로 빌려드려요. 필요하면 ‘다리미 갖다 주세요’라고 요청해 주세요.",en:"There’s a hair dryer in your room. An iron and ironing board can be borrowed for free — just ask.",zh:"客房内备有吹风机。熨斗和熨衣板可免费借用，请随时告诉我们。",ja:"ドライヤーは客室にございます。アイロンとアイロン台は無料で貸し出しますので、お申し付けください。"},
+ {c:"객실",k:["충전기","어댑터","콘센트","돼지코","charger","adapter","plug","socket","充电器","转换插头","插座","充電器","変換プラグ","コンセント"],ko:"객실 콘센트는 220V예요. C타입·라이트닝·8핀 충전기와 110V용 어댑터를 무료로 빌려드려요.",en:"Outlets are 220V. We lend USB‑C, Lightning and micro‑USB chargers and 110V plug adapters for free.",zh:"客房插座为220V。可免费借用C口、Lightning、安卓8针充电器和110V转换插头。",ja:"客室のコンセントは220Vです。USB‑C・Lightning・8ピンの充電器と110V用変換アダプターを無料で貸し出しています。"},
+ {c:"객실",k:["청소","하우스키핑","housekeeping","cleaning","clean my room","打扫","清扫","掃除","清掃"],ko:"객실 청소는 매일 10:00~16:00에 해요. 원하는 시간이 있으면 알려 주세요. 연박 중 청소를 원하지 않으면 ‘방해 금지’ 카드를 걸어 주세요.",en:"Rooms are cleaned daily between 10:00 and 16:00. Tell us if you prefer a specific time, or hang the ‘Do Not Disturb’ card if you’d rather skip it.",zh:"客房每天10:00~16:00打扫。如需指定时间请告诉我们；连住期间不需要打扫可挂“请勿打扰”牌。",ja:"客室清掃は毎日10:00〜16:00です。ご希望の時間があればお知らせください。清掃不要の場合は「起こさないでください」カードをおかけください。"},
+ {c:"객실",k:["방해 금지","do not disturb","dnd","请勿打扰","起こさないで"],ko:"출입문 안쪽에 있는 ‘방해 금지’ 카드를 문밖에 걸어 주시면 청소나 방문을 하지 않아요.",en:"Hang the ‘Do Not Disturb’ card from inside your door on the outside handle and we won’t enter or clean.",zh:"请把门内侧的“请勿打扰”牌挂在门外，我们就不会进入或打扫。",ja:"ドアの内側にある「起こさないでください」カードを外側にかけていただくと、清掃や訪問をいたしません。"},
+ {c:"객실",k:["가운","슬리퍼","robe","bathrobe","slippers","浴袍","拖鞋","バスローブ","スリッパ"],ko:"가운과 슬리퍼는 객실 옷장에 준비되어 있어요. 더 필요하면 요청해 주세요.",en:"Bathrobes and slippers are in the wardrobe. Ask us if you need more.",zh:"浴袍和拖鞋放在衣柜里，如需更多请告诉我们。",ja:"バスローブとスリッパはクローゼットにございます。追加が必要でしたらお申し付けください。"},
+ {c:"객실",k:["베개","이불","담요","pillow","blanket","枕头","被子","毯子","枕","毛布"],ko:"베개와 이불은 무료로 더 드려요. ‘베개 하나 더 주세요’처럼 요청하시면 객실로 가져다드려요.",en:"Extra pillows and blankets are free. Just ask, for example ‘one more pillow please’, and we’ll bring it to your room.",zh:"可免费加枕头和被子。告诉我们“请再给一个枕头”，我们会送到客房。",ja:"枕や毛布は無料で追加できます。「枕をもう1つください」とお申し付けいただければお部屋までお届けします。"},
+ {c:"객실",k:["휠체어","장애인","장애","wheelchair","accessible room","disabled","轮椅","无障碍","残疾","車椅子","バリアフリー"],ko:"휠체어로 들어갈 수 있는 욕실이 있는 장애인 편의 객실이 4실 있고, 휠체어도 무료로 빌려드려요. 객실 변경이 필요하면 직원을 연결해 드릴게요.",en:"We have 4 accessible rooms with wheelchair‑accessible bathrooms, and wheelchairs to borrow for free. If you need a room change, I’ll connect you to staff.",zh:"我们有4间无障碍客房（浴室可供轮椅进出），并可免费借用轮椅。如需更换房间，我为您联系员工。",ja:"車椅子で入れる浴室のあるバリアフリー客室が4室あり、車椅子も無料で貸し出しています。お部屋の変更が必要でしたらスタッフにおつなぎします。"},
+ {c:"객실",k:["높은 층","고층","조용한 방","전망 좋은","high floor","quiet room","better view","高楼层","安静的房间","高層階","静かな部屋"],h:true,ko:"높은 층이나 조용한 방은 당일 객실 상황에 따라 프런트에서 바꿔 드릴 수 있어요. 직원을 연결해 드릴게요.",en:"A higher floor or quieter room depends on today’s availability, and the front desk can arrange it. I’ll connect you to staff.",zh:"高楼层或安静的房间视当天房态而定，可由前台为您调整。我为您联系员工。",ja:"高層階や静かなお部屋は当日の空室状況により、フロントで変更できます。スタッフにおつなぎします。"},
+ {c:"객실",k:["엘리베이터","승강기","elevator","lift","电梯","エレベーター"],ko:"엘리베이터는 로비 안쪽에 4대가 있어요. 객실층 버튼은 카드키를 엘리베이터 리더기에 댄 뒤에 눌러야 움직여요.",en:"There are 4 elevators at the back of the lobby. Tap your key card on the elevator reader first, then press your floor.",zh:"大堂里侧有4部电梯。请先将房卡放在电梯感应器上，再按楼层按钮。",ja:"エレベーターはロビー奥に4基ございます。カードキーをエレベーターのリーダーにかざしてから、客室階のボタンを押してください。"},
+ {c:"객실",k:["방 어떻게 가","객실 위치","방까지","where is my room","how do i get to my room","怎么去房间","房间在哪","部屋への行き方","部屋はどこ"],ko:"로비 안쪽 엘리베이터에서 카드키를 리더기에 대고 객실 층을 누르세요. 내리면 벽의 객실 번호 안내판을 따라가시면 돼요.",en:"Take the elevator at the back of the lobby, tap your key card and press your floor. Then follow the room‑number signs on the wall.",zh:"请到大堂里侧乘电梯，刷房卡后按楼层。出电梯后按墙上的房号指示牌走即可。",ja:"ロビー奥のエレベーターでカードキーをかざし、客室階を押してください。降りたら壁の部屋番号の案内に沿ってお進みください。"},
+ {c:"객실",k:["비상구","대피","화재 시","emergency exit","evacuation","安全出口","疏散","非常口","避難"],ko:"객실 문 뒤에 비상구 안내도가 있어요. 화재 때는 엘리베이터를 쓰지 말고 계단으로 대피하세요. 긴급하면 119, 그리고 프런트(0번)에 알려 주세요.",en:"The evacuation map is on the back of your room door. In a fire, use the stairs, not the elevator. In an emergency call 119 and the front desk (dial 0).",zh:"客房门后有疏散示意图。火灾时请走楼梯，不要乘电梯。紧急情况请拨打119并联系前台（拨0）。",ja:"客室ドアの裏に避難経路図がございます。火災時はエレベーターを使わず階段で避難してください。緊急時は119とフロント（0番）へご連絡ください。"},
+ {c:"식음",k:["채식","비건","알레르기","할랄","글루텐","vegetarian","vegan","allergy","halal","gluten","素食","过敏","清真","ベジタリアン","アレルギー","ハラル"],ko:"레스토랑 직원이 재료를 직접 안내해 드려요. 채식 메뉴는 일부 준비되어 있고, 할랄 인증 메뉴는 없어요. 알레르기가 있으면 주문 전에 꼭 말씀해 주세요.",en:"Our restaurant staff will explain the ingredients. Some vegetarian dishes are available; there are no halal‑certified menus. Please mention any allergies before ordering.",zh:"餐厅员工会为您说明食材。部分菜品为素食，没有清真认证菜单。如有过敏请在点餐前告知。",ja:"レストランスタッフが食材をご案内します。ベジタリアンメニューは一部ございますが、ハラル認証メニューはございません。アレルギーがある場合はご注文前に必ずお知らせください。"},
+ {c:"식음",k:["클럽 라운지","이그제큐티브 라운지","해피아워","club lounge","executive lounge","happy hour","行政酒廊","欢乐时光","クラブラウンジ","ハッピーアワー"],ko:"19층 이그제큐티브 클럽 라운지는 07:00~22:00이고, 해피아워(주류·핑거푸드)는 17:30~19:30이에요. 이그제큐티브 이상 객실 손님 전용이며, 만 12세 미만은 해피아워에 입장할 수 없어요.",en:"The 19F Executive Club Lounge is open 07:00–22:00, with happy hour (drinks and finger food) 17:30–19:30. It’s for Executive rooms and above; children under 12 can’t join happy hour.",zh:"19楼行政酒廊开放时间07:00~22:00，欢乐时光（酒水·小食）17:30~19:30。仅限行政间及以上客人使用，未满12岁儿童不可参加欢乐时光。",ja:"19階エグゼクティブクラブラウンジは07:00〜22:00、ハッピーアワー（お酒・フィンガーフード）は17:30〜19:30です。エグゼクティブ以上の客室のお客様専用で、12歳未満はハッピーアワーにご入場いただけません。"},
+ {c:"식음",k:["맛집","먹을 곳","식당 추천","뭐 먹","배고파","restaurant nearby","nearby restaurant","where to eat","where can i eat","place to eat","eat nearby","food recommend","hungry","美食","好吃","吃什么","哪里吃","附近吃","おすすめのお店","グルメ","お腹すいた"],ko:"명동 거리(도보 10분)에 칼국수·한식·길거리 음식이 많고, 을지로 골목에는 오래된 노포와 호프집이 모여 있어요. 1층 컨시어지(08:00~22:00)에서 취향에 맞게 추천하고 예약도 도와드려요.",en:"Myeongdong (10 min walk) has noodle soup, Korean food and street food, and the Euljiro alleys are full of old‑style local restaurants and pubs. The concierge on 1F (08:00–22:00) can recommend and book for you.",zh:"明洞（步行10分钟）有刀削面、韩餐和街头小吃，乙支路小巷聚集了许多老字号餐馆和啤酒屋。1楼礼宾部（08:00~22:00）可为您推荐并预订。",ja:"明洞（徒歩10分）にはカルグクス・韓国料理・屋台グルメが多く、乙支路の路地には老舗食堂やビアホールが集まっています。1階コンシェルジュ（08:00〜22:00）でおすすめやご予約をお手伝いします。"},
+ {c:"부대시설",k:["아이","어린이","키즈","아기랑","kids","children","child","儿童","孩子","子ども","子供"],ko:"아이와 함께라면 아기침대·아기욕조·젖병소독기를 무료로 빌려드려요. 수영장은 만 13세 미만 보호자 동반, 조식은 만 4세 미만 무료·만 4~12세 15,000원이에요.",en:"For families we lend cribs, baby baths and bottle sterilizers for free. Children under 13 need an adult at the pool; breakfast is free under 4 and 15,000 KRW for ages 4–12.",zh:"带孩子入住可免费借用婴儿床、婴儿浴盆和奶瓶消毒器。13岁以下儿童须由监护人陪同使用泳池；早餐4岁以下免费，4~12岁15,000韩元。",ja:"お子様連れの方にはベビーベッド・ベビーバス・哺乳瓶消毒器を無料で貸し出しています。プールは13歳未満は保護者同伴、朝食は4歳未満無料・4〜12歳15,000ウォンです。"},
+ {c:"부대시설",k:["전기차","충전소","ev 충전","electric car","ev charging","charging station","电动车","充电桩","電気自動車","EV充電"],ko:"지하 2층에 전기차 완속 충전기 4대가 있어요(유료). 주차는 객실당 1대 무료예요.",en:"There are 4 slow EV chargers on B2 (paid). Parking is free for one car per room.",zh:"地下2层有4台电动车慢充桩（收费）。每间客房可免费停1辆车。",ja:"地下2階にEV普通充電器が4台ございます（有料）。駐車は1室につき1台無料です。"},
+ {c:"부대시설",k:["발레","발렛","valet","代客泊车","バレー"],ko:"발레파킹은 운영하지 않아요. 지하 2~4층 주차장에 직접 주차해 주세요(높이 제한 2.1m).",en:"We don’t offer valet parking. Please park in the B2–B4 garage yourself (height limit 2.1 m).",zh:"酒店不提供代客泊车。请自行停在地下2~4层停车场（限高2.1米）。",ja:"バレーパーキングはございません。地下2〜4階の駐車場にご自身で駐車してください（高さ制限2.1m）。"},
+ {c:"교통·주변",k:["택시 어디","택시 타는","택시 승강장","taxi stand","where to get a taxi","出租车在哪","打车","タクシー乗り場"],ko:"택시는 로비 정문 앞에서 타시면 돼요. 이 화면에서 ‘택시 불러 주세요’라고 요청하시면 프런트가 대신 불러 드려요.",en:"Taxis pick up at the main entrance. You can also ask here, ‘please call a taxi’, and the front desk will call one for you.",zh:"请在大堂正门前乘出租车。也可以在这里说“请帮我叫出租车”，前台会为您叫车。",ja:"タクシーはロビー正面玄関前からご乗車ください。この画面で「タクシーを呼んでください」とお申し付けいただければ、フロントが手配します。"},
+ {c:"교통·주변",k:["동대문","ddp","dongdaemun","东大门","東大門"],ko:"동대문디자인플라자(DDP)는 지하철로 약 10분이에요. 을지로입구역에서 2호선을 타고 동대문역사문화공원역에서 내리세요.",en:"Dongdaemun Design Plaza (DDP) is about 10 min by subway: take Line 2 from Euljiro 1(il)‑ga station to Dongdaemun History & Culture Park.",zh:"东大门设计广场（DDP）乘地铁约10分钟：在乙支路入口站乘2号线，到东大门历史文化公园站下车。",ja:"東大門デザインプラザ（DDP）は地下鉄で約10分です。乙支路入口駅から2号線に乗り、東大門歴史文化公園駅で降りてください。"},
+ {c:"교통·주변",k:["쇼핑","면세점","백화점","shopping","duty free","department store","购物","免税店","百货","買い物","免税店","デパート"],ko:"명동 쇼핑 거리가 도보 10분이고, 근처에 백화점과 면세점도 있어요. 컨시어지에서 지도와 쇼핑 정보를 드려요.",en:"The Myeongdong shopping streets are a 10‑minute walk, with department stores and duty‑free shops nearby. The concierge can give you a map.",zh:"步行10分钟即到明洞购物街，附近还有百货商店和免税店。礼宾部可提供地图和购物信息。",ja:"明洞のショッピング街まで徒歩10分で、近くにデパートや免税店もございます。コンシェルジュで地図やショッピング情報をお渡しします。"},
+ {c:"교통·주변",k:["투어","공연","관광 예약","tour","show","tickets","旅游","演出","观光预订","ツアー","公演","観光予約"],ko:"1층 컨시어지(08:00~22:00)에서 시티 투어, 공연, 관광지 예약을 대신 도와드려요.",en:"The concierge on 1F (08:00–22:00) can book city tours, shows and attractions for you.",zh:"1楼礼宾部（08:00~22:00）可代为预订城市观光、演出和景点门票。",ja:"1階コンシェルジュ（08:00〜22:00）で市内ツアー、公演、観光地の予約を代行いたします。"},
+ {c:"교통·주변",k:["우산","비 와","비가","umbrella","raining","rain","雨伞","下雨","傘","雨"],ko:"우산은 프런트에서 무료로 빌려드려요. 여기서 ‘우산 빌려주세요’라고 요청하셔도 돼요.",en:"You can borrow an umbrella for free at the front desk, or just ask here: ‘lend me an umbrella’.",zh:"前台可免费借用雨伞，也可以在这里说“请借我一把伞”。",ja:"傘はフロントで無料で貸し出しています。ここで「傘を貸してください」とお申し付けいただいても大丈夫です。"},
+ {c:"교통·주변",k:["병원","아파요","몸이 안 좋","응급실","hospital","feel sick","doctor","医院","不舒服","看病","病院","具合が悪"],h:true,ko:"응급실이 있는 대학병원은 택시로 약 10분이에요. 위급하면 바로 119에 전화하세요. 직원을 연결해 드릴게요.",en:"A university hospital with an ER is about 10 min by taxi. If it’s urgent, call 119 now. I’ll connect you to staff.",zh:"有急诊的大学医院乘出租车约10分钟。情况紧急请立即拨打119。我为您联系员工。",ja:"救急外来のある大学病院はタクシーで約10分です。緊急の場合はすぐに119へお電話ください。スタッフにおつなぎします。"},
+ {c:"교통·주변",k:["두통약","감기약","진통제","해열제","소화제","medicine","painkiller","cold medicine","药","止痛药","感冒药","薬","頭痛薬","風邪薬"],ko:"약국은 정문에서 도보 3분(09:00~21:00)이고, 24시간 약국은 명동 쪽 도보 10분이에요. 호텔에서는 의약품을 드릴 수 없는 점 양해 부탁드려요.",en:"A pharmacy is 3 min from the main entrance (09:00–21:00), and a 24‑hour pharmacy is 10 min toward Myeongdong. Sorry, the hotel can’t provide medicine.",zh:"药店距正门步行3分钟（09:00~21:00），24小时药店在明洞方向步行10分钟。酒店无法提供药品，敬请谅解。",ja:"薬局は正面玄関から徒歩3分（09:00〜21:00）、24時間営業の薬局は明洞方面へ徒歩10分です。ホテルではお薬をお渡しできませんのでご了承ください。"},
+ {c:"외국인 안내",k:["atm","현금 인출","돈 뽑","cash machine","withdraw","取钱","提款","ATM","お金をおろ"],ko:"1층에 외화 ATM(달러·엔·위안)이 있어요. 원화가 필요하면 명동 환전소(도보 10분)나 은행 ATM을 이용해 주세요.",en:"There’s a foreign‑currency ATM (USD, JPY, CNY) on 1F. For Korean won, use the Myeongdong exchange shops (10 min walk) or a bank ATM.",zh:"1楼有外币ATM（美元·日元·人民币）。如需韩元，可去明洞换钱所（步行10分钟）或银行ATM。",ja:"1階に外貨ATM（ドル・円・元）がございます。ウォンが必要な場合は明洞の両替所（徒歩10分）か銀行ATMをご利用ください。"},
+ {c:"체크인·아웃",k:["신분증","여권","passport","id card","身份证","护照","パスポート","身分証"],ko:"이 키오스크는 시연용이라 신분증 확인 단계를 넣지 않았어요. 실제 호텔은 신분 확인 방법이 다를 수 있으니 필요하면 프런트에 문의해 주세요.",en:"This is a demo kiosk, so it doesn’t include an ID check. Real hotels may verify identity differently — please ask the front desk if needed.",zh:"本自助机为演示用，未包含身份证件核验步骤。实际酒店的核验方式可能不同，如有需要请咨询前台。",ja:"このキオスクはデモ用のため、身分証確認の手順は入れていません。実際のホテルでは確認方法が異なる場合がありますので、必要でしたらフロントへお問い合わせください。"},
+ {c:"체크인·아웃",k:["미성년","청소년","고등학생","under 19","minor","未成年","青少年","未成年者"],ko:"만 19세 미만은 보호자와 함께 투숙하거나 보호자 동의서가 있어야 해요. 자세한 내용은 프런트에서 확인해 드려요.",en:"Guests under 19 must stay with a guardian or bring a guardian’s consent form. The front desk can explain the details.",zh:"未满19岁者须由监护人陪同入住或持有监护人同意书。详情请咨询前台。",ja:"19歳未満の方は保護者同伴、または保護者の同意書が必要です。詳しくはフロントでご案内します。"},
+ {c:"체크인·아웃",k:["키 반납","카드키 반납","체크아웃 방법","return the key","how to check out","还房卡","怎么退房","カードキーの返却","チェックアウトの方法"],ko:"체크아웃은 키오스크나 프런트에서 할 수 있어요. 카드키는 로비 반납함에 넣으시면 되고, 미니바 이용 금액이 있으면 그때 정산해요.",en:"Check out at the kiosk or front desk. Drop your key cards in the lobby return box; any minibar charges are settled then.",zh:"可在自助机或前台办理退房。房卡请投入大堂回收箱，迷你吧费用届时结算。",ja:"チェックアウトはキオスクまたはフロントで行えます。カードキーはロビーの返却ボックスへ入れてください。ミニバーのご利用分はその際に精算します。"},
+ {c:"체크인·아웃",k:["연박","하루 더","연장","더 묵","extend","extra night","stay longer","续住","多住一晚","延泊","もう1泊"],h:true,ko:"연박은 객실 상황에 따라 프런트에서 바로 확인해 드려요. 직원을 연결해 드릴게요.",en:"Extending your stay depends on availability; the front desk can check right away. I’ll connect you to staff.",zh:"续住视房态而定，前台可立即为您确认。我为您联系员工。",ja:"延泊は空室状況により、フロントですぐにお調べします。スタッフにおつなぎします。"},
+ {c:"체크인·아웃",k:["분실","잃어버","두고 왔","놓고 왔","lost","left something","forgot","丢了","遗失","忘了","忘れ物","なくし"],ko:"분실물은 프런트에서 30일 동안 보관해요. 잃어버린 물건과 장소를 알려 주시면 직원이 확인해 드릴게요.",en:"Lost items are kept at the front desk for 30 days. Tell staff what and where, and they’ll check for you.",zh:"遗失物品由前台保管30天。请告诉员工物品和地点，我们会为您查找。",ja:"お忘れ物はフロントで30日間保管しています。物と場所をお知らせいただければスタッフが確認します。"},
+ {c:"체크인·아웃",k:["아고다","야놀자","여기어때","부킹닷컴","익스피디아","트립닷컴","외부 사이트","agoda","booking.com","expedia","trip.com","otas","携程","外部サイト","じゃらん","楽天トラベル"],ko:"외부 예약 사이트에서 예약하셨어도 이 키오스크에서 체크인할 수 있어요. 그 사이트의 예약번호를 입력하면 돼요. 객실 요금은 이미 결제되어 있어 보증금 승인만 하시면 돼요.",en:"You can check in here even if you booked on another site. Enter that site’s booking number. Your room is already paid, so only a deposit hold is needed.",zh:"即使在第三方网站预订，也可以在这里办理入住。请输入该网站的预订号。房费已支付，只需授权押金。",ja:"外部の予約サイトでご予約の場合も、このキオスクでチェックインできます。そのサイトの予約番号を入力してください。客室料金はお支払い済みのため、デポジットの承認のみで大丈夫です。"},
+ {c:"결제·정책",k:["현금","cash","现金","現金"],ko:"키오스크는 카드와 간편결제만 받아요. 현금으로 결제하거나 보증금을 내고 싶으면 프런트에서 도와드려요.",en:"The kiosk takes cards and mobile pay only. To pay or leave a deposit in cash, please see the front desk.",zh:"自助机仅支持银行卡和移动支付。如需现金付款或交押金，请到前台办理。",ja:"キオスクではカードとスマホ決済のみご利用いただけます。現金でのお支払いやデポジットはフロントで承ります。"},
+ {c:"결제·정책",k:["해외 카드","외국 카드","유니온페이","비자카드","비자 카드","마스터카드","visa","visa card","mastercard","master card","overseas card","foreign card","amex","unionpay","jcb","银联","外国卡","海外カード","銀聯"],ko:"비자·마스터·아멕스·JCB·유니온페이 등 해외 카드도 쓸 수 있어요. 해외 결제가 막혀 있으면 승인이 안 될 수 있으니 다른 카드를 써 보세요.",en:"Overseas cards such as Visa, Mastercard, Amex, JCB and UnionPay are accepted. If overseas payments are blocked on your card, try another card.",zh:"可使用Visa、万事达、美国运通、JCB、银联等境外卡。如果您的卡限制境外支付，可能无法授权，请换一张卡试试。",ja:"Visa・Mastercard・Amex・JCB・銀聯など海外カードもご利用いただけます。海外決済が制限されている場合は承認されないことがありますので、別のカードをお試しください。"},
+ {c:"체크인 도움",k:["뭘 할 수","뭐 할 수 있","무엇을 도와","도움말","what can you do","what can you help","你能做什么","能帮我什么","何ができ","何を手伝"],ko:"호텔 이용 질문(조식, 시설, 체크아웃, 주변 안내 등)에 답하고, 수건·모닝콜·택시 같은 요청을 직원에게 전달해요. 답하기 어려운 일은 직원을 연결해 드려요.",en:"I answer questions about your stay (breakfast, facilities, check‑out, the area) and pass requests like towels, wake‑up calls or taxis to staff. For anything I can’t handle, I connect you to staff.",zh:"我可以回答住宿相关问题（早餐、设施、退房、周边等），并把毛巾、叫醒、出租车等请求转给员工。无法处理的事项会为您联系员工。",ja:"ご滞在に関するご質問（朝食、施設、チェックアウト、周辺案内など）にお答えし、タオル・モーニングコール・タクシーなどのご依頼をスタッフへお伝えします。対応が難しいことはスタッフにおつなぎします。"},
+ {c:"체크인 도움",k:["사용법","어떻게 써","어떻게 사용","키오스크 처음","처음인데","how to use","how does this work","怎么用","怎么操作","使い方","どうすれば"],ko:"‘체크인 시작’을 누르고 QR이나 예약번호로 예약을 찾은 뒤, 내용 확인 → 결제 → 카드키 받기 순서로 진행돼요. 약 1분 걸리고, 막히면 언제든 오른쪽 아래 ‘직원 호출’을 누르세요.",en:"Tap ‘Start check-in’, find your booking by QR or number, then confirm → pay → get your key. It takes about a minute; tap ‘Call staff’ at the bottom right anytime.",zh:"点击“开始入住”，用二维码或预订号查找预订，然后依次确认→付款→领取房卡。约需1分钟，遇到困难可随时点击右下角“呼叫员工”。",ja:"「チェックイン開始」を押し、QRか予約番号で予約を探したら、確認→お支払い→カードキー受け取りの順に進みます。約1分で、困ったらいつでも右下の「スタッフ呼び出し」を押してください。"},
+ {c:"체크인 도움",k:["글씨가 작","글씨","글자가","잘 안 보여","안 보여요","크게 보","text is small","can't see","bigger text","font size","字太小","看不清","文字が小さ","見えにく"],ko:"왼쪽 아래 ‘편하게 보기’를 누르면 글씨를 3단계로 키우거나, 검은 바탕의 선명한 화면으로 바꿀 수 있어요.",en:"Tap ‘Easy view’ at the bottom left to make text larger (3 sizes) or switch to a high‑contrast screen.",zh:"点击左下角“易用模式”，可将字体放大（3级）或切换为高对比度画面。",ja:"左下の「見やすく」を押すと、文字を3段階で大きくしたり、黒背景のくっきり表示に切り替えたりできます。"},
+ {c:"체크인 도움",k:["소리로","읽어 줘","읽어주","음성 안내","read aloud","voice guide","语音","读出来","読み上げ","音声で"],ko:"왼쪽 아래 ‘편하게 보기’에서 ‘안내 듣기’를 켜면 화면 안내를 소리로 읽어 드려요.",en:"Turn on ‘Voice guide’ in ‘Easy view’ at the bottom left and the screen will be read aloud.",zh:"在左下角“易用模式”中开启“语音引导”，即可朗读屏幕内容。",ja:"左下の「見やすく」で「音声ガイド」をオンにすると、画面の案内を読み上げます。"},
+ {c:"체크인 도움",k:["영어로","중국어로","일본어로","언어 바꿔","language","english please","语言","换成中文","言語","日本語で"],ko:"화면 아래의 한국어 · English · 中文 · 日本語 버튼을 누르면 언어가 바로 바뀌어요.",en:"Tap 한국어 · English · 中文 · 日本語 at the bottom of the screen to switch language.",zh:"点击屏幕下方的 한국어 · English · 中文 · 日本語 按钮即可切换语言。",ja:"画面下の 한국어 · English · 中文 · 日本語 ボタンを押すと言語が切り替わります。"},
+ {c:"체크인 도움",k:["짐 옮","짐이 많","포터","벨보이","porter","bellboy","help with luggage","行李员","帮我拿行李","ポーター","荷物を運"],h:true,ko:"짐이 많으면 직원이 객실까지 옮겨 드려요. 직원을 연결해 드릴게요.",en:"If you have a lot of luggage, staff can carry it to your room. I’ll connect you now.",zh:"行李较多时，员工可以帮您送到客房。我为您联系员工。",ja:"お荷物が多い場合はスタッフがお部屋までお運びします。スタッフにおつなぎします。"}
+];
+MORE.forEach(f=>FAQ.push(f));
+/* lost items: answered before the complaint check, so "I lost my wallet" gets the lost-and-found answer */
+HELP.push(MORE.find(f=>f.k.includes("분실")));
+/* extra ways people ask the same thing */
+const SYN=[["조식",["아침밥","아침 식사","밥은","식사 시간","早饭","朝ごはん","morning meal"]],["와이파이",["인터넷","비밀번호","internet","password","网络","密码","ネット","パスワード"]],["바",["카페","커피숍","coffee shop","cafe","咖啡厅","カフェ"]],["에어컨",["더워","추워","덥","춥","too hot","too cold","太热","太冷","暑い","寒い"]],["주차",["자동차","car park","parking","停车场","駐車場"]],["지하철",["metro","地下鉄","メトロ"]],["명동",["가볼 만한","놀러","볼거리","things to do","去哪玩","観光地"]],["공항",["인천공항","김포공항","incheon","gimpo","仁川","金浦"]],["수영",["수영장","swimming","游泳池","プール"]]];
+SYN.forEach(([key,extra])=>{const f=FAQ.find(x=>x.k.includes(key));if(f)extra.forEach(w=>{if(!f.k.includes(w))f.k.push(w)})});
+/* answers about this guest's own booking (work without AI) */
+const MY=[
+ {k:["몇 호","방 번호","객실 번호","내 방","room number","my room","房间号","几号房","部屋番号","何号室"],a:r=>({ko:`객실은 ${r.fl}층 ${r.no}호, ${r.room.ko} · ${r.view.ko}예요.`,en:`Your room is ${r.no} on the ${r.fl}th floor — ${r.room.en}, ${r.view.en}.`,zh:`您的房间是${r.fl}楼${r.no}号，${r.room.zh} · ${r.view.zh}。`,ja:`お部屋は${r.fl}階の${r.no}号室、${r.room.ja}・${r.view.ja}です。`})},
+ {k:["조식 포함","아침 포함","조식 있","breakfast included","include breakfast","含早","含早餐","朝食付き","朝食は含"],a:r=>r.bf?({ko:`네, ${r.pkg.ko} 패키지에 조식 뷔페 ${r.ad}인이 포함되어 있어요. 2층 아르케에서 07:00~10:00(주말 10:30)에 드시면 돼요.`,en:`Yes — your ${r.pkg.en} package includes breakfast for ${r.ad}. It’s at ARCHE on 2F, 07:00–10:00 (10:30 on weekends).`,zh:`是的，您的“${r.pkg.zh}”包含${r.ad}人自助早餐。请在2楼ARCHE用餐，07:00~10:00（周末至10:30）。`,ja:`はい、${r.pkg.ja}に朝食ビュッフェ${r.ad}名分が含まれています。2階アルケで07:00〜10:00（週末10:30まで）にお召し上がりください。`}):r.note},
+ {k:["체크아웃 몇","체크아웃 시간","언제 나가","check-out time","what time is check-out","几点退房","チェックアウトは何時"],a:r=>({ko:`${day(r.out)} ${r.co}까지 체크아웃하시면 돼요.${r.co!=="11:00"?" 패키지에 레이트 체크아웃이 포함되어 있어요.":""}`,en:`Please check out by ${r.co} on ${day(r.out)}.${r.co!=="11:00"?" Late check-out is included in your package.":""}`,zh:`请在${day(r.out)} ${r.co}前退房。${r.co!=="11:00"?"您的套餐包含延迟退房。":""}`,ja:`${day(r.out)} ${r.co}までにチェックアウトしてください。${r.co!=="11:00"?"プランにレイトチェックアウトが含まれています。":""}`})},
+ {k:["보증금 얼마","보증금은 얼마","deposit amount","how much is the deposit","押金多少","デポジットはいくら"],a:r=>({ko:`보증금은 1박당 50,000원이라 이번 숙박은 ${won(depOf(r))}이에요. 신용카드는 승인만 되고, 체크아웃 때 취소돼요.`,en:`The deposit is 50,000 KRW per night, so ${won(depOf(r))} for this stay. On a credit card it’s only a hold, released at check-out.`,zh:`押金为每晚50,000韩元，本次共${won(depOf(r))}。信用卡仅预授权，退房时取消。`,ja:`デポジットは1泊50,000ウォンのため、今回は${won(depOf(r))}です。クレジットカードは承認のみで、チェックアウト時に取り消されます。`})},
+ {k:["와이파이 비번","와이파이 비밀번호","wifi password","wi-fi password","无线密码","wifi密码","Wi-Fiのパスワード","ワイファイのパスワード"],a:r=>({ko:`와이파이 이름은 GIDAE_GUEST, 비밀번호는 welcome${r.no}이에요.`,en:`Wi‑Fi: GIDAE_GUEST, password welcome${r.no}.`,zh:`Wi‑Fi名称：GIDAE_GUEST，密码：welcome${r.no}。`,ja:`Wi‑Fi名はGIDAE_GUEST、パスワードはwelcome${r.no}です。`})},
+ {k:["패키지","포함 내역","뭐가 포함","package","what's included","套餐","包含什么","プラン","含まれる"],a:r=>({ko:`${r.pkg.ko}에는 ${r.inc.ko.join(", ")}이(가) 포함되어 있어요.${r.note?" "+r.note.ko:""}`,en:`Your ${r.pkg.en} includes: ${r.inc.en.join(", ")}.${r.note?" "+r.note.en:""}`,zh:`您的“${r.pkg.zh}”包含：${r.inc.zh.join("，")}。${r.note?r.note.zh:""}`,ja:`${r.pkg.ja}には、${r.inc.ja.join("、")}が含まれています。${r.note?r.note.ja:""}`})},
+ {k:["결제 금액","방값","객실 요금","숙박비","how much do i pay","room charge","room rate","房费","住宿费","客室料金","宿泊料金"],a:r=>r.ota?({ko:`객실 요금은 ${r.ch.ko}에서 이미 결제되었어요. 키오스크에서는 보증금 ${won(depOf(r))} 승인만 하시면 돼요.`,en:`Your room was already paid on ${r.ch.en}. At the kiosk you only place a ${won(depOf(r))} deposit hold.`,zh:`房费已在${r.ch.zh}支付。在自助机上只需授权押金${won(depOf(r))}。`,ja:`客室料金は${r.ch.ja}でお支払い済みです。キオスクではデポジット${won(depOf(r))}の承認のみです。`}):({ko:`${r.pkg.ko} ${r.n}박 요금은 부가세 포함 ${won(r.due)}이고, 보증금 ${won(depOf(r))}은 승인만 돼요.`,en:`Your ${r.pkg.en} for ${r.n} night(s) is ${won(r.due)} incl. VAT, plus a ${won(depOf(r))} deposit hold.`,zh:`“${r.pkg.zh}”${r.n}晚的费用为${won(r.due)}（含增值税），另需预授权押金${won(depOf(r))}。`,ja:`${r.pkg.ja} ${r.n}泊の料金は付加価値税込み${won(r.due)}で、デポジット${won(depOf(r))}は承認のみです。`})}
+];
+function myAnswer(low){if(!K.resv)return null;const m=bestMatch(MY,low);if(!m)return null;const a=m.a(K.resv);return a?(a[K.lang]||a.en||a.ko):null}
+/* questions to suggest first, depending on the screen the guest is on */
+const SCREEN_SUGG={
+ find:{ko:["예약번호를 모르겠어요","QR이 안 읽혀요","외부 사이트 예약도 되나요?","체크인은 몇 시부터예요?"],en:["I don’t know my booking number","The QR code won’t scan","I booked on Agoda — is that OK?","When can I check in?"],zh:["我不知道预订号","二维码扫不出来","携程订的也可以吗？","几点可以入住？"],ja:["予約番号がわかりません","QRコードが読み取れません","外部サイトの予約でも大丈夫？","チェックインは何時から？"]},
+ confirm:{ko:["조식 포함이에요?","높은 층으로 바꿀 수 있나요?","인원 추가하고 싶어요","예약 정보가 달라요"],en:["Is breakfast included?","Can I get a higher floor?","I want to add a guest","My booking details are wrong"],zh:["含早餐吗？","可以换高楼层吗？","我想加人","预订信息不对"],ja:["朝食付きですか？","高層階に変更できますか？","人数を追加したいです","予約内容が違います"]},
+ pay:{ko:["보증금 얼마예요?","해외 카드 돼요?","현금으로 낼 수 있나요?","결제가 안 돼요"],en:["How much is the deposit?","Can I use an overseas card?","Can I pay in cash?","My payment isn’t working"],zh:["押金多少？","可以用外国卡吗？","可以付现金吗？","付款失败了"],ja:["デポジットはいくら？","海外カードは使えますか？","現金で払えますか？","決済できません"]},
+ done:{ko:["엘리베이터 어떻게 타요?","와이파이 비밀번호 알려주세요","체크아웃 몇 시예요?","패키지에 뭐가 포함돼요?"],en:["How do I use the elevator?","What’s the Wi‑Fi password?","What time is check-out?","What’s included in my package?"],zh:["电梯怎么坐？","wifi密码是多少？","几点退房？","套餐包含什么？"],ja:["エレベーターの乗り方は？","Wi‑Fiのパスワードを教えて","チェックアウトは何時？","プランに何が含まれる？"]}
+};
+const SCREEN_GROUP={find:"find",qr:"find",code:"find",phone:"find",error:"find",confirm:"confirm",pay:"pay",paying:"pay",payok:"pay",payfail:"pay",key:"done",keyfail:"done",done:"done",rate:"done",thanks:"done"};
+
 const REQX={"수건 추가":["加毛巾","タオル追加"],"생수 추가":["加矿泉水","お水の追加"],"침구 추가":["加寝具","寝具の追加"],"어메니티 요청":["洗漱用品","アメニティ"],"모닝콜":["叫醒服务","モーニングコール"],"택시 호출":["叫出租车","タクシー手配"],"객실 청소":["打扫客房","客室清掃"],"충전기 대여":["借充电器","充電器の貸出"],"어댑터 대여":["借转换插头","変換アダプターの貸出"],"우산 대여":["借雨伞","傘の貸出"],"아기침대":["婴儿床","ベビーベッド"],"다리미 대여":["借熨斗","アイロンの貸出"]};
 const loc=o=>o[K.lang]||o.en||o.ko;
 /* pick the entry whose matched keyword is longest, so "온도는 어떻게 바꿔요" goes to the air-con answer, not the bar */
+function bestMatchL(list,low){let best=null,bl=0;list.forEach(f=>f.k.forEach(k=>{const kk=k.toLowerCase();if(kk.length>bl&&low.includes(kk)){best=f;bl=kk.length}}));return {f:best,len:bl}}
 function bestMatch(list,low){let best=null,bl=0;list.forEach(f=>f.k.forEach(k=>{const kk=k.toLowerCase();if(kk.length>bl&&low.includes(kk)){best=f;bl=kk.length}}));return best}
 function faqAnswer(q){
   const low=q.toLowerCase();
@@ -1215,8 +1410,11 @@ function faqAnswer(q){
   const rq=bestMatch(REQ,low);
   if(rq&&ASKVERB.test(q)){const lab=K.lang==="ko"?rq.ko:K.lang==="zh"?REQX[rq.ko][0]:K.lang==="ja"?REQX[rq.ko][1]:rq.en;
     return {answer:t("aiReq").replace("{r}",lab),handoff:false,topic:"요청",request:{type:rq.ko,detail:q}}}
-  const f=bestMatch(FAQ,low);
-  if(f)return {answer:loc(f),handoff:false,topic:f.c,request:null};
+  const fm=bestMatchL(FAQ,low);
+  /* the guest's own booking wins when the question is clearly about it (its keyword is at least as specific) */
+  if(K.resv){const mm=bestMatchL(MY,low);if(mm.f&&mm.len>=fm.len){const a=mm.f.a(K.resv);const txt=a?(a[K.lang]||a.en||a.ko):null;if(txt)return {answer:txt,handoff:false,topic:"체크인·아웃",request:null}}}
+  const f=fm.f;
+  if(f)return {answer:loc(f),handoff:!!f.h,topic:TOPICS.includes(f.c)?f.c:"기타",request:null};
   return null;
 }
 const TOPICS=["체크인 도움","체크인·아웃","객실","식음","부대시설","연회·행사","결제·정책","교통·주변","외국인 안내","요청","불편·긴급","기타"];
@@ -1261,7 +1459,7 @@ GUEST: ${q}`;
     ticket="R-"+String(Date.now()).slice(-4);
     log("request",{rtype:String(res.request.type).slice(0,30),detail:String(res.request.detail||q).slice(0,120),room:K.resv?K.resv.no:"로비",status:"open",ticket,lang:K.lang});
   }
-  K.ai.push({r:"a",t:res.answer,handoff:res.handoff,via,ticket:ticket?t("reqNo")+ticket:null}); K.aiBusy=false; renderKiosk();
+  K.ai.push({r:"a",t:res.answer,handoff:res.handoff,via,ticket:ticket?t("reqNo")+ticket:null}); say(res.answer); K.aiBusy=false; renderKiosk();
   log("ai",{q:q.slice(0,120),handoff:res.handoff,topic:res.topic,request:!!res.request,via,lang:K.lang,stage:K.screen});
 }
 function consumeFail(){K.demoFail="";const fs=document.getElementById("failSel");if(fs)fs.value=""}
@@ -1272,8 +1470,8 @@ function go(s){
   if(s==="idle"){
     /* a session left unfinished is recorded as a drop-out, the same way for both screen types */
     if(K.sess&&!K.sess.done&&!["idle","thanks","done","rate"].includes(K.screen))
-      log("abandon",{stage:K.screen==="fault"?"error":K.screen,dur:Math.round((Date.now()-K.sess.start)/1000),errors:K.sess.errors,retries:K.sess.retries,staff:K.sess.staff,paid:!!K.sess.paid,lang:K.lang,mode:K.easy?"easy":"normal"});
-    K.sess=null;K.ai=[];K.aiOpen=false;K.aiCat=0;K.easy=false;K.lang="ko";K.callOpen=false;K.homeAsk=false;K.errKind="code";
+      (RT&&RT.on&&RT.stage==="task"&&(RT.ab[K.variant]=(RT.ab[K.variant]||0)+1,rtSave())),log("abandon",{stage:K.screen==="fault"?"error":K.screen,dur:Math.round((Date.now()-K.sess.start)/1000),errors:K.sess.errors,retries:K.sess.retries,staff:K.sess.staff,paid:!!K.sess.paid,lang:K.lang,mode:K.easy?"easy":"normal"});
+    K.sess=null;K.ai=[];K.aiOpen=false;K.aiCat=0;K.easy=false;K.lang="ko";K.callOpen=false;K.homeAsk=false;K.errKind="code";K.size=0;K.hc=false;K.voice=false;K.slow=false;K.a11yOpen=false;stopVoice();
   }
   if(s==="find"&&!K.sess)newSession();
   if(s==="find"&&base()){s="code";K.code="";if(K.sess)K.sess.method="code"}
@@ -1288,23 +1486,23 @@ function go(s){
     if(K.screen!=="paying")return;
     if(K.demoFail==="pay"){consumeFail();K.sess.errors++;K.sess.errStages.push("pay");log("error",{stage:"pay",code:"declined",lang:K.lang});go("payfail");return}
     K.sess.paid=true;K.sess.payRef="SIM-"+String(Date.now()).slice(-6);go("payok")},1800)}
-  if(s==="payok"){K.timer=setTimeout(()=>{if(K.screen==="payok")go("key")},2500)}
+  if(s==="payok"&&!K.slow){K.timer=setTimeout(()=>{if(K.screen==="payok")go("key")},2500)}
   if(s==="key"){K.timer=setTimeout(()=>{
     if(K.screen!=="key")return;
     if(K.demoFail==="key"){consumeFail();K.sess.errors++;K.sess.errStages.push("key");log("error",{stage:"key",code:"key_fail",lang:K.lang});go("keyfail");return}
     finish();go("done")},1800)}
-  if(s==="thanks"){K.timer=setTimeout(()=>go("idle"),6000)}
+  if(s==="thanks"){if(RT&&RT.on&&rtCapture())return;K.timer=setTimeout(()=>go("idle"),K.slow?15000:6000)}
 }
 function finish(){
   const s=K.sess;if(!s||s.done)return;   /* one check-in record per session, however the buttons are pressed */
   s.done=true;
-  const dur=Math.round((Date.now()-s.start)/1000);
-  log("checkin",{dur,errors:s.errors,retries:s.retries,staff:s.staff,mode:K.easy?"easy":"normal",lang:K.lang,ota:!!K.resv.ota,method:s.method||"code",errStages:s.errStages,paid:!!s.paid});
+  const dur=Math.round((Date.now()-s.start)/1000); s.dur=dur;
+  log("checkin",{dur,errors:s.errors,retries:s.retries,staff:s.staff,mode:K.easy?"easy":"normal",a11y:{size:K.size,hc:K.hc,voice:K.voice,slow:K.slow},lang:K.lang,ota:!!K.resv.ota,method:s.method||"code",errStages:s.errStages,paid:!!s.paid});
 }
 async function callStaff(){
   if(K.sess&&!K.sess.done)K.sess.staff++;
   K.callOpen=true; renderKiosk();
-  K.callId=await log("staff",{stage:K.screen,status:"open",lang:K.lang,mode:K.easy?"easy":"normal"});
+  K.callId=await log("staff",{stage:K.screen,status:"open",lang:K.lang,mode:K.easy?"easy":"normal",code:K.resv?K.code:null,room:K.resv?K.resv.no:null,errors:K.sess?K.sess.errors:0,a11y:{size:K.size,hc:K.hc,voice:K.voice,slow:K.slow}});
 }
 $("#screen").addEventListener("submit",e=>{e.preventDefault();const i=$("#aiQ");if(i)askAI(i.value)});
 $("#screen").addEventListener("click",e=>{
@@ -1312,6 +1510,8 @@ $("#screen").addEventListener("click",e=>{
   try{kioskClick(b)}catch(err){console.error("kiosk",err);clearTimeout(K.timer);stopQR();K.screen="fault";K.callOpen=false;K.aiOpen=false;renderKiosk()}
 });
 function kioskClick(b){
+  if(RT&&RT.on&&rtClick(b))return;
+  if(K.a11yOpen&&!b.closest(".a11y")&&b.id!=="easyBtn"){K.a11yOpen=false}
   if(b.id==="homeBtn"){const mid=K.sess&&!K.sess.done&&!["idle","done","rate","thanks","fault"].includes(K.screen);if(mid){K.homeAsk=true;K.aiOpen=false;renderKiosk()}else go("idle");return}
   if(b.id==="homeStay"){K.homeAsk=false;renderKiosk();return}
   if(b.id==="homeGo"){K.homeAsk=false;go("idle");return}
@@ -1323,9 +1523,13 @@ function kioskClick(b){
   if(b.id==="payRetry"){K.sess.retries++;go("paying");return}
   if(b.id==="keyRetry"){K.sess.retries++;go("key");return}
   if(b.dataset.lang){K.lang=b.dataset.lang;if(K.screen==="idle")go("find");else renderKiosk();return}
-  if(b.id==="easyBtn"){K.easy=!K.easy;renderKiosk();return}
-  if(b.id==="aiBtn"){K.aiOpen=!K.aiOpen;renderKiosk();if(K.aiOpen){const i=$("#aiQ");if(i)i.focus()}return}
-  if(b.id==="aiClose"){K.aiOpen=false;renderKiosk();return}
+  if(b.id==="easyBtn"){if(!K.a11yOpen&&!(K.size||K.hc||K.voice||K.slow))K.size=1;K.a11yOpen=!K.a11yOpen;K.aiOpen=false;renderKiosk();return}
+  if(b.id==="a11yClose"||b.id==="a11yBd"){K.a11yOpen=false;renderKiosk();return}
+  if(b.dataset.size!==undefined){K.size=+b.dataset.size;renderKiosk();say(t("size"+K.size));return}
+  if(b.dataset.a11y){const k=b.dataset.a11y;K[k]=!K[k];if(k==="voice"){if(K.voice){VOICE.last=voiceKey();renderKiosk();say(t("voiceOn"));say(screenSpeech(),false);return}stopVoice();}if(k==="slow")K.etaEnd=K.etaEnd||0;renderKiosk();return}
+  if(b.id==="voiceAgain"){VOICE.last="";say(screenSpeech());return}
+  if(b.id==="aiBtn"){K.aiOpen=!K.aiOpen;if(!K.aiOpen){stopVoice();VOICE.last=voiceKey();renderKiosk();return}renderKiosk();const i=$("#aiQ");if(i)i.focus();return}
+  if(b.id==="aiClose"){K.aiOpen=false;stopVoice();VOICE.last=voiceKey();renderKiosk();return}
   if(b.dataset.aicat!==undefined){K.aiCat=+b.dataset.aicat;renderKiosk();return}
   if(b.dataset.sugg){askAI(b.dataset.sugg);return}
   if(b.dataset.aicall!==undefined){K.aiOpen=false;callStaff();return}
@@ -1343,7 +1547,8 @@ function kioskClick(b){
     if(b.dataset.retry&&K.sess){K.sess.retries++}
     if(b.dataset.go==="code"){K.code="";if(K.sess)K.sess.method="code"}
     go(b.dataset.go);return}
-  if(b.dataset.key){
+  if(b.dataset.key){if(K.voice)say(b.dataset.key);
+
     const k=b.dataset.key;
     if(k==="del")K.code=K.code.slice(0,-1);else if(k==="clr")K.code="";else if(K.code.length<10)K.code+=k;
     renderKiosk();return}
@@ -1367,6 +1572,87 @@ sel.addEventListener("change",()=>{kioskNo=+sel.value;ls.set("easyin.kiosk",kios
 const vs=$("#variantSel"),ti=$("#testerIn");vs.value=K.variant;ti.value=K.tester;setLabel();
 vs.addEventListener("change",()=>{K.variant=vs.value;ls.set("easyin.variant",K.variant);setLabel();go("idle")});
 ti.addEventListener("input",()=>{K.tester=ti.value.trim().toUpperCase();ls.set("easyin.tester",K.tester);setLabel()});
+/* ───────── remote usability test (open the site with ?test)
+   Each tester uses screen A and screen B (order randomised, names hidden to avoid bias),
+   answers 3 questions, then copies a result card into the group chat. Nothing is sent anywhere automatically. */
+const RT_KEY="easyin.rt";
+var RT=Object.assign({on:false,stage:"intro",nick:"",id:"",order:[],round:0,res:{},ab:{baseline:0,improved:0},help:{},better:"",note:"",device:""},ls.get(RT_KEY,{}));
+RT.on=/[?&]test\b/.test(location.search)||location.hash==="#test";
+function rtSave(){ls.set(RT_KEY,{stage:RT.stage,nick:RT.nick,id:RT.id,order:RT.order,round:RT.round,res:RT.res,ab:RT.ab,help:RT.help,better:RT.better,note:RT.note,device:RT.device})}
+const rtName=v=>RT.order.indexOf(v)===0?"A 화면":"B 화면";
+const RT_V={baseline:"기존형",improved:"개선형(EASY IN)"};
+function rtDevice(){const u=navigator.userAgent;return /iPad|Tablet/i.test(u)||(/Macintosh/.test(u)&&navigator.maxTouchPoints>1)?"태블릿":/Mobi|Android|iPhone/i.test(u)?"휴대폰":"PC"}
+function rtApplyRound(){const v=RT.order[RT.round];K.variant=v;K.tester=RT.id;setLabel();}
+function rtStart(nick){
+  RT.nick=nick.slice(0,20);RT.id="R-"+RT.nick.replace(/\s+/g,"").toUpperCase();
+  RT.order=Math.random()<.5?["baseline","improved"]:["improved","baseline"];
+  RT.round=0;RT.res={};RT.ab={baseline:0,improved:0};RT.help={};RT.better="";RT.note="";RT.device=rtDevice();RT.stage="task";
+  rtSave();rtApplyRound();go("idle");
+}
+/* called when a test round reaches the thank-you screen */
+function rtCapture(){
+  if(!RT.on||RT.stage!=="task"||!K.sess||!K.sess.done)return false;
+  const v=RT.order[RT.round],s=K.sess;
+  RT.res[v]={dur:s.dur||Math.round((Date.now()-s.start)/1000),errors:s.errors,retries:s.retries,staff:s.staff,rating:s.rated?K.rating:null};
+  RT.stage=RT.round===0?"between":"survey";rtSave();renderKiosk();return true;
+}
+function rtNext(){RT.round=1;RT.stage="task";rtSave();rtApplyRound();go("idle")}
+function rtText(){
+  const yn=v=>RT.help[v]===true?"예":RT.help[v]===false?"아니요":"-";
+  const line=v=>{const r=RT.res[v]||{};return `• ${RT_V[v]}: ${r.dur!=null?r.dur+"초":"-"} · 오류 ${r.errors??"-"}회 · 재시도 ${r.retries??"-"}회${v==="improved"?` · 직원 호출 ${r.staff??0}회`:""} · 도움 필요 ${yn(v)} · 만족 ${r.rating!=null?r.rating+"점":"-"}${RT.ab[v]?` · 중도 포기 ${RT.ab[v]}회`:""}`};
+  const better=RT.better==="same"?"비슷해요":RT.better?RT_V[RT.better]:"-";
+  const code=v=>{const r=RT.res[v]||{};return [r.dur??"",r.errors??"",r.retries??"",r.staff??"",RT.help[v]===true?1:RT.help[v]===false?0:"",r.rating??"",RT.ab[v]||0].join(",")};
+  return `[EASY IN 원격 테스트] ${RT.nick} · ${RT.device} · 순서 ${RT.order.map(v=>RT_V[v].replace("(EASY IN)","")).join("→")}\n${line("baseline")}\n${line("improved")}\n• 더 편했던 쪽: ${better}\n• 불편했던 점: ${RT.note||"-"}\nEI|v1|b:${code("baseline")}|i:${code("improved")}|p:${RT.better==="baseline"?"b":RT.better==="improved"?"i":RT.better==="same"?"s":""}|o:${RT.order.map(v=>v[0]).join("")}`;
+}
+function rtModal(){
+  if(!RT.on)return "";
+  const ov=(inner)=>`<div class="overlay rt-ov" role="dialog" aria-modal="true"><div class="modal rt-modal">${inner}</div></div>`;
+  if(RT.stage==="intro")return ov(`<h3>EASY IN 사용성 테스트</h3><p>호텔 셀프 체크인 화면 두 가지(A, B)를 차례로 써 보고, 어느 쪽이 편했는지 알려 주세요. 약 3분 걸려요.</p>
+    <ol class="rt-steps"><li>A 화면으로 체크인하기</li><li>B 화면으로 체크인하기</li><li>질문 3개에 답하고 결과를 단톡에 붙여 넣기</li></ol>
+    <label class="rt-lab" for="rtNick">이름 또는 별명</label><input id="rtNick" class="rt-in" maxlength="20" autocomplete="off" placeholder="예: 혜나">
+    <p class="rt-small">결과는 이 기기에만 저장되고, ‘결과 복사’로 직접 보낼 때만 전달돼요. 결제와 카드키는 시연용이라 실제로 결제되지 않아요.</p>
+    <button class="k-btn main" id="rtGo">시작하기</button>`);
+  if(RT.stage==="task"&&K.rtShow!==false&&K.screen==="idle"){
+    const v=RT.order[RT.round];
+    return ov(`<h3>테스트 ${RT.round+1}/2 · ${rtName(v)}</h3><p class="rt-task"><b>과제</b> 예약번호 <b>GD2611</b>로 체크인을 끝까지 해 주세요.${v==="baseline"?"<br>휴대폰 뒷자리를 물어보면 <b>1234</b>를 입력하세요.":"<br>막히면 화면에 있는 도움 기능을 자유롭게 써도 돼요."}</p>
+    <p class="rt-small">평소 호텔에서 하듯 편하게 해 주세요. 시간은 자동으로 재요. 마지막에 별점도 남겨 주세요.</p><button class="k-btn main" id="rtTaskOk">시작</button>`);
+  }
+  if(RT.stage==="between")return ov(`<h3>첫 번째 화면 완료! 👏</h3><p>이제 <b>다른 화면(${rtName(RT.order[1])})</b>으로 같은 체크인을 한 번 더 해 주세요.</p><button class="k-btn main" id="rtNext">다음 화면 시작</button>`);
+  if(RT.stage==="survey"){
+    const opt=(name,val,lab,cur)=>`<button class="rt-opt" data-rt="${name}" data-val="${val}" aria-pressed="${cur===val}">${lab}</button>`;
+    const A=RT.order[0],B=RT.order[1];const hv=v=>RT.help[v]===true?"y":RT.help[v]===false?"n":"";
+    return ov(`<h3>마지막 질문 3개</h3>
+    <div class="rt-q"><b>1. 어느 화면이 더 편했나요?</b><div class="rt-opts">${opt("better",A,"A 화면",RT.better)}${opt("better",B,"B 화면",RT.better)}${opt("better","same","비슷해요",RT.better)}</div></div>
+    <div class="rt-q"><b>2. 다른 사람의 도움이 필요했던 순간이 있었나요?</b><div class="rt-row"><span>A 화면</span><div class="rt-opts">${opt("help-"+A,"y","있었어요",hv(A))}${opt("help-"+A,"n","없었어요",hv(A))}</div></div><div class="rt-row"><span>B 화면</span><div class="rt-opts">${opt("help-"+B,"y","있었어요",hv(B))}${opt("help-"+B,"n","없었어요",hv(B))}</div></div></div>
+    <div class="rt-q"><b>3. 헷갈리거나 불편했던 점 (선택)</b><textarea id="rtNote" class="rt-in" rows="2" maxlength="200" placeholder="한 줄이면 충분해요">${esc(RT.note)}</textarea></div>
+    <button class="k-btn main" id="rtDone">결과 보기</button>`);
+  }
+  if(RT.stage==="done")return ov(`<h3>참여해 주셔서 고마워요! 🙏</h3><p>아래 <b>결과 복사</b>를 누른 뒤, 단톡방에 붙여 넣어 주세요.</p>
+    <textarea id="rtOut" class="rt-in rt-out" rows="7" readonly>${esc(rtText())}</textarea>
+    <button class="k-btn main" id="rtCopy">결과 복사</button><button class="rt-link" id="rtRestart">처음부터 다시 하기</button>`);
+  return "";
+}
+function rtChip(){
+  if(!RT.on||RT.stage!=="task")return "";
+  return `<button class="rt-chip" id="rtChip" type="button" aria-label="테스트 과제 다시 보기">테스트 ${RT.round+1}/2 · ${rtName(RT.order[RT.round])} ⓘ</button>`;
+}
+function rtClick(b){
+  if(b.id==="rtGo"){const n=(document.getElementById("rtNick").value||"").trim();if(!n){const i=document.getElementById("rtNick");i.focus();i.classList.add("rt-err");return true}K.rtShow=true;rtStart(n);return true}
+  if(b.id==="rtTaskOk"){K.rtShow=false;renderKiosk();return true}
+  if(b.id==="rtChip"){if(K.screen!=="idle"){toast(`과제: 예약번호 GD2611로 체크인을 끝까지 해 주세요.${RT.order[RT.round]==="baseline"?" (휴대폰 뒷자리 1234)":""}`);return true}K.rtShow=true;renderKiosk();return true}
+  if(b.id==="rtNext"){K.rtShow=true;rtNext();return true}
+  if(b.dataset.rt){const n=b.dataset.rt,v=b.dataset.val;const note=document.getElementById("rtNote");if(note)RT.note=note.value.trim();
+    if(n==="better")RT.better=v;else if(n.startsWith("help-"))RT.help[n.slice(5)]=v==="y";rtSave();renderKiosk();return true}
+  if(b.id==="rtDone"){const note=document.getElementById("rtNote");if(note)RT.note=note.value.trim();
+    if(!RT.better||RT.help[RT.order[0]]===undefined||RT.help[RT.order[1]]===undefined){toast("질문 1, 2에 답해 주세요.");return true}
+    RT.stage="done";rtSave();renderKiosk();return true}
+  if(b.id==="rtCopy"){const txt=rtText();const done=()=>toast("복사했어요! 단톡방에 붙여 넣어 주세요.");
+    const fallback=()=>{const ta=document.getElementById("rtOut");ta.removeAttribute("readonly");ta.select();try{document.execCommand("copy");done()}catch(e){toast("길게 눌러 직접 복사해 주세요.")}ta.setAttribute("readonly","")};
+    try{navigator.clipboard.writeText(txt).then(done,fallback)}catch(e){fallback()}return true}
+  if(b.id==="rtRestart"){RT.stage="intro";rtSave();K.variant="improved";go("idle");return true}
+  return false;
+}
+
 function toast(msg){const d=document.createElement("div");d.className="toast";d.setAttribute("role","status");d.textContent=msg;document.body.appendChild(d);setTimeout(()=>d.remove(),2600)}
 $("#kReset").addEventListener("click",()=>{K.callOpen=false;go("idle");toast("키오스크를 처음 화면으로 되돌렸어요.")});
 $("#failSel").addEventListener("change",e=>{K.demoFail=e.target.value;if(K.demoFail)toast(K.demoFail==="pay"?"다음 결제가 한 번 실패합니다.":"다음 카드키 발급이 한 번 실패합니다.")});
@@ -1377,7 +1663,7 @@ $("#obsStaff").addEventListener("click",()=>{
 /* unattended kiosk: after 2 minutes without a touch, return to the start screen so the next guest never inherits someone's booking */
 let lastAct=Date.now();
 ["pointerdown","keydown"].forEach(ev=>document.addEventListener(ev,()=>{lastAct=Date.now()},true));
-setInterval(()=>{if(view==="kiosk"&&!["idle","thanks","paying","payok","key"].includes(K.screen)&&!K.callOpen&&!K.aiBusy&&Date.now()-lastAct>120000){go("idle")}},5000);
+setInterval(()=>{if(view==="kiosk"&&!["idle","thanks","paying","payok","key"].includes(K.screen)&&!K.callOpen&&!K.aiBusy&&Date.now()-lastAct>(K.slow?300000:120000)){go("idle")}},5000);
 window.addEventListener("error",e=>console.error("page error",e.message));
 window.addEventListener("unhandledrejection",e=>console.warn("unhandled",e.reason));
 $("#nextTester").addEventListener("click",()=>{const m=/^([A-Z]*)(\d+)$/.exec(K.tester);K.tester=m?m[1]+String(+m[2]+1).padStart(m[2].length,"0"):"P01";ti.value=K.tester;ls.set("easyin.tester",K.tester);setLabel();go("idle")});
@@ -1442,7 +1728,7 @@ Object.assign(STAGE_KO,{paying:"결제 처리",payok:"결제 완료",payfail:"�
 function feedLine(e){
   const tm=new Date(e.ts).toTimeString().slice(0,5);
   let d="";
-  if(e.type==="checkin")d=`키오스크 ${e.kiosk} · ${e.dur}초 · ${METHOD_KO[e.method]||"예약번호"}${e.ota?" · 외부 예약":""}${e.mode==="easy"?" · 쉬운 모드":""}${e.lang&&e.lang!=="ko"?" · "+e.lang.toUpperCase():""}${e.errors?` · 오류 ${e.errors}회`:""}${e.variant==="baseline"?" · 기존형":""}`;
+  if(e.type==="checkin")d=`키오스크 ${e.kiosk} · ${e.dur}초 · ${METHOD_KO[e.method]||"예약번호"}${e.ota?" · 외부 예약":""}${e.mode==="easy"||(e.a11y&&(e.a11y.hc||e.a11y.voice||e.a11y.slow))?" · 편하게 보기"+(e.a11y?[e.a11y.size===2?"아주 크게":e.a11y.size===1?"크게":"",e.a11y.hc?"선명히":"",e.a11y.voice?"음성":"",e.a11y.slow?"천천히":""].filter(Boolean).map(x=>"·"+x).join(""):""):""}${e.lang&&e.lang!=="ko"?" · "+e.lang.toUpperCase():""}${e.errors?` · 오류 ${e.errors}회`:""}${e.variant==="baseline"?" · 기존형":""}`;
   if(e.type==="error")d=`키오스크 ${e.kiosk} · ${STAGE_KO[e.stage]||"예약 조회"} 단계 · ${ERR_KO[e.code]||"예약번호 불일치"}`;
   if(e.type==="abandon")d=`키오스크 ${e.kiosk} · ${STAGE_KO[e.stage]||e.stage} 화면에서 중단 · ${e.dur}초${e.variant==="baseline"?" · 기존형":""}`;
   if(e.type==="staff")d=`키오스크 ${e.kiosk} · ${STAGE_KO[e.stage]||e.stage} 화면 · ${e.source==="observer"?"진행자 기록(직원 개입)":e.status==="open"?"대기 중":e.status==="resolved"?"처리 완료":"취소됨"}`;
@@ -1521,7 +1807,7 @@ function renderAdmin(){
   renderCompare(); renderAIPanels();
   const ev=events.filter(e=>e.ts>=resetAt&&($("#showDemo").checked||!e.demo)).slice(0,40);
   $("#feed").innerHTML=ev.length?ev.map(feedLine).join(""):`<li class="empty" style="display:block">아직 기록이 없습니다. 고객 키오스크 화면에서 체크인을 진행하면 여기에 바로 나타납니다.</li>`;
-  $("#alerts").innerHTML=s.open.map(e=>`<div class="alert" role="status"><div class="ring">${ICON.bell.replace("<svg","<svg width=\"18\" height=\"18\"")}</div><div class="grow"><b>키오스크 ${e.kiosk}에서 직원 호출</b><span class="meta">${STAGE_KO[e.stage]||e.stage} 화면 · ${new Date(e.ts).toTimeString().slice(0,5)} · ${e.mode==="easy"?"쉬운 모드 이용 중":"일반 모드"}${e.lang&&e.lang!=="ko"?" · 언어 "+e.lang.toUpperCase():""}</span></div><button class="btn" data-resolve="${e.id}" type="button">처리 완료</button></div>`).join("");
+  $("#alerts").innerHTML=s.open.map(e=>`<div class="alert" role="status"><div class="ring">${ICON.bell.replace("<svg","<svg width=\"18\" height=\"18\"")}</div><div class="grow"><b>키오스크 ${e.kiosk}에서 직원 호출</b><span class="meta">${STAGE_KO[e.stage]||e.stage} 화면 · ${new Date(e.ts).toTimeString().slice(0,5)}${e.lang&&e.lang!=="ko"?` · <b>${{en:"영어",zh:"중국어",ja:"일본어"}[e.lang]||e.lang} 손님</b>`:""}${e.code?` · 예약 ${esc(e.code)}${e.room?" ("+esc(e.room)+"호)":""}`:""}${e.errors?` · 오류 ${e.errors}회`:""}${e.a11y&&(e.a11y.size||e.a11y.hc||e.a11y.voice||e.a11y.slow)?" · 편하게 보기 사용 중"+[e.a11y.size===2?"아주 큰 글씨":e.a11y.size===1?"큰 글씨":"",e.a11y.hc?"선명히":"",e.a11y.voice?"음성 안내":"",e.a11y.slow?"천천히":""].filter(Boolean).map(x=>"·"+x).join(""):e.mode==="easy"?" · 쉬운 모드":""}</span></div><button class="btn" data-resolve="${e.id}" type="button">처리 완료</button></div>`).join("");
   const nReal=events.filter(e=>e.ts>=resetAt&&!e.demo).length;
   $("#resetArea").innerHTML=confirmReset
     ?`<span class="confirm"><span>지금까지의 기록 ${nReal}건(실제)을 대시보드와 사용성 테스트 비교에서 숨깁니다. 삭제되지는 않으며 '되돌리기'로 복구할 수 있어요.${nReal?" 테스트 결과가 있다면 먼저 '보고서용 요약 복사'로 저장하세요.":""}</span> <button class="btn danger" id="resetYes" type="button">초기화</button><button class="btn" id="resetNo" type="button">취소</button></span>`
@@ -1596,9 +1882,8 @@ function setK(on){
 $("#kmodeBtn").addEventListener("click",()=>{if(location.hash!=="#kiosk")location.hash="#kiosk";setK(true)});
 $("#kexit").addEventListener("click",()=>setK(false));
 window.addEventListener("hashchange",()=>{if((location.hash||"#kiosk")!=="#kiosk")setK(false)});
-route(); renderKiosk(); initData();
+if(RT.on){document.body.classList.add("rtmode");if(location.hash!=="#kiosk")history.replaceState(null,"",location.pathname+location.search+"#kiosk");if(RT.stage==="task"){rtApplyRound();K.rtShow=true}}
+route(); if(RT.on)setK(true); renderKiosk(); initData();
 (async()=>{try{sampleFn=window.claude&&window.claude.use?await window.claude.use("sample"):null}catch(e){sampleFn=null}aiState=sampleFn?"ai":"faq";if(K.aiOpen)renderKiosk()})();
 })();
 </script>
-
-</body></html>

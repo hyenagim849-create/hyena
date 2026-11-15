@@ -400,6 +400,7 @@ body.rtmode .kexit{display:none!important}
 body.kmode.rtmode .k-head{padding-left:22px}
 .rt-chip{display:block;width:100%;border:0;background:var(--gold);color:var(--gold-ink);font-weight:700;font-size:13px;padding:5px 12px;text-align:center;letter-spacing:.02em}
 .screen.base .rt-chip{background:#2D5BD3;color:#fff}
+.rt-chip{position:relative;z-index:7}body.rtmode #screen .ai-panel{top:44px}body.rtmode #screen .a11y{z-index:6}
 .rt-ov{z-index:40}
 .rt-modal{max-width:520px;text-align:left;max-height:calc(100% - 20px);overflow:auto}
 .rt-modal h3{text-align:center}
@@ -417,6 +418,13 @@ body.kmode.rtmode .k-head{padding-left:22px}
 .rt-opt[aria-pressed="true"]{background:var(--gold);color:var(--gold-ink);border-color:var(--gold);font-weight:700}
 .screen.base .rt-opt[aria-pressed="true"]{background:#2D5BD3;border-color:#2D5BD3;color:#fff}
 .rt-modal .k-btn{width:100%}
+.b-floors{width:100%;border-collapse:collapse;font-size:15px;margin:4px 0 8px}.b-floors th{width:76px;text-align:left;padding:7px 8px;border-bottom:1px solid #CDD2DA;font-weight:700}.b-floors td{padding:7px 8px;border-bottom:1px solid #CDD2DA}
+.rt-msg{background:#fff;color:#1D2430;border-radius:14px;padding:12px 14px;margin:10px 0 12px;font-size:14px;line-height:1.6;border:1px solid #D7DBE2}
+.rt-msg small{display:block;color:#5A6472;font-size:12px;margin-bottom:2px}.rt-msg>b:first-of-type{display:block}
+.rt-two{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:10px}
+.rt-modal .k-btn.ghost{margin-bottom:6px}
+.rt-ok{color:var(--ok);font-weight:700}.rt-bad{color:var(--bad)}
+.rt-more{margin:10px 0}.rt-more summary{cursor:pointer;color:var(--k-muted);font-size:13px}
 .rt-link{display:block;margin:10px auto 0;background:none;border:0;color:var(--k-muted);text-decoration:underline;font-size:13px}
 /* ───────── review additions */
 .k-stepper{display:flex;gap:6px;align-items:center;flex-wrap:wrap}
@@ -554,7 +562,7 @@ body.kmode .intro{display:none}
         <select id="variantSel"><option value="improved">개선형 (EASY IN)</option><option value="baseline">기존형 (비교용)</option></select></div>
       <div class="row"><label for="testerIn">테스터 번호</label><input id="testerIn" type="text" placeholder="예: P01" maxlength="8"><button class="btn" id="nextTester" type="button">다음 테스터</button></div>
       <div class="row"><button class="btn" id="obsStaff" type="button">직원 개입 기록 (관찰자용)</button></div>
-      <p class="gnote">기존형은 일반 키오스크처럼 예약번호와 휴대폰 뒷자리를 직접 입력하고, 진행 표시·직원 호출·쉬운 모드·AI 안내가 없습니다. 휴대폰 뒷자리: GD2611 → 1234, BK58201 → 5678</p>
+      <p class="gnote">기존형은 일반 키오스크처럼 예약번호와 휴대폰 뒷자리를 직접 입력하고, 진행 표시·직원 호출·쉬운 모드·AI 안내가 없습니다. 영문 성: KIM (두 예약 모두) · 휴대폰 뒷자리: GD2611 → 1234, BK58201 → 5678</p>
       <p class="gnote">기존형에는 직원 호출 버튼이 없으므로, 테스트 중 진행자가 직접 도와줬다면 '직원 개입 기록'을 눌러 주세요. 두 화면 모두 같은 방식으로 기록해야 비교가 공정합니다.</p>
     </aside>
   </div>
@@ -689,19 +697,19 @@ ja:{hotel:"ホテル・キデ・ソウル",step:"ステップ",left:"残り約 {
 };
 /* review additions: new screens (QR camera, payment states, card key states, AI mode labels) in all four languages */
 const T2={
-ko:{left:"예상 남은 시간 {m}분 {s}초",easy:"편하게 보기",a11yT:"편하게 보기",sizeLab:"글씨 크기",size0:"보통",size1:"크게",size2:"아주 크게",hcLab:"선명히 보기",hcD:"검은 바탕에 흰 글씨로 또렷하게",voiceLab:"안내 듣기",voiceD:"화면 안내를 소리로 읽어 드려요",slowLab:"천천히 하기",slowD:"남은 시간을 숨기고 여유 있게 진행해요",a11yClose:"닫기",voiceNo:"이 기기에서는 음성 안내를 쓸 수 없어요.",voiceOn:"안내 듣기를 켰어요.",again:"다시 듣기",pressBtn:"‘{b}’ 버튼을 눌러 주세요.",stepOf:"{n}단계 중 {i}단계",etaM:"약 {m}분",etaS:"약 {s}초",etaMS:"약 {m}분 {s}초",roomIs:"객실은 {r}호예요.",vatLab:"부가세 10% 포함",billLab:"{p} · {n}박",roomFee:"객실 요금",paidOn:"{c}에서 결제 완료",dueLab:"지금 결제할 금액",depLab:"보증금 카드 승인",depRate:"1박당 50,000원",depNote:"신용카드는 승인만 되고 청구되지 않아요. 체크카드는 일시 출금 후 체크아웃 때 환불되며, 카드사에 따라 3~7영업일 걸릴 수 있어요.",depT:"보증금 승인이 필요해요",depS:"객실 요금은 이미 결제되었어요. 카드를 리더기에 대고 보증금 승인만 해 주세요.",payBtnDep:"보증금 승인하기",payingDep:"보증금을 승인하고 있어요",depOkT:"보증금 승인이 완료되었어요",paidSum:"{a} 결제 · 보증금 {d} 승인",depSum:"보증금 {d} 승인",homeSDep:"보증금 승인은 완료되었어요. 카드키는 프런트에서 받으실 수 있어요.",payS2:"카드를 리더기에 대거나 꽂은 뒤 ‘카드 결제’를 눌러 주세요. 객실 요금 결제와 보증금 승인이 한 번에 진행돼요.",pkgLab:"패키지",inclLab:"포함 내역",nonSmoke:"금연 객실",maxP:"최대 {n}인",roomLab:"ROOM",camSwitch:"카메라 전환",etaLab:"예상 남은 시간",etaVal:"{m}분 {s}초",idleEtaLab:"예상 소요 시간",home:"처음으로",homeT:"처음으로 돌아갈까요?",homeS:"지금까지 진행한 내용은 저장되지 않아요.",homeSPaid:"결제는 이미 완료되었어요. 카드키는 프런트에서 받으실 수 있어요.",homeStay:"계속하기",homeGo:"처음으로 돌아가기",etaSoon:"거의 다 됐어요",qrS:"예약 확인 문자·메일의 QR을 카메라에 보여 주세요",idleDesc:["QR 또는 예약번호","자동으로 불러온 정보 확인","카드 결제","카드키 받기"],idleAvg:"예상 소요 시간 약 1분",
+ko:{left:"예상 남은 시간 {m}분 {s}초",bInfo:"시설 안내",bFloors:[["19F", "이그제큐티브 클럽 라운지"], ["7–18F", "객실"], ["6F", "실내 수영장 · 사우나 · 피트니스"], ["3F", "미팅룸 · 비즈니스 센터"], ["2F", "올데이다이닝 아르케(조식) · 그랜드볼룸"], ["1F", "로비 · 프런트 · 컨시어지 · 라운지 & 바 골드"], ["B1", "셀프 세탁실"], ["B2–B4", "주차장"]],bNameT:"예약자 영문 성(Last name)을 입력하세요",bNameS:"예: KIM",easy:"편하게 보기",a11yT:"편하게 보기",sizeLab:"글씨 크기",size0:"보통",size1:"크게",size2:"아주 크게",hcLab:"선명히 보기",hcD:"검은 바탕에 흰 글씨로 또렷하게",voiceLab:"안내 듣기",voiceD:"화면 안내를 소리로 읽어 드려요",slowLab:"천천히 하기",slowD:"남은 시간을 숨기고 여유 있게 진행해요",a11yClose:"닫기",voiceNo:"이 기기에서는 음성 안내를 쓸 수 없어요.",voiceOn:"안내 듣기를 켰어요.",again:"다시 듣기",pressBtn:"‘{b}’ 버튼을 눌러 주세요.",stepOf:"{n}단계 중 {i}단계",etaM:"약 {m}분",etaS:"약 {s}초",etaMS:"약 {m}분 {s}초",roomIs:"객실은 {r}호예요.",vatLab:"부가세 10% 포함",billLab:"{p} · {n}박",roomFee:"객실 요금",paidOn:"{c}에서 결제 완료",dueLab:"지금 결제할 금액",depLab:"보증금 카드 승인",depRate:"1박당 50,000원",depNote:"신용카드는 승인만 되고 청구되지 않아요. 체크카드는 일시 출금 후 체크아웃 때 환불되며, 카드사에 따라 3~7영업일 걸릴 수 있어요.",depT:"보증금 승인이 필요해요",depS:"객실 요금은 이미 결제되었어요. 카드를 리더기에 대고 보증금 승인만 해 주세요.",payBtnDep:"보증금 승인하기",payingDep:"보증금을 승인하고 있어요",depOkT:"보증금 승인이 완료되었어요",paidSum:"{a} 결제 · 보증금 {d} 승인",depSum:"보증금 {d} 승인",homeSDep:"보증금 승인은 완료되었어요. 카드키는 프런트에서 받으실 수 있어요.",payS2:"카드를 리더기에 대거나 꽂은 뒤 ‘카드 결제’를 눌러 주세요. 객실 요금 결제와 보증금 승인이 한 번에 진행돼요.",pkgLab:"패키지",inclLab:"포함 내역",nonSmoke:"금연 객실",maxP:"최대 {n}인",roomLab:"ROOM",camSwitch:"카메라 전환",etaLab:"예상 남은 시간",etaVal:"{m}분 {s}초",idleEtaLab:"예상 소요 시간",home:"처음으로",homeT:"처음으로 돌아갈까요?",homeS:"지금까지 진행한 내용은 저장되지 않아요.",homeSPaid:"결제는 이미 완료되었어요. 카드키는 프런트에서 받으실 수 있어요.",homeStay:"계속하기",homeGo:"처음으로 돌아가기",etaSoon:"거의 다 됐어요",qrS:"예약 확인 문자·메일의 QR을 카메라에 보여 주세요",idleDesc:["QR 또는 예약번호","자동으로 불러온 정보 확인","카드 결제","카드키 받기"],idleAvg:"예상 소요 시간 약 1분",
  qrTitle:"QR 코드를 카메라에 보여 주세요",qrHow:"예약 확인 문자나 메일의 QR을 네모 칸 안에 맞추고, 15~20cm 거리에서 잠시 멈춰 주세요.",camStarting:"카메라를 켜고 있어요",camAsk:"카메라 사용을 묻는 창이 뜨면 '허용'을 눌러 주세요.",camScanning:"QR 코드를 찾고 있어요",camDeniedT:"카메라를 사용할 수 없어요",camDenied:"카메라 사용이 허용되지 않았어요. 브라우저의 카메라 권한을 허용하거나, 예약번호로 입력해 주세요.",camNone:"이 기기에서 카메라를 찾지 못했어요. 예약번호로 입력해 주세요.",camUnsup:"이 화면에서는 카메라를 쓸 수 없어요. 예약번호로 입력해 주세요.",camSlow:"잘 읽히지 않으면 휴대폰 화면 밝기를 높이거나, 예약번호로 입력해 보세요.",qrNotBooking:"예약 QR 코드가 아니에요. 예약 확인 메일에 있는 QR을 보여 주세요.",useCode:"예약번호로 입력하기",simQR:"시연용 QR 시뮬레이션",simQRNote:"카메라 없이 시연용 예약(GD2611)으로 진행합니다. 실제 QR 인식이 아닙니다.",qrErrT:"등록되지 않은 QR 코드예요",
  simPay:"결제 시연 화면 · 실제로 결제되지 않습니다",payS:"카드를 리더기에 대거나 꽂은 뒤, 아래 '카드 결제'를 눌러 주세요.",payWait:"결제가 끝날 때까지 카드를 빼지 마세요.",payCancel:"결제 취소",payOkT:"결제가 완료되었어요",payRef:"승인번호(시연)",toKey:"카드키 받기",payFailT:"결제가 승인되지 않았어요",payFailTips:["카드를 끝까지 꽂았는지, IC칩 방향이 맞는지 확인해 주세요.","한도 초과나 해외 결제 차단일 수 있어요. 다른 카드로 해 보세요.","결제되지 않았으니 다시 시도해도 두 번 결제되지 않아요."],payRetry:"다시 결제하기",
  simKey:"가상 발급 · 실제 카드키 발급기와 연결되어 있지 않습니다",keyFailT:"카드키를 만들지 못했어요",keyFailB:"결제는 이미 완료되었고, 다시 결제되지 않아요. 카드키를 한 번 더 발급하거나 직원을 불러 주세요.",keyRetry:"카드키 다시 발급",simDone:"시연에서는 실제 카드키가 나오지 않습니다",
  callHint:"막히면 언제든 오른쪽 아래 '직원 호출'을 눌러 주세요.",faultT:"일시적인 문제가 생겼어요",faultS:"처음 화면으로 돌아가 다시 시작해 주세요. 계속되면 직원을 불러 주세요.",
  aiModeAI:"AI 연결됨",aiModeFAQ:"AI 미연결 · FAQ 안내",aiModeChk:"연결 확인 중",viaAI:"AI 답변 · 중요한 내용은 직원에게 확인하세요",viaFAQ:"자주 묻는 질문 자동 안내 (AI 답변 아님)",viaNone:"자동 안내 불가 · 직원 연결 권장",aiNote:"호텔 안내 정보를 바탕으로 AI가 답합니다.",aiNoteFAQ:"지금은 AI가 연결되지 않아, 미리 등록된 안내문에서 찾아 답합니다.",aiUrg:"긴급 상황이면 바로 119(화재·구급) 또는 112(경찰)에 연락해 주세요. 지금 직원을 연결해 드릴게요.",aiCmp:"불편을 드려 죄송해요. 바로 해결할 수 있도록 직원을 연결해 드릴게요.",aiReq:"{r} 요청을 접수했어요. 담당 직원이 곧 처리해 드릴게요.",reqNo:"요청번호 "},
-en:{left:"Est. {m} min {s} sec left",easy:"Easy view",a11yT:"Easy view",sizeLab:"Text size",size0:"Normal",size1:"Large",size2:"Extra large",hcLab:"High contrast",hcD:"White text on black for clearer reading",voiceLab:"Voice guide",voiceD:"Reads the screen aloud",slowLab:"Take it slow",slowD:"Hides the timer and gives you more time",a11yClose:"Close",voiceNo:"Voice guide isn’t available on this device.",voiceOn:"Voice guide is on.",again:"Repeat",pressBtn:"Press ‘{b}’.",stepOf:"Step {i} of {n}",etaM:"about {m} min",etaS:"about {s} sec",etaMS:"about {m} min {s} sec",roomIs:"Your room is {r}.",vatLab:"incl. 10% VAT",billLab:"{p} · {n} night(s)",roomFee:"Room charge",paidOn:"Paid on {c}",dueLab:"Amount to pay now",depLab:"Deposit hold",depRate:"50,000 KRW per night",depNote:"Credit cards are only authorized, not charged. Debit cards are charged temporarily and refunded after check-out, which can take 3–7 business days depending on your bank.",depT:"A deposit hold is needed",depS:"Your room is already paid. Just tap or insert your card to place the deposit hold.",payBtnDep:"Authorize deposit",payingDep:"Placing the deposit hold",depOkT:"Deposit hold complete",paidSum:"{a} paid · {d} deposit held",depSum:"{d} deposit held",homeSDep:"Your deposit hold is complete. You can collect your key at the front desk.",payS2:"Tap or insert your card, then press ‘Pay by card’. The room payment and the deposit hold are done together.",pkgLab:"Package",inclLab:"Included",nonSmoke:"Non-smoking",maxP:"Up to {n} guests",roomLab:"ROOM",camSwitch:"Switch camera",etaLab:"Time left (est.)",etaVal:"{m} min {s} sec",idleEtaLab:"Estimated time",home:"Start over",homeT:"Go back to the start?",homeS:"What you’ve done so far won’t be saved.",homeSPaid:"Your payment is already complete. You can collect your key at the front desk.",homeStay:"Continue",homeGo:"Start over",etaSoon:"Almost done",qrS:"Show the QR from your confirmation to the camera",idleDesc:["QR or booking number","Check your details","Pay by card","Get your key"],idleAvg:"Estimated time: about 1 minute",
+en:{left:"Est. {m} min {s} sec left",bInfo:"Facilities",bFloors:[["19F", "Executive Club Lounge"], ["7–18F", "Guest rooms"], ["6F", "Indoor pool · Sauna · Fitness"], ["3F", "Meeting rooms · Business center"], ["2F", "All-day dining ARCHE (breakfast) · Grand ballroom"], ["1F", "Lobby · Front desk · Concierge · Lounge & Bar GOLD"], ["B1", "Self laundry"], ["B2–B4", "Parking"]],bNameT:"Enter the guest’s last name",bNameS:"e.g. KIM",easy:"Easy view",a11yT:"Easy view",sizeLab:"Text size",size0:"Normal",size1:"Large",size2:"Extra large",hcLab:"High contrast",hcD:"White text on black for clearer reading",voiceLab:"Voice guide",voiceD:"Reads the screen aloud",slowLab:"Take it slow",slowD:"Hides the timer and gives you more time",a11yClose:"Close",voiceNo:"Voice guide isn’t available on this device.",voiceOn:"Voice guide is on.",again:"Repeat",pressBtn:"Press ‘{b}’.",stepOf:"Step {i} of {n}",etaM:"about {m} min",etaS:"about {s} sec",etaMS:"about {m} min {s} sec",roomIs:"Your room is {r}.",vatLab:"incl. 10% VAT",billLab:"{p} · {n} night(s)",roomFee:"Room charge",paidOn:"Paid on {c}",dueLab:"Amount to pay now",depLab:"Deposit hold",depRate:"50,000 KRW per night",depNote:"Credit cards are only authorized, not charged. Debit cards are charged temporarily and refunded after check-out, which can take 3–7 business days depending on your bank.",depT:"A deposit hold is needed",depS:"Your room is already paid. Just tap or insert your card to place the deposit hold.",payBtnDep:"Authorize deposit",payingDep:"Placing the deposit hold",depOkT:"Deposit hold complete",paidSum:"{a} paid · {d} deposit held",depSum:"{d} deposit held",homeSDep:"Your deposit hold is complete. You can collect your key at the front desk.",payS2:"Tap or insert your card, then press ‘Pay by card’. The room payment and the deposit hold are done together.",pkgLab:"Package",inclLab:"Included",nonSmoke:"Non-smoking",maxP:"Up to {n} guests",roomLab:"ROOM",camSwitch:"Switch camera",etaLab:"Time left (est.)",etaVal:"{m} min {s} sec",idleEtaLab:"Estimated time",home:"Start over",homeT:"Go back to the start?",homeS:"What you’ve done so far won’t be saved.",homeSPaid:"Your payment is already complete. You can collect your key at the front desk.",homeStay:"Continue",homeGo:"Start over",etaSoon:"Almost done",qrS:"Show the QR from your confirmation to the camera",idleDesc:["QR or booking number","Check your details","Pay by card","Get your key"],idleAvg:"Estimated time: about 1 minute",
  qrTitle:"Show your QR code to the camera",qrHow:"Fit the QR from your confirmation text or email inside the square and hold it still, 15–20 cm away.",camStarting:"Turning on the camera",camAsk:"If you’re asked about the camera, tap ‘Allow’.",camScanning:"Looking for a QR code",camDeniedT:"The camera isn’t available",camDenied:"Camera access was not allowed. Allow camera access in your browser, or enter your booking number instead.",camNone:"No camera was found on this device. Please enter your booking number.",camUnsup:"The camera can’t be used on this screen. Please enter your booking number.",camSlow:"If it won’t scan, turn up your phone’s brightness or enter your booking number.",qrNotBooking:"That isn’t a booking QR code. Please show the QR from your confirmation email.",useCode:"Enter booking number",simQR:"Demo QR simulation",simQRNote:"Continues with the demo booking (GD2611) without a camera. This is not real QR recognition.",qrErrT:"This QR code isn’t registered",
  simPay:"Payment demo · No real charge is made",payS:"Tap or insert your card on the reader, then press ‘Pay by card’.",payWait:"Please keep your card in until payment is done.",payCancel:"Cancel payment",payOkT:"Payment complete",payRef:"Approval no. (demo)",toKey:"Get my key",payFailT:"Your payment wasn’t approved",payFailTips:["Check that the card is fully inserted with the chip facing the right way.","Your limit or overseas payments may be blocked. Try another card.","Nothing was charged, so trying again won’t charge you twice."],payRetry:"Try payment again",
  simKey:"Virtual issue · Not connected to a real key card encoder",keyFailT:"We couldn’t make your key card",keyFailB:"Your payment is already complete and won’t be charged again. Try issuing the key again or call staff.",keyRetry:"Issue key again",simDone:"No real key card comes out in this demo",
  callHint:"If you get stuck, tap ‘Call staff’ at the bottom right anytime.",faultT:"Something went wrong",faultS:"Please go back to the start and try again. If it keeps happening, call staff.",
  aiModeAI:"AI connected",aiModeFAQ:"AI offline · FAQ answers",aiModeChk:"Checking",viaAI:"AI answer · Please confirm important details with staff",viaFAQ:"Automatic FAQ answer (not AI)",viaNone:"No automatic answer · Staff recommended",aiNote:"AI answers from the hotel’s guest information.",aiNoteFAQ:"AI isn’t connected right now, so answers come from our saved FAQ.",aiUrg:"If this is an emergency, call 119 (fire/ambulance) or 112 (police) now. I’m connecting you to staff.",aiCmp:"I’m sorry for the trouble. Let me connect you to a staff member right away.",aiReq:"Your request ({r}) has been sent. Our staff will take care of it shortly.",reqNo:"Request "},
-zh:{left:"预计还需 {m}分{s}秒",easy:"易用模式",a11yT:"易用模式",sizeLab:"字体大小",size0:"标准",size1:"大",size2:"特大",hcLab:"高对比度",hcD:"黑底白字，看得更清楚",voiceLab:"语音引导",voiceD:"朗读屏幕内容",slowLab:"慢慢来",slowD:"隐藏剩余时间，从容办理",a11yClose:"关闭",voiceNo:"此设备无法使用语音引导。",voiceOn:"已开启语音引导。",again:"再听一次",pressBtn:"请点击“{b}”。",stepOf:"第{i}步，共{n}步",etaM:"约{m}分钟",etaS:"约{s}秒",etaMS:"约{m}分{s}秒",roomIs:"您的房间是{r}号。",vatLab:"含10%增值税",billLab:"{p} · {n}晚",roomFee:"房费",paidOn:"已在{c}支付",dueLab:"本次付款金额",depLab:"押金预授权",depRate:"每晚50,000韩元",depNote:"信用卡仅预授权，不会扣款。借记卡会先暂时扣款，退房后退还，视发卡行需3~7个工作日。",depT:"需要授权押金",depS:"房费已支付。请将卡片放在读卡器上，仅需授权押金。",payBtnDep:"授权押金",payingDep:"正在授权押金",depOkT:"押金授权完成",paidSum:"已付{a} · 押金{d}已授权",depSum:"押金{d}已授权",homeSDep:"押金已授权，可在前台领取房卡。",payS2:"请刷卡或插卡后点击“刷卡付款”。房费付款和押金授权将一并完成。",pkgLab:"套餐",inclLab:"包含内容",nonSmoke:"禁烟客房",maxP:"最多{n}人",roomLab:"ROOM",camSwitch:"切换摄像头",etaLab:"预计还需",etaVal:"{m}分{s}秒",idleEtaLab:"预计用时",home:"返回首页",homeT:"要返回首页吗？",homeS:"目前为止的操作内容不会被保存。",homeSPaid:"付款已完成，可在前台领取房卡。",homeStay:"继续办理",homeGo:"返回首页",etaSoon:"马上就好",
+zh:{left:"预计还需 {m}分{s}秒",bInfo:"设施指南",bFloors:[["19F", "行政酒廊"], ["7–18F", "客房"], ["6F", "室内游泳池 · 桑拿 · 健身房"], ["3F", "会议室 · 商务中心"], ["2F", "全日餐厅 ARCHE（早餐）· 宴会厅"], ["1F", "大堂 · 前台 · 礼宾 · GOLD 酒廊"], ["B1", "自助洗衣房"], ["B2–B4", "停车场"]],bNameT:"请输入预订人的英文姓氏",bNameS:"例：KIM",easy:"易用模式",a11yT:"易用模式",sizeLab:"字体大小",size0:"标准",size1:"大",size2:"特大",hcLab:"高对比度",hcD:"黑底白字，看得更清楚",voiceLab:"语音引导",voiceD:"朗读屏幕内容",slowLab:"慢慢来",slowD:"隐藏剩余时间，从容办理",a11yClose:"关闭",voiceNo:"此设备无法使用语音引导。",voiceOn:"已开启语音引导。",again:"再听一次",pressBtn:"请点击“{b}”。",stepOf:"第{i}步，共{n}步",etaM:"约{m}分钟",etaS:"约{s}秒",etaMS:"约{m}分{s}秒",roomIs:"您的房间是{r}号。",vatLab:"含10%增值税",billLab:"{p} · {n}晚",roomFee:"房费",paidOn:"已在{c}支付",dueLab:"本次付款金额",depLab:"押金预授权",depRate:"每晚50,000韩元",depNote:"信用卡仅预授权，不会扣款。借记卡会先暂时扣款，退房后退还，视发卡行需3~7个工作日。",depT:"需要授权押金",depS:"房费已支付。请将卡片放在读卡器上，仅需授权押金。",payBtnDep:"授权押金",payingDep:"正在授权押金",depOkT:"押金授权完成",paidSum:"已付{a} · 押金{d}已授权",depSum:"押金{d}已授权",homeSDep:"押金已授权，可在前台领取房卡。",payS2:"请刷卡或插卡后点击“刷卡付款”。房费付款和押金授权将一并完成。",pkgLab:"套餐",inclLab:"包含内容",nonSmoke:"禁烟客房",maxP:"最多{n}人",roomLab:"ROOM",camSwitch:"切换摄像头",etaLab:"预计还需",etaVal:"{m}分{s}秒",idleEtaLab:"预计用时",home:"返回首页",homeT:"要返回首页吗？",homeS:"目前为止的操作内容不会被保存。",homeSPaid:"付款已完成，可在前台领取房卡。",homeStay:"继续办理",homeGo:"返回首页",etaSoon:"马上就好",
 qrS:"请将确认短信或邮件中的二维码对准摄像头",idleDesc:["二维码或预订号","确认自动读取的信息","刷卡付款","领取房卡"],idleAvg:"预计约 1 分钟完成",
  qrTitle:"请将二维码对准摄像头",qrHow:"请将确认短信或邮件中的二维码放入方框内，保持15~20厘米距离并稍作停留。",camStarting:"正在打开摄像头",camAsk:"如弹出摄像头使用提示，请点击“允许”。",camScanning:"正在识别二维码",camDeniedT:"无法使用摄像头",camDenied:"未允许使用摄像头。请在浏览器中允许摄像头权限，或改为输入预订号。",camNone:"此设备未找到摄像头，请输入预订号。",camUnsup:"此页面无法使用摄像头，请输入预订号。",camSlow:"如果无法识别，请调高手机屏幕亮度，或改为输入预订号。",qrNotBooking:"这不是预订二维码，请出示确认邮件中的二维码。",useCode:"输入预订号",simQR:"演示用二维码模拟",simQRNote:"不使用摄像头，以演示预订（GD2611）继续办理。这不是实际的二维码识别。",qrErrT:"该二维码未登记",
  simPay:"付款演示画面 · 不会实际扣款",payS:"请在读卡器上刷卡或插卡，然后点击下方“刷卡付款”。",payWait:"付款完成前请勿取出卡片。",payCancel:"取消付款",payOkT:"付款已完成",payRef:"授权号（演示）",toKey:"领取房卡",payFailT:"付款未获批准",payFailTips:["请确认卡片已完全插入，芯片方向正确。","可能超出额度或境外支付受限，请换一张卡试试。","本次未扣款，重新尝试不会重复扣款。"],payRetry:"重新付款",
@@ -709,7 +717,7 @@ qrS:"请将确认短信或邮件中的二维码对准摄像头",idleDesc:["二�
  callHint:"遇到困难时，可随时点击右下角“呼叫员工”。",faultT:"出现了暂时性问题",faultS:"请返回首页重新开始。如果问题持续，请呼叫员工。",
  aiModeAI:"AI 已连接",aiModeFAQ:"AI 未连接 · 常见问题解答",aiModeChk:"正在确认",viaAI:"AI 回答 · 重要事项请向员工确认",viaFAQ:"常见问题自动解答（非 AI）",viaNone:"无法自动解答 · 建议联系员工",aiNote:"AI 根据酒店信息回答。",aiNoteFAQ:"目前 AI 未连接，将从已登记的常见问题中查找答案。",aiUrg:"如遇紧急情况，请立即拨打 119（火警·急救）或 112（警察）。现在为您联系员工。",aiCmp:"给您带来不便，非常抱歉。现在为您联系员工尽快处理。",aiReq:"已收到您的请求（{r}），工作人员将尽快为您处理。",reqNo:"请求编号 ",
  bCodeHelp:"请输入预订号后点击确认。",bPhoneT:"请输入手机号码后4位",bConfT:"预订信息",bErr:"预订信息不一致。（ERR-102）",bErrT:"错误"},
-ja:{left:"残り約{m}分{s}秒（目安）",easy:"見やすく",a11yT:"見やすく・聞きやすく",sizeLab:"文字の大きさ",size0:"標準",size1:"大きく",size2:"とても大きく",hcLab:"くっきり表示",hcD:"黒い背景に白い文字で見やすく",voiceLab:"音声ガイド",voiceD:"画面の案内を読み上げます",slowLab:"ゆっくり",slowD:"残り時間を隠して、ゆっくり進めます",a11yClose:"閉じる",voiceNo:"この端末では音声ガイドを使えません。",voiceOn:"音声ガイドをオンにしました。",again:"もう一度聞く",pressBtn:"「{b}」を押してください。",stepOf:"{n}ステップ中{i}",etaM:"約{m}分",etaS:"約{s}秒",etaMS:"約{m}分{s}秒",roomIs:"お部屋は{r}号室です。",vatLab:"付加価値税10%込み",billLab:"{p} · {n}泊",roomFee:"客室料金",paidOn:"{c}で支払い済み",dueLab:"今回お支払い金額",depLab:"デポジット仮押さえ",depRate:"1泊50,000ウォン",depNote:"クレジットカードは承認のみで請求されません。デビットカードは一時的に引き落とされ、チェックアウト後に返金されます（カード会社により3〜7営業日）。",depT:"デポジットの承認が必要です",depS:"客室料金はお支払い済みです。カードをリーダーにかざして、デポジットの承認だけ行ってください。",payBtnDep:"デポジットを承認",payingDep:"デポジットを承認しています",depOkT:"デポジットの承認が完了しました",paidSum:"{a} 決済 · デポジット{d} 承認",depSum:"デポジット{d} 承認",homeSDep:"デポジットの承認は完了しています。カードキーはフロントでお受け取りいただけます。",payS2:"カードをかざすか差し込み、「カードで支払う」を押してください。客室料金の決済とデポジットの承認を一度に行います。",pkgLab:"プラン",inclLab:"含まれるもの",nonSmoke:"禁煙",maxP:"最大{n}名",roomLab:"ROOM",camSwitch:"カメラ切替",etaLab:"残り時間（目安）",etaVal:"{m}分{s}秒",idleEtaLab:"所要時間（目安）",home:"最初に戻る",homeT:"最初の画面に戻りますか？",homeS:"ここまでの内容は保存されません。",homeSPaid:"お支払いは完了しています。カードキーはフロントでお受け取りいただけます。",homeStay:"続ける",homeGo:"最初に戻る",etaSoon:"まもなく完了します",qrS:"予約確認メールのQRをカメラに向けてください",idleDesc:["QRまたは予約番号","読み込んだ内容を確認","カード決済","カードキーを受け取る"],idleAvg:"所要時間の目安：約1分",
+ja:{left:"残り約{m}分{s}秒（目安）",bInfo:"館内案内",bFloors:[["19F", "エグゼクティブクラブラウンジ"], ["7–18F", "客室"], ["6F", "屋内プール · サウナ · フィットネス"], ["3F", "会議室 · ビジネスセンター"], ["2F", "オールデイダイニング ARCHE（朝食）· 宴会場"], ["1F", "ロビー · フロント · コンシェルジュ · ラウンジ&バー GOLD"], ["B1", "セルフランドリー"], ["B2–B4", "駐車場"]],bNameT:"予約者の英字の姓（Last name）を入力してください",bNameS:"例：KIM",easy:"見やすく",a11yT:"見やすく・聞きやすく",sizeLab:"文字の大きさ",size0:"標準",size1:"大きく",size2:"とても大きく",hcLab:"くっきり表示",hcD:"黒い背景に白い文字で見やすく",voiceLab:"音声ガイド",voiceD:"画面の案内を読み上げます",slowLab:"ゆっくり",slowD:"残り時間を隠して、ゆっくり進めます",a11yClose:"閉じる",voiceNo:"この端末では音声ガイドを使えません。",voiceOn:"音声ガイドをオンにしました。",again:"もう一度聞く",pressBtn:"「{b}」を押してください。",stepOf:"{n}ステップ中{i}",etaM:"約{m}分",etaS:"約{s}秒",etaMS:"約{m}分{s}秒",roomIs:"お部屋は{r}号室です。",vatLab:"付加価値税10%込み",billLab:"{p} · {n}泊",roomFee:"客室料金",paidOn:"{c}で支払い済み",dueLab:"今回お支払い金額",depLab:"デポジット仮押さえ",depRate:"1泊50,000ウォン",depNote:"クレジットカードは承認のみで請求されません。デビットカードは一時的に引き落とされ、チェックアウト後に返金されます（カード会社により3〜7営業日）。",depT:"デポジットの承認が必要です",depS:"客室料金はお支払い済みです。カードをリーダーにかざして、デポジットの承認だけ行ってください。",payBtnDep:"デポジットを承認",payingDep:"デポジットを承認しています",depOkT:"デポジットの承認が完了しました",paidSum:"{a} 決済 · デポジット{d} 承認",depSum:"デポジット{d} 承認",homeSDep:"デポジットの承認は完了しています。カードキーはフロントでお受け取りいただけます。",payS2:"カードをかざすか差し込み、「カードで支払う」を押してください。客室料金の決済とデポジットの承認を一度に行います。",pkgLab:"プラン",inclLab:"含まれるもの",nonSmoke:"禁煙",maxP:"最大{n}名",roomLab:"ROOM",camSwitch:"カメラ切替",etaLab:"残り時間（目安）",etaVal:"{m}分{s}秒",idleEtaLab:"所要時間（目安）",home:"最初に戻る",homeT:"最初の画面に戻りますか？",homeS:"ここまでの内容は保存されません。",homeSPaid:"お支払いは完了しています。カードキーはフロントでお受け取りいただけます。",homeStay:"続ける",homeGo:"最初に戻る",etaSoon:"まもなく完了します",qrS:"予約確認メールのQRをカメラに向けてください",idleDesc:["QRまたは予約番号","読み込んだ内容を確認","カード決済","カードキーを受け取る"],idleAvg:"所要時間の目安：約1分",
  qrTitle:"QRコードをカメラに向けてください",qrHow:"予約確認のSMSやメールのQRを四角い枠に合わせ、15〜20cmの距離で少し止めてください。",camStarting:"カメラを起動しています",camAsk:"カメラの使用確認が表示されたら「許可」を押してください。",camScanning:"QRコードを探しています",camDeniedT:"カメラを使用できません",camDenied:"カメラの使用が許可されませんでした。ブラウザでカメラを許可するか、予約番号を入力してください。",camNone:"この端末でカメラが見つかりません。予約番号を入力してください。",camUnsup:"この画面ではカメラを使用できません。予約番号を入力してください。",camSlow:"読み取れない場合は、スマートフォンの画面を明るくするか、予約番号を入力してください。",qrNotBooking:"予約のQRコードではありません。予約確認メールのQRを表示してください。",useCode:"予約番号を入力する",simQR:"デモ用QRシミュレーション",simQRNote:"カメラを使わず、デモ予約（GD2611）で進みます。実際のQR読み取りではありません。",qrErrT:"登録されていないQRコードです",
  simPay:"決済デモ画面 · 実際には請求されません",payS:"カードをリーダーにかざすか差し込み、下の「カードで支払う」を押してください。",payWait:"決済が終わるまでカードを抜かないでください。",payCancel:"決済をキャンセル",payOkT:"お支払いが完了しました",payRef:"承認番号（デモ）",toKey:"カードキーを受け取る",payFailT:"決済が承認されませんでした",payFailTips:["カードが奥まで入っているか、ICチップの向きをご確認ください。","限度額や海外決済の制限の可能性があります。別のカードをお試しください。","請求は発生していないため、再試行しても二重に請求されません。"],payRetry:"もう一度支払う",
  simKey:"仮想発行 · 実際のカードキー発行機とは接続されていません",keyFailT:"カードキーを作成できませんでした",keyFailB:"お支払いは完了しており、再度請求されることはありません。もう一度発行するか、スタッフをお呼びください。",keyRetry:"カードキーを再発行",simDone:"デモでは実際のカードキーは出てきません",
@@ -945,6 +953,7 @@ const $=s=>document.querySelector(s);
 const esc=s=>String(s).replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
 const won=n=>{const l=K.lang;return l==="ko"?n.toLocaleString("ko-KR")+"원":l==="zh"?n.toLocaleString("en-US")+" 韩元":l==="ja"?n.toLocaleString("en-US")+" ウォン":"KRW "+n.toLocaleString("en-US")};
 const depOf=r=>50000*r.n;
+const LNAME={GD2611:"KIM",BK58201:"KIM"};
 const day=iso=>{const d=new Date(iso+"T12:00:00");const m=d.getMonth()+1,dd=d.getDate(),w=d.getDay();const l=K.lang;return l==="ko"?`${m}.${dd} (${"일월화수목금토"[w]})`:l==="zh"?`${m}月${dd}日（${["周日","周一","周二","周三","周四","周五","周六"][w]}）`:l==="ja"?`${m}月${dd}日（${"日月火水木金土"[w]}）`:d.toLocaleDateString("en-US",{weekday:"short",month:"short",day:"numeric"})};
 const ls={get(k,d){try{const v=localStorage.getItem(k);return v==null?d:JSON.parse(v)}catch(e){return d}},set(k,v){try{localStorage.setItem(k,JSON.stringify(v))}catch(e){}}};
 const ICON={
@@ -1024,10 +1033,10 @@ let kioskNo=ls.get("easyin.kiosk",1);
 const K={screen:"idle",lang:"ko",easy:false,code:"",phone:"",resv:null,fails:0,sess:null,rating:0,callId:null,timer:null,callOpen:false,variant:ls.get("easyin.variant","improved"),tester:ls.get("easyin.tester",""),aiOpen:false,ai:[],aiBusy:false,aiCat:0};
 const base=()=>K.variant==="baseline";
 let sampleFn=null; let aiState="chk";
-K.demoFail=""; K.qr={state:"starting",msg:null,slow:false}; K.errKind="code"; K.size=0; K.hc=false; K.voice=false; K.slow=false; K.a11yOpen=false;
+K.lname=""; K.demoFail=""; K.qr={state:"starting",msg:null,slow:false}; K.errKind="code"; K.size=0; K.hc=false; K.voice=false; K.slow=false; K.a11yOpen=false;
 const t=k=>(T[K.lang][k]!==undefined?T[K.lang][k]:T.ko[k]);
 function newSession(){K.sess={start:Date.now(),errors:0,retries:0,staff:0,method:null,errStages:[],paid:false,done:false};K.fails=0;K.code="";K.resv=null;K.rating=0}
-function stepIndex(){return {find:0,qr:0,code:0,phone:0,error:0,confirm:1,pay:2,paying:2,payok:2,payfail:2,key:3,keyfail:3,done:4,rate:4}[K.screen]}
+function stepIndex(){return {find:0,qr:0,code:0,bname:0,phone:0,error:0,confirm:1,pay:2,paying:2,payok:2,payfail:2,key:3,keyfail:3,done:4,rate:4}[K.screen]}
 /* live countdown: re-anchored on each step change, ticks every second, never drops below what the remaining steps still need */
 function stepsAfterSec(){const i=stepIndex();if(i===undefined||i>=4)return 0;let s=0;for(let j=i+1;j<4;j++){if(j===2&&K.resv&&(K.sess&&K.sess.paid))continue;s+=STEP_SEC[j]}return s}
 function etaAnchor(){const i=stepIndex();if(i===undefined||i>=4){K.etaStep=null;K.etaEnd=0;return}if(K.etaStep!==i||!K.etaEnd){K.etaStep=i;K.etaEnd=Date.now()+stepsLeftSec()*1000}}
@@ -1054,7 +1063,7 @@ function header(){
 }
 function footer(){
   let langs=LANGS.map(([c,n])=>`<button class="k-chip" data-lang="${c}" lang="${c==="zh"?"zh-CN":c}" aria-pressed="${K.lang===c}">${n}</button>`).join("");
-  if(base())return `<div class="k-foot">${langs}<span class="grow"></span></div>`;
+  if(base())return `<div class="k-foot">${langs}<span class="grow"></span>${K.screen==="idle"?`<button class="k-chip" data-go="binfo">${esc(t("bInfo"))}</button>`:""}</div>`;
   const a11yOn=K.size>0||K.hc||K.voice||K.slow;
   return `<div class="k-foot"><button class="k-chip" id="easyBtn" aria-pressed="${a11yOn}" aria-expanded="${K.a11yOpen}">${ICON.easy}${esc(t("easy"))}</button>${K.voice?`<button class="k-chip" id="voiceAgain"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M11 5 6 9H3v6h3l5 4z"/><path d="M15.5 8.5a5 5 0 0 1 0 7M18.5 5.5a9 9 0 0 1 0 13"/></svg>${esc(t("again"))}</button>`:""}${langs}<span class="grow"></span><button class="aibtn" id="aiBtn" aria-expanded="${K.aiOpen}">${ICON.chat}${esc(t("ai"))}</button><button class="callbtn" id="callBtn">${ICON.bell}${esc(t("call"))}</button></div>`;
 }
@@ -1067,6 +1076,11 @@ function body(){
     const steps=t("steps").map((n,i)=>`<li><b>${i+1}</b>${esc(n)}<span>${esc(desc[i])}</span></li>`).join("");
     return `<div class="k-body k-idle"><div class="idle-l"><div class="eyebrow">WELCOME · HOTEL GIDAE SEOUL</div><div class="big">${esc(t("idleBig")).replace("\n","<br>")}</div><div class="rule"></div><p class="k-sub" style="margin:0">${esc(t("idleSub"))}</p><button class="tap" data-go="find">${esc(t("start"))}</button><div class="idle-time"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="13" r="8"/><path d="M12 9v4l2.5 2.5M9 2h6"/></svg>${esc(t("idleAvg"))}</div></div>
     <div class="idle-r"><div class="clock-big" id="kclock">${tm}</div><div class="idle-date">${esc(dt)}</div><ol class="idle-steps">${steps}</ol></div></div>`;
+  }
+  if(s==="binfo"){
+    const rows=t("bFloors").map(([f,n])=>`<tr><th>${esc(f)}</th><td>${esc(n)}</td></tr>`).join("");
+    return `<div class="k-body"><h2 class="k-title">${esc(t("bInfo"))}</h2><table class="b-floors">${rows}</table>
+    <div class="k-actions"><button class="k-btn ghost" data-go="idle">${esc(t("back"))}</button></div></div>`;
   }
   if(s==="find"){
     return `<div class="k-body"><h2 class="k-title">${esc(t("findT"))}</h2><p class="k-sub">${esc(t("findS"))}</p>
@@ -1092,12 +1106,19 @@ function body(){
     <div class="code-row"><div class="code-box">${K.code?esc(K.code):"&nbsp;"}</div></div><div class="pad">${pad}</div>
     <div class="k-actions"><button class="k-btn ghost" data-go="idle">${esc(t("back"))}</button><button class="k-btn main" id="bNext" ${K.code.length<3?"disabled":""}>${esc(t("ok"))}</button></div></div>`;
   }
+  if(s==="bname"){
+    const keys="ABCDEFGHIJKLMNOPQRSTUVWXYZ".split("");
+    const pad=keys.map(k=>`<button data-nkey="${k}">${k}</button>`).join("")+`<button class="wide" data-nkey="del">${esc(t("del"))}</button>`;
+    return `<div class="k-body"><h2 class="k-title">${esc(t("bNameT"))}</h2><p class="k-sub">${esc(t("bNameS"))}</p>
+    <div class="code-row"><div class="code-box">${K.lname?esc(K.lname):"&nbsp;"}</div></div><div class="pad">${pad}</div>
+    <div class="k-actions"><button class="k-btn ghost" data-go="code">${esc(t("back"))}</button><button class="k-btn main" id="bNameNext" ${K.lname.length<2?"disabled":""}>${esc(t("ok"))}</button></div></div>`;
+  }
   if(s==="phone"){
     const keys=["1","2","3","4","5","6","7","8","9","0"];
     const pad=keys.map(k=>`<button data-pkey="${k}">${k}</button>`).join("")+`<button class="wide" data-pkey="del">${esc(t("del"))}</button>`;
     return `<div class="k-body"><h2 class="k-title">${esc(t("bPhoneT"))}</h2><p class="k-sub">${esc(K.code)}</p>
     <div class="code-row"><div class="code-box">${K.phone?esc(K.phone.replace(/./g,"●")):"&nbsp;"}</div></div><div class="pad">${pad}</div>
-    <div class="k-actions"><button class="k-btn ghost" data-go="code">${esc(t("back"))}</button><button class="k-btn main" id="bFind" ${K.phone.length<4?"disabled":""}>${esc(t("ok"))}</button></div></div>`;
+    <div class="k-actions"><button class="k-btn ghost" data-go="bname">${esc(t("back"))}</button><button class="k-btn main" id="bFind" ${K.phone.length<4?"disabled":""}>${esc(t("ok"))}</button></div></div>`;
   }
   if(s==="code"){
     const keys=["1","2","3","4","5","6","7","8","9","0","G","D","B","K"];
@@ -1534,10 +1555,12 @@ function kioskClick(b){
   if(b.dataset.sugg){askAI(b.dataset.sugg);return}
   if(b.dataset.aicall!==undefined){K.aiOpen=false;callStaff();return}
   if(b.dataset.pkey){const k=b.dataset.pkey;if(k==="del")K.phone=K.phone.slice(0,-1);else if(K.phone.length<4)K.phone+=k;renderKiosk();return}
-  if(b.id==="bNext"){K.phone="";go("phone");return}
+  if(b.dataset.nkey){const k=b.dataset.nkey;if(k==="del")K.lname=K.lname.slice(0,-1);else if(K.lname.length<20)K.lname+=k;renderKiosk();return}
+  if(b.id==="bNext"){K.lname="";go("bname");return}
+  if(b.id==="bNameNext"){K.phone="";go("phone");return}
   if(b.id==="bFind"){
     const r=RESV[K.code];
-    if(r&&PHONE[K.code]===K.phone){K.resv=r;go("confirm")}
+    if(r&&PHONE[K.code]===K.phone&&LNAME[K.code]===K.lname){K.resv=r;go("confirm")}
     else{K.fails++;K.sess.errors++;K.sess.errStages.push("lookup");log("error",{stage:"lookup",code:"not_found",lang:K.lang});go("error")}
     return}
   if(b.id==="callBtn"||b.id==="callBig"){callStaff();return}
@@ -1576,17 +1599,19 @@ ti.addEventListener("input",()=>{K.tester=ti.value.trim().toUpperCase();ls.set("
    Each tester uses screen A and screen B (order randomised, names hidden to avoid bias),
    answers 3 questions, then copies a result card into the group chat. Nothing is sent anywhere automatically. */
 const RT_KEY="easyin.rt";
-var RT=Object.assign({on:false,stage:"intro",nick:"",id:"",order:[],round:0,res:{},ab:{baseline:0,improved:0},help:{},better:"",note:"",device:""},ls.get(RT_KEY,{}));
+/* Google Form that collects results: action = .../formResponse, entry = the 결과 field id. Empty = copy-only mode. */
+const RT_FORM={action:"https://docs.google.com/forms/d/e/1FAIpQLSdoGlb7zPybe2L9qotCP7UKpwCMTJCPKy0Z_hqpNgEiOtTRJQ/formResponse",entry:"entry.596074207"};
+var RT=Object.assign({on:false,stage:"intro",nick:"",id:"",order:[],round:0,res:{},ab:{baseline:0,improved:0},help:{},info:{},infoT0:0,better:"",note:"",device:"",sent:false},ls.get(RT_KEY,{}));
 RT.on=/[?&]test\b/.test(location.search)||location.hash==="#test";
-function rtSave(){ls.set(RT_KEY,{stage:RT.stage,nick:RT.nick,id:RT.id,order:RT.order,round:RT.round,res:RT.res,ab:RT.ab,help:RT.help,better:RT.better,note:RT.note,device:RT.device})}
+function rtSave(){ls.set(RT_KEY,{stage:RT.stage,nick:RT.nick,id:RT.id,order:RT.order,round:RT.round,res:RT.res,ab:RT.ab,help:RT.help,info:RT.info,infoT0:RT.infoT0,better:RT.better,note:RT.note,device:RT.device,sent:RT.sent})}
 const rtName=v=>RT.order.indexOf(v)===0?"A 화면":"B 화면";
 const RT_V={baseline:"기존형",improved:"개선형(EASY IN)"};
 function rtDevice(){const u=navigator.userAgent;return /iPad|Tablet/i.test(u)||(/Macintosh/.test(u)&&navigator.maxTouchPoints>1)?"태블릿":/Mobi|Android|iPhone/i.test(u)?"휴대폰":"PC"}
-function rtApplyRound(){const v=RT.order[RT.round];K.variant=v;K.tester=RT.id;setLabel();}
+function rtApplyRound(){const v=RT.order[RT.round];K.variant=v;K.tester=RT.id;setLabel();K.demoFail="pay";const fs=document.getElementById("failSel");if(fs)fs.value="pay";}
 function rtStart(nick){
   RT.nick=nick.slice(0,20);RT.id="R-"+RT.nick.replace(/\s+/g,"").toUpperCase();
   RT.order=Math.random()<.5?["baseline","improved"]:["improved","baseline"];
-  RT.round=0;RT.res={};RT.ab={baseline:0,improved:0};RT.help={};RT.better="";RT.note="";RT.device=rtDevice();RT.stage="task";
+  RT.round=0;RT.res={};RT.ab={baseline:0,improved:0};RT.help={};RT.info={};RT.better="";RT.note="";RT.sent=false;RT.device=rtDevice();RT.stage="task";
   rtSave();rtApplyRound();go("idle");
 }
 /* called when a test round reaches the thank-you screen */
@@ -1594,15 +1619,17 @@ function rtCapture(){
   if(!RT.on||RT.stage!=="task"||!K.sess||!K.sess.done)return false;
   const v=RT.order[RT.round],s=K.sess;
   RT.res[v]={dur:s.dur||Math.round((Date.now()-s.start)/1000),errors:s.errors,retries:s.retries,staff:s.staff,rating:s.rated?K.rating:null};
-  RT.stage=RT.round===0?"between":"survey";rtSave();renderKiosk();return true;
+  RT.stage="info";RT.infoT0=Date.now();K.rtShow=true;rtSave();renderKiosk();return true;
 }
+function rtInfoDone(ans){const v=RT.order[RT.round];RT.info=RT.info||{};RT.info[v]={ans:ans,ok:ans==="6",sec:Math.round((Date.now()-(RT.infoT0||Date.now()))/1000)};RT.stage=RT.round===0?"between":"survey";K.rtShow=true;rtSave();renderKiosk()}
 function rtNext(){RT.round=1;RT.stage="task";rtSave();rtApplyRound();go("idle")}
 function rtText(){
   const yn=v=>RT.help[v]===true?"예":RT.help[v]===false?"아니요":"-";
-  const line=v=>{const r=RT.res[v]||{};return `• ${RT_V[v]}: ${r.dur!=null?r.dur+"초":"-"} · 오류 ${r.errors??"-"}회 · 재시도 ${r.retries??"-"}회${v==="improved"?` · 직원 호출 ${r.staff??0}회`:""} · 도움 필요 ${yn(v)} · 만족 ${r.rating!=null?r.rating+"점":"-"}${RT.ab[v]?` · 중도 포기 ${RT.ab[v]}회`:""}`};
+  const inf=v=>{const i=(RT.info||{})[v];return !i?"-":i.ans===""?`모름(${i.sec}초)`:i.ok?`정답(${i.sec}초)`:`오답 ${i.ans}층(${i.sec}초)`};
+  const line=v=>{const r=RT.res[v]||{};return `• ${RT_V[v]}: 체크인 ${r.dur!=null?r.dur+"초":"-"} · 오류 ${r.errors??"-"}회 · 재시도 ${r.retries??"-"}회${v==="improved"?` · 직원 호출 ${r.staff??0}회`:""} · 도움 필요 ${yn(v)} · 만족 ${r.rating!=null?r.rating+"점":"-"} · 수영장 층 찾기 ${inf(v)}${RT.ab[v]?` · 중도 포기 ${RT.ab[v]}회`:""}`};
   const better=RT.better==="same"?"비슷해요":RT.better?RT_V[RT.better]:"-";
-  const code=v=>{const r=RT.res[v]||{};return [r.dur??"",r.errors??"",r.retries??"",r.staff??"",RT.help[v]===true?1:RT.help[v]===false?0:"",r.rating??"",RT.ab[v]||0].join(",")};
-  return `[EASY IN 원격 테스트] ${RT.nick} · ${RT.device} · 순서 ${RT.order.map(v=>RT_V[v].replace("(EASY IN)","")).join("→")}\n${line("baseline")}\n${line("improved")}\n• 더 편했던 쪽: ${better}\n• 불편했던 점: ${RT.note||"-"}\nEI|v1|b:${code("baseline")}|i:${code("improved")}|p:${RT.better==="baseline"?"b":RT.better==="improved"?"i":RT.better==="same"?"s":""}|o:${RT.order.map(v=>v[0]).join("")}`;
+  const code=v=>{const r=RT.res[v]||{};const i=(RT.info||{})[v];return [r.dur??"",r.errors??"",r.retries??"",r.staff??"",RT.help[v]===true?1:RT.help[v]===false?0:"",r.rating??"",RT.ab[v]||0,!i?"":i.ans===""?-1:i.ok?1:0,i?i.sec:""].join(",")};
+  return `[EASY IN 원격 테스트] ${RT.nick} · ${RT.device} · 순서 ${RT.order.map(v=>RT_V[v].replace("(EASY IN)","")).join("→")}\n${line("baseline")}\n${line("improved")}\n• 더 편했던 쪽: ${better}\n• 불편했던 점: ${RT.note||"-"}\nEI|v2|b:${code("baseline")}|i:${code("improved")}|p:${RT.better==="baseline"?"b":RT.better==="improved"?"i":RT.better==="same"?"s":""}|o:${RT.order.map(v=>v[0]).join("")}`;
 }
 function rtModal(){
   if(!RT.on)return "";
@@ -1614,9 +1641,14 @@ function rtModal(){
     <button class="k-btn main" id="rtGo">시작하기</button>`);
   if(RT.stage==="task"&&K.rtShow!==false&&K.screen==="idle"){
     const v=RT.order[RT.round];
-    return ov(`<h3>테스트 ${RT.round+1}/2 · ${rtName(v)}</h3><p class="rt-task"><b>과제</b> 예약번호 <b>GD2611</b>로 체크인을 끝까지 해 주세요.${v==="baseline"?"<br>휴대폰 뒷자리를 물어보면 <b>1234</b>를 입력하세요.":"<br>막히면 화면에 있는 도움 기능을 자유롭게 써도 돼요."}</p>
-    <p class="rt-small">평소 호텔에서 하듯 편하게 해 주세요. 시간은 자동으로 재요. 마지막에 별점도 남겨 주세요.</p><button class="k-btn main" id="rtTaskOk">시작</button>`);
+    return ov(`<h3>테스트 ${RT.round+1}/2 · ${rtName(v)}</h3>${rtMsg()}<p class="rt-task"><b>과제 1</b> 위 예약으로 체크인을 끝까지 해 주세요. 화면에서 필요한 정보를 물어보면 위 문자를 보고 입력하면 돼요.</p>
+    <p class="rt-small">평소 호텔에서 하듯 편하게 해 주세요. 중간에 예상치 못한 일이 생겨도 화면을 보고 해결해 보세요. 시간은 자동으로 재요. 체크인이 끝나면 과제 2가 나와요.</p><button class="k-btn main" id="rtTaskOk">시작</button>`);
   }
+  if(RT.stage==="info"&&K.rtShow!==false){const v=RT.order[RT.round];
+    return ov(`<h3>과제 2 · ${rtName(v)}</h3><p class="rt-task">이 호텔의 <b>수영장은 몇 층</b>에 있을까요?<br>키오스크 화면을 이용해 찾아보고, 숫자로 입력해 주세요.</p>
+    <button class="k-btn ghost" id="rtLook">키오스크에서 찾아보기</button>
+    <label class="rt-lab" for="rtAns">답 (숫자)</label><input id="rtAns" class="rt-in" inputmode="numeric" maxlength="3" autocomplete="off" placeholder="예: 3">
+    <div class="rt-two"><button class="k-btn main" id="rtAnsGo">제출</button><button class="k-btn ghost" id="rtAnsNo">모르겠어요</button></div>`);}
   if(RT.stage==="between")return ov(`<h3>첫 번째 화면 완료! 👏</h3><p>이제 <b>다른 화면(${rtName(RT.order[1])})</b>으로 같은 체크인을 한 번 더 해 주세요.</p><button class="k-btn main" id="rtNext">다음 화면 시작</button>`);
   if(RT.stage==="survey"){
     const opt=(name,val,lab,cur)=>`<button class="rt-opt" data-rt="${name}" data-val="${val}" aria-pressed="${cur===val}">${lab}</button>`;
@@ -1627,29 +1659,51 @@ function rtModal(){
     <div class="rt-q"><b>3. 헷갈리거나 불편했던 점 (선택)</b><textarea id="rtNote" class="rt-in" rows="2" maxlength="200" placeholder="한 줄이면 충분해요">${esc(RT.note)}</textarea></div>
     <button class="k-btn main" id="rtDone">결과 보기</button>`);
   }
-  if(RT.stage==="done")return ov(`<h3>참여해 주셔서 고마워요! 🙏</h3><p>아래 <b>결과 복사</b>를 누른 뒤, 단톡방에 붙여 넣어 주세요.</p>
+  if(RT.stage==="done"){
+    if(RT_FORM.action){
+      const st=RT.sent==="ok"?`<p class="rt-ok">✓ 결과가 제출되었어요. 참여해 주셔서 고마워요!</p>`:RT.sent==="sending"?`<p>제출하고 있어요…</p>`:RT.sent==="fail"?`<p class="rt-bad">인터넷 문제로 제출하지 못했어요. 다시 시도하거나 아래 ‘결과 복사’로 단톡에 보내 주세요.</p>`:"";
+      return ov(`<h3>참여해 주셔서 고마워요! 🙏</h3>${st||`<p>아래 <b>제출하기</b>를 누르면 결과가 자동으로 전달돼요.</p>`}
+      ${RT.sent==="ok"?"":`<button class="k-btn main" id="rtSend">${RT.sent==="fail"?"다시 제출하기":"제출하기"}</button>`}
+      <details class="rt-more"><summary>내 결과 보기</summary><textarea id="rtOut" class="rt-in rt-out" rows="7" readonly>${esc(rtText())}</textarea><button class="k-btn ghost" id="rtCopy">결과 복사</button></details>
+      <button class="rt-link" id="rtRestart">처음부터 다시 하기</button>`);
+    }
+    return ov(`<h3>참여해 주셔서 고마워요! 🙏</h3><p>아래 <b>결과 복사</b>를 누른 뒤, 단톡방에 붙여 넣어 주세요.</p>
     <textarea id="rtOut" class="rt-in rt-out" rows="7" readonly>${esc(rtText())}</textarea>
     <button class="k-btn main" id="rtCopy">결과 복사</button><button class="rt-link" id="rtRestart">처음부터 다시 하기</button>`);
+  }
   return "";
 }
+function rtMsg(){return `<div class="rt-msg"><small>📩 예약 확인 문자</small><b>호텔 기대 서울</b>예약번호 <b>GD2611</b> · 예약자 <b>KIM HANEUL</b><br>휴대폰 010-****-<b>1234</b> · 11.20 체크인 1박</div>`}
 function rtChip(){
-  if(!RT.on||RT.stage!=="task")return "";
-  return `<button class="rt-chip" id="rtChip" type="button" aria-label="테스트 과제 다시 보기">테스트 ${RT.round+1}/2 · ${rtName(RT.order[RT.round])} ⓘ</button>`;
+  if(!RT.on||(RT.stage!=="task"&&RT.stage!=="info"))return "";
+  if(RT.stage==="info")return `<button class="rt-chip" id="rtChip" type="button">과제 2 · 수영장 층 찾기 → 답 입력하기 ⓘ</button>`;
+  return `<button class="rt-chip" id="rtChip" type="button" aria-label="테스트 과제 다시 보기">테스트 ${RT.round+1}/2 · ${rtName(RT.order[RT.round])} · 예약 GD2611 / KIM / 1234 ⓘ</button>`;
+}
+function rtSend(){
+  if(!RT_FORM.action||RT.sent==="sending"||RT.sent==="ok")return;
+  RT.sent="sending";renderKiosk();
+  const body=new URLSearchParams();body.append(RT_FORM.entry,rtText());
+  /* Google Forms gives no readable reply to other sites, so a finished request is treated as delivered */
+  fetch(RT_FORM.action,{method:"POST",mode:"no-cors",body}).then(()=>{RT.sent="ok";rtSave();renderKiosk()},()=>{RT.sent="fail";rtSave();renderKiosk()});
 }
 function rtClick(b){
   if(b.id==="rtGo"){const n=(document.getElementById("rtNick").value||"").trim();if(!n){const i=document.getElementById("rtNick");i.focus();i.classList.add("rt-err");return true}K.rtShow=true;rtStart(n);return true}
   if(b.id==="rtTaskOk"){K.rtShow=false;renderKiosk();return true}
-  if(b.id==="rtChip"){if(K.screen!=="idle"){toast(`과제: 예약번호 GD2611로 체크인을 끝까지 해 주세요.${RT.order[RT.round]==="baseline"?" (휴대폰 뒷자리 1234)":""}`);return true}K.rtShow=true;renderKiosk();return true}
+  if(b.id==="rtChip"){if(RT.stage==="info"){K.rtShow=true;renderKiosk();return true}if(K.screen!=="idle"){toast("예약번호 GD2611 · 예약자 KIM HANEUL · 휴대폰 뒷자리 1234");return true}K.rtShow=true;renderKiosk();return true}
+  if(b.id==="rtLook"){K.rtShow=false;go("idle");return true}
+  if(b.id==="rtAnsGo"){const a=(document.getElementById("rtAns").value||"").replace(/[^0-9]/g,"");if(!a){document.getElementById("rtAns").classList.add("rt-err");return true}rtInfoDone(a);return true}
+  if(b.id==="rtAnsNo"){rtInfoDone("");return true}
   if(b.id==="rtNext"){K.rtShow=true;rtNext();return true}
   if(b.dataset.rt){const n=b.dataset.rt,v=b.dataset.val;const note=document.getElementById("rtNote");if(note)RT.note=note.value.trim();
     if(n==="better")RT.better=v;else if(n.startsWith("help-"))RT.help[n.slice(5)]=v==="y";rtSave();renderKiosk();return true}
   if(b.id==="rtDone"){const note=document.getElementById("rtNote");if(note)RT.note=note.value.trim();
     if(!RT.better||RT.help[RT.order[0]]===undefined||RT.help[RT.order[1]]===undefined){toast("질문 1, 2에 답해 주세요.");return true}
-    RT.stage="done";rtSave();renderKiosk();return true}
+    RT.stage="done";RT.sent=false;rtSave();renderKiosk();if(RT_FORM.action)rtSend();return true}
+  if(b.id==="rtSend"){rtSend();return true}
   if(b.id==="rtCopy"){const txt=rtText();const done=()=>toast("복사했어요! 단톡방에 붙여 넣어 주세요.");
     const fallback=()=>{const ta=document.getElementById("rtOut");ta.removeAttribute("readonly");ta.select();try{document.execCommand("copy");done()}catch(e){toast("길게 눌러 직접 복사해 주세요.")}ta.setAttribute("readonly","")};
     try{navigator.clipboard.writeText(txt).then(done,fallback)}catch(e){fallback()}return true}
-  if(b.id==="rtRestart"){RT.stage="intro";rtSave();K.variant="improved";go("idle");return true}
+  if(b.id==="rtRestart"){RT.stage="intro";RT.sent=false;rtSave();K.variant="improved";K.demoFail="";go("idle");return true}
   return false;
 }
 
@@ -1724,7 +1778,7 @@ function bars(svg,labels,vals,opt){
 const TYPE_KO={checkin:"체크인",error:"오류",staff:"직원 호출",rating:"만족도",ai:"AI 안내",request:"객실 요청",abandon:"중도 이탈"};
 const ERR_KO={not_found:"예약번호 불일치",qr_unknown:"등록되지 않은 QR",declined:"결제 승인 실패(시연)",key_fail:"카드키 발급 오류(시연)"};
 const METHOD_KO={qr:"QR 스캔",qr_sim:"QR 시뮬레이션(시연)",code:"예약번호"};
-Object.assign(STAGE_KO,{paying:"결제 처리",payok:"결제 완료",payfail:"결제 실패",keyfail:"카드키 오류",phone:"휴대폰 번호 입력",fault:"오류 복구"});
+Object.assign(STAGE_KO,{bname:"영문 이름 입력",paying:"결제 처리",payok:"결제 완료",payfail:"결제 실패",keyfail:"카드키 오류",phone:"휴대폰 번호 입력",fault:"오류 복구"});
 function feedLine(e){
   const tm=new Date(e.ts).toTimeString().slice(0,5);
   let d="";
